@@ -3,5 +3,5 @@
 ## 인원
 * 김성민(devsungmin)
 * 이한별(ons_star)
-* 주호승(hoseungzzang)
+* 주호승(hoseungzzang)똥
 * 최준혁(sn00918)
