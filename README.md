@@ -2,6 +2,6 @@
 ---
 ## 인원
 * 김성민(devsungmin)
-* 이한별(ons_star)
-* 주호승(hoseungzzang)똥쟁이
+* 이한별(ons_star)제발 공부나좀해 음료수빵 거리고있네 
+* 주호승(hoseungzzang)
 * 최준혁(sn00918)
