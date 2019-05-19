@@ -16,7 +16,5 @@ public class MainActivity extends AppCompatActivity {
         mapView.setDaumMapApiKey("e3833943feadc8a6fd0827ba10e572ed");
         RelativeLayout container = (RelativeLayout) findViewById(R.id.map_view);
         container.addView(mapView);
-
-
     }
 }
