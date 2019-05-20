@@ -27,6 +27,8 @@ public class MainActivity extends FragmentActivity implements OnMapReadyCallback
             getSupportFragmentManager().beginTransaction().add(R.id.map, mapFragment).commit();
         }
         mapFragment.getMapAsync(this);
+
+        
     }
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions,
@@ -41,5 +43,7 @@ public class MainActivity extends FragmentActivity implements OnMapReadyCallback
     public void onMapReady(@NonNull NaverMap naverMap){
         naverMap.setLocationSource(locationSource);
     }
+
+
 
 }
