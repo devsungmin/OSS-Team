@@ -1,16 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#fff"
     tools:context=".MainActivity">
 
-    <FrameLayout
+    <fragment
         android:id="@+id/map"
+        android:name="com.naver.maps.map.MapFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        tools:layout="@layout/activity_main"
         tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="0dp"/>
+        tools:layout_editor_absoluteY="0dp"></fragment>
 
-</android.support.constraint.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/대피소찾기버튼"
+            android:layout_width="410dp"
+            android:layout_height="60dp"
+            android:text="대피소 찾기"
+            tools:layout_editor_absoluteX="21dp"
+            tools:layout_editor_absoluteY="0dp" />
+    </LinearLayout>
+
+</RelativeLayout>
