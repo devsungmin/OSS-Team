@@ -13,12 +13,14 @@
 <!-- 뷰포트 -->
 
 <meta name="viewport" content="width=device-width" initial-scale="1">
-
+<script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=krqrfbpm8q"></script>
 <!-- 스타일시트 참조  -->
 
 <link rel="stylesheet" href="css/bootstrap.min.css">
 
-<title>jsp 게시판 웹사이트</title>
+<title>내 주변 대피소 찾기</title>
+
+
 
 </head>
 
@@ -57,7 +59,7 @@
 
 			</button>
 
-			<a class="navbar-brand" href="main.jsp">JSP 게시판</a>
+			<a class="navbar-brand" href="main.jsp">내 주변 대피소 찾기</a>
 
 		</div>
 
@@ -142,25 +144,30 @@
 	</nav>
 
  <!-- 메인폼 -->
-
- <div class="container">
+<div class="container">
 
   <div class="col-lg-4"></div>
 
   <div class="col-lg-4">
 
-  <!-- 점보트론 -->
+  <!-- 지도 -->
+	<div id="map" style="width:100%;height:400px;"></div>
+   	<script>
+	var mapOptions = {
+    center: new naver.maps.LatLng(37.3595704, 127.105399),
+    zoom: 10
+	};
+	
+	var map = new naver.maps.Map('map', mapOptions);
+	</script>
 
-   <div class="jumbotron" style="padding-top: 20px;">
 
-
-   </form>
-
-  </div>
 
  </div>
 
 </div>
+ 
+
 
  
 

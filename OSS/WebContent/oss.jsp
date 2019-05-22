@@ -79,7 +79,7 @@
 
 				<li><a href="main.jsp">메인</a></li>
 
-				<li class="active"><a href="bbs.jsp">게시판</a></li>
+				<li class="active"><a href="oss.jsp">게시판</a></li>
 
 			</ul>
 
