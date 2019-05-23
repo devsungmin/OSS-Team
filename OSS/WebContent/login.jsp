@@ -18,7 +18,7 @@
 
 <link rel="stylesheet" href="css/bootstrap.min.css">
 
-<title>jsp 게시판 웹사이트</title>
+<title>내 주변 대피소 찾기</title>
 
 </head>
 
@@ -44,7 +44,7 @@
 
     </button>
 
-    <a class="navbar-brand" href="main.jsp">JSP 게시판</a>
+    <a class="navbar-brand" href="main.jsp">내 주변 대피소 찾기</a>
 
   </div>
 

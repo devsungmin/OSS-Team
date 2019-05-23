@@ -166,9 +166,15 @@
  </div>
 
 </div>
- 
-
-
+ <form method="post" action="result.jsp">
+<div class="container">
+	<div class="col-lg-4"></div>
+	<div class="col-lg-4">
+	<input type="submit" class="btn btn-primary form-control" value="대피소 찾기">
+	</div>
+	
+	</div>
+</form>
  
 
  
