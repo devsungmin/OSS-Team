@@ -1,8 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+ <%@ page language="java" contentType="text/html; charset=UTF-8"
 
-	pageEncoding="UTF-8"%>
-
-<%@ page import="java.io.PrintWriter"%>
+    pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
 
@@ -15,18 +13,19 @@
 <!-- 뷰포트 -->
 
 <meta name="viewport" content="width=device-width" initial-scale="1">
-
+<script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=krqrfbpm8q"></script>
 <!-- 스타일시트 참조  -->
 
-<link rel="stylesheet" href="css/bootstrap.css">
+<link rel="stylesheet" href="css/bootstrap.min.css">
 
 <title>내 주변 대피소 찾기</title>
+
+
 
 </head>
 
 <body>
-
-	<%
+<%
 
 		//로긴한사람이라면	 userID라는 변수에 해당 아이디가 담기고 그렇지 않으면 null값
 
@@ -42,16 +41,9 @@
 		}
 
 	%>
+ <!-- 네비게이션  -->
 
-
-
-
-
-
-
-	<!-- 네비게이션  -->
-
-	<nav class="navbar navbar-default">
+ <nav class="navbar navbar-default">
 
 		<div class="navbar-header">
 
@@ -77,9 +69,9 @@
 
 			<ul class="nav navbar-nav">
 
-				<li><a href="main.jsp">메인</a></li>
+				<li class="active"><a href="main.jsp">메인</a></li>
 
-				<li class="active"><a href="oss.jsp">게시판</a></li>
+				<li><a href="oss.jsp">게시판</a></li>
 
 			</ul>
 
@@ -151,61 +143,52 @@
 
 	</nav>
 
-	<!-- 게시판 -->
+ <!-- 메인폼 -->
+<div class="container">
 
-	<div class="container">
+  <div class="col-lg-4"></div>
 
-		<div class = "row">
+  <div class="col-lg-4">
 
-			<table class="table table-striped" style="text-align:center; border:1px solid #dddddd"> 
-
-				<thead>
-
-					<tr>
-
-						<th style="background-color: #eeeeee; text-align: center;">번호</th>
-
-						<th style="background-color: #eeeeee; text-align: center;">제목</th>
-
-						<th style="background-color: #eeeeee; text-align: center;">작성자</th>
-
-						<th style="background-color: #eeeeee; text-align: center;">작성일</th>
-
-					</tr>
-
-				</thead>
-
-				<tbody>
-
-					<tr>
-
-						<td>1</td>
-
-						<td>안녕하세요</td>
-
-						<td>김성민</td>
-
-						<td>2019-05-21</td>
-
-					</tr>
-
-				</tbody>
-
-			</table>	
-
-			<a href = "write.jsp" class="btn btn-primary pull-right">글쓰기</a>
-
-		</div>
-
-	</div>
-
+  <!-- 지도 -->
+	<div id="map" style="width:100%;height:400px;"></div>
+   	<script>
+	var mapOptions = {
+    center: new naver.maps.LatLng(37.3595704, 127.105399),
+    zoom: 10
+	};
 	
-	<!-- 애니매이션 담당 JQUERY -->
+	var map = new naver.maps.Map('map', mapOptions);
+	</script>
 
-	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 
-	<!-- 부트스트랩 JS  -->
 
-	<script src="js/bootstrap.js"></script>
-	</body>
+ </div>
+
+</div>
+ <form method="post" action="result.jsp">
+<div class="container">
+	<div class="col-lg-4"></div>
+	<div class="col-lg-4">
+	<input type="submit" class="btn btn-primary form-control" value="대피소 찾기">
+	</div>
+	
+	</div>
+</form>
+ 
+
+ 
+
+ <!-- 애니매이션 담당 JQUERY -->
+
+ <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script> 
+
+ <!-- 부트스트랩 JS  -->
+
+ <script src="js/bootstrap.js"></script>
+
+ 
+
+</body>
+
 </html>
