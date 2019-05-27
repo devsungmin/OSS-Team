@@ -9,18 +9,31 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
 
+
 public class MainActivity extends AppCompatActivity {
+
     private WebView mWebView;
+<<<<<<< HEAD
+=======
+
+>>>>>>> 11ac56ec9c943786531cc10b33c53e92869682a6
     private String myUrl = "http://osspj.xco.kr/";// 접속 URL (내장HTML의 경우 왼쪽과 같이 쓰고 아니면 걍 URL)
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
         // 웹뷰 셋팅
         mWebView = findViewById(R.id.webView);//xml 자바코드 연결
         mWebView.getSettings().setJavaScriptEnabled(true);//자바스크립트 허용
+<<<<<<< HEAD
         mWebView.loadUrl("http://osspj.xco.kr/");//웹뷰 실행 및 로컬 파일로 인한 file
+=======
+
+        mWebView.loadUrl("http://osspj.xco.kr/");//웹뷰 실행
+>>>>>>> 11ac56ec9c943786531cc10b33c53e92869682a6
         mWebView.setWebChromeClient(new WebChromeClient());//웹뷰에 크롬 사용 허용//이 부분이 없으면 크롬에서 alert가 뜨지 않음
         mWebView.setWebViewClient(new WebViewClientClass());//새창열기 없이 웹뷰 내에서 다시 열기//페이지 이동 원활히 하기위해 사용
 
@@ -35,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
         }
         return super.onKeyDown(keyCode, event);
     }
+
     private class WebViewClientClass extends WebViewClient {//페이지 이동
         @Override
         public boolean shouldOverrideUrlLoading(WebView view, String url) {
@@ -43,4 +57,6 @@ public class MainActivity extends AppCompatActivity {
             return true;
         }
     }
+
+
 }

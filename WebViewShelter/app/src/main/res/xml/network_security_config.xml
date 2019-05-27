@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <network-security-config>
+<<<<<<< HEAD
     <domain-config cleartextTrafficPermitted="ture">
         <domain includeSubdomains="true">http://osspj.xco.kr/</domain>
     </domain-config>
 
+=======
+    <domain-config
+        cleartextTrafficPermitted="true">
+        <domain
+            includeSubdomains="true">example.com
+        </domain>
+    </domain-config>
+>>>>>>> 11ac56ec9c943786531cc10b33c53e92869682a6
 </network-security-config>
