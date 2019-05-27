@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
         // 웹뷰 셋팅
         mWebView = findViewById(R.id.webView);//xml 자바코드 연결
         mWebView.getSettings().setJavaScriptEnabled(true);//자바스크립트 허용
-        mWebView.loadUrl("file:///android_asset/OSS/WebContent/main.jsp");//웹뷰 실행 및 로컬 파일로 인한 fi
+        mWebView.loadUrl("file:///android_asset/OSS/WebContent/main.jsp");//웹뷰 실행 및 로컬 파일로 인한 file
         mWebView.setWebChromeClient(new WebChromeClient());//웹뷰에 크롬 사용 허용//이 부분이 없으면 크롬에서 alert가 뜨지 않음
         mWebView.setWebViewClient(new WebViewClientClass());//새창열기 없이 웹뷰 내에서 다시 열기//페이지 이동 원활히 하기위해 사용
 
