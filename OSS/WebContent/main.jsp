@@ -116,6 +116,30 @@
    		{
    			content:'<div><h4>포스코더샵오피스텔(지하주차장)</h4><br>충청남도 천안시 동남구 만남로 9 (신부동 더샵오피스텔)</div>',
    	        latlng:new naver.maps.LatLng(36.819139, 127.153003)
+   		},
+   		{
+   			content:'<div><h4>CGV(지하주차장)</h4><br>충청남도 천안시 동남구 명동길 47 (대흥동 CGV)</div>',
+   	        latlng:new naver.maps.LatLng(36.807686, 127.148381)
+   		},
+   		{
+   			content:'<div><h4>농협은행 대흥동지점 앞 지하상가주차장</h4><br>충청남도 천안시 동남구 명동길 (문화동)</div>',
+   	        latlng:new naver.maps.LatLng(36.808458, 127.127.149817)
+   		},
+   		{
+   			content:'<div><h4>신도브래뉴2차아파트(지하주차장)</h4><br>충청남도 천안시 동남구 목천읍 목천안터2길 19 (신도브래뉴2차아파트)</div>',
+   	        latlng:new naver.maps.LatLng(36.819139, 127.153003)
+   		},
+   		{
+   			content:'<div><h4>부영2단지아파트(지하주차장)</h4><br>충청남도 천안시 동남구 목천읍 삼성5길 41 (원앙마을 부영아파트)</div>',
+   	        latlng:new naver.maps.LatLng(36.761769, 127.176989)
+   		},
+   		{
+   			content:'<div><h4>부영1단지아파트(지하주차장)</h4><br>충청남도 천안시 동남구 목천읍 삼성5길 42 (부영아파트)</div>',
+   	        latlng:new naver.maps.LatLng(36.758992, 127.178917)
+   		},
+   		{
+   			content:'<div><h4>대흥동지하상가</h4><br>충청남도 천안시 동남구 버들로 지하 2 (대흥동 지하상가)</div>',
+   	        latlng:new naver.maps.LatLng(36.809347, 127.148194)
    		}
    	]
 	
