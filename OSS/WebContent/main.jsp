@@ -123,11 +123,11 @@
    		},
    		{
    			content:'<div><h4>농협은행 대흥동지점 앞 지하상가주차장</h4><br>충청남도 천안시 동남구 명동길 (문화동)</div>',
-   	        latlng:new naver.maps.LatLng(36.808458, 127.127.149817)
+   	        latlng:new naver.maps.LatLng(36.808458, 127.149817)
    		},
    		{
    			content:'<div><h4>신도브래뉴2차아파트(지하주차장)</h4><br>충청남도 천안시 동남구 목천읍 목천안터2길 19 (신도브래뉴2차아파트)</div>',
-   	        latlng:new naver.maps.LatLng(36.819139, 127.153003)
+   	        latlng:new naver.maps.LatLng(36.777781, 127.210667)
    		},
    		{
    			content:'<div><h4>부영2단지아파트(지하주차장)</h4><br>충청남도 천안시 동남구 목천읍 삼성5길 41 (원앙마을 부영아파트)</div>',
@@ -140,7 +140,155 @@
    		{
    			content:'<div><h4>대흥동지하상가</h4><br>충청남도 천안시 동남구 버들로 지하 2 (대흥동 지하상가)</div>',
    	        latlng:new naver.maps.LatLng(36.809347, 127.148194)
-   		}
+   		},
+   		{
+   			content:'<div><h4>봉명청솔3차아파트(지하주차장)</h4><br>충청남도 천안시 동남구 봉서8길 13 (봉명동 청솔3차아파트)</div>',
+   	        latlng:new naver.maps.LatLng(36.810894, 127.132358)
+   		},
+   		{
+   			content:'<div><h4>신동아아파트(지하주차장)</h4><br>충청남도 천안시 동남구 새말4길 5 (신방동 신동아아파트)</div>',
+   	        latlng:new naver.maps.LatLng(36.793931, 127.131853)
+   		},
+   		{
+   			content:'<div><h4>향촌현대아파트(지하주차장)</h4><br>충청남도 천안시 동남구 서부대로 226-11 (신방동 향촌현대아파트)</div>',
+   	        latlng:new naver.maps.LatLng(36.789247, 127.130083)
+   		},
+   		{
+   			content:'<div><h4>한라동백2차아파트(지하주차장)</h4><br>충청남도 천안시 동남구 서부대로 226-12 (신방동 한라동백2차아파트)</div>',
+   	        latlng:new naver.maps.LatLng(36.787108, 127.129922)
+   		},
+   		{
+   			content:'<div><h4>두레현대2단지아파트(지하주차장)</h4><br>충청남도 천안시 동남구 서부대로 252 (신방동 신방동두레현대아파트2단지)</div>',
+   	        latlng:new naver.maps.LatLng(36.791086, 127.130167)
+   		},
+   		{
+   			content:'<div><h4>초원그린아파트(지하주차장)</h4><br>충청남도 천안시 동남구 신촌4로 16 (신방동 초원아파트)</div>',
+   	        latlng:new naver.maps.LatLng(36.787306, 127.126369)
+   		},
+   		{
+   			content:'<div><h4>초원라이프아파트(지하주차장)</h4><br>충청남도 천안시 동남구 원성5길 17 (원성동 초원라이프타운)</div>',
+   	        latlng:new naver.maps.LatLng(36.807956, 127.162289)
+   		},
+   		{
+   			content:'<div><h4>성지새말1단지아파트(지하주차장)</h4><br>충청남도 천안시 동남구 일봉로 17 (신방동 성지새말아파트)</div>',
+   	        latlng:new naver.maps.LatLng(36.794117, 127.130117)
+   		},
+   		{
+   			content:'<div><h4>성지새말2단지아파트(지하주차장)</h4><br>충청남도 천안시 동남구 일봉로 20 (신방동 성지새말아파트)</div>',
+   	        latlng:new naver.maps.LatLng(36.792414, 127.130644)
+   		},
+   		{
+   			content:'<div><h4>두레현대1단지아파트(지하주차장)</h4><br>충청남도 천안시 동남구 일봉로 34 (신방동 두레현대아파트)</div>',
+   	        latlng:new naver.maps.LatLng(36.7925948, 127.132131)
+   		},
+   		{
+   			content:'<div><h4>동일하이빌아파트1단지아파트(1 4 5 지하주차장)</h4><br>충청남도 천안시 동남구 일봉로 71 (용곡동 동일하이빌1단지아파트)</div>',
+   	        latlng:new naver.maps.LatLng(36.791956, 127.137417)
+   		},
+   		{
+   			content:'<div><h4>신성미소지움아파트(지하주차장)</h4><br>충청남도 천안시 동남구 천안대로 483-8 (구성동 신성미소지움아파트)</div>',
+   	        latlng:new naver.maps.LatLng(36.792844, 127.1637275)
+   		},
+   		{
+   			content:'<div><h4>방죽안휴먼시아아파트(지하주차장)</h4><br>충청남도 천안시 동남구 천안천8길 45 (신부동 방죽안휴먼시아아파트)</div>',
+   	        latlng:new naver.maps.LatLng(36.821683, 127.155067)
+   		},
+   		{
+   			content:'<div><h4>청당벽산블루밍아파트(지하주차장)</h4><br>충청남도 천안시 동남구 청당2길 118 (청당동 청당벽산블루밍아파트)</div>',
+   	        latlng:new naver.maps.LatLng(36.779283, 127.156197)
+   		},
+   		{
+   			content:'<div><h4>청솔엘지에스케이아파트(지하주차장)</h4><br>충청남도 천안시 동남구 청수로 98 (청수동 청솔LG아파트)</div>',
+   	        latlng:new naver.maps.LatLng(36.792014, 127.157775)
+   		},
+   		{
+   			content:'<div><h4>우성VIP아파트(지하주차장)</h4><br>충청남도 천안시 동남구 충무로 455-3 (원성동 우성VIP아파트)</div>',
+   	        latlng:new naver.maps.LatLng(36.798772, 127.155453)
+   		},
+   		{
+   			content:'<div><h4>충남근로자복지회관(지하주차장)</h4><br>충청남도 천안시 동남구 충무로 457 (원성동 충청남도근로자복지회관)</div>',
+   	        latlng:new naver.maps.LatLng(36.798811, 127.156183)
+   		},
+   		{
+   			content:'<div><h4>교보생명(지하주차장)</h4><br>충청남도 천안시 동남구 충절로 138 (원성동 교보생명)</div>',
+   	        latlng:new naver.maps.LatLng(36.806753, 127.158417)
+   		},
+   		{
+   			content:'<div><h4>원성극동아파트(101동 지하)</h4><br>충청남도 천안시 동남구 충절로 190 (원성동 원성극동아파트)</div>',
+   	        latlng:new naver.maps.LatLng(36.802492, 127.158642)
+   		},
+   		{
+   			content:'<div><h4>천안동부새마을금고(지하주차장)</h4><br>충청남도 천안시 동남구 충절로 196 (원성동 천안동부새마을금고)</div>',
+   	        latlng:new naver.maps.LatLng(36.801347, 127.158808)
+   		},
+   		{
+   			content:'<div><h4>파고다아파트(지하주차장)</h4><br>충청남도 천안시 동남구 큰시장길 37 (영성동 파고다주상복합아파트)</div>',
+   	        latlng:new naver.maps.LatLng(36.802231, 127.150972)
+   		},
+   		{
+   			content:'<div><h4>대림한들아파트(지하주차장)</h4><br>충청남도 천안시 동남구 터미널9길 59 (신부동 대림한들아파트)</div>',
+   	        latlng:new naver.maps.LatLng(36.823794, 127.158789)
+   		},
+   		{
+   			content:'<div><h4>청수현대아파트(지하주차장)</h4><br>충청남도 천안시 동남구 풍세로 1010-31 (청수동 청수현대아파트)</div>',
+   	        latlng:new naver.maps.LatLng(36.797417, 127.153894)
+   		},
+   		{
+   			content:'<div><h4>e편한세상스마일시티아파트(지하주차장)</h4><br>충청남도 천안시 서북구 3공단6로 85-27 (차암동 e편한세상스마일시티)</div>',
+   	        latlng:new naver.maps.LatLng(36.843828, 127.103606)
+   		},
+   		{
+   			content:'<div><h4>불당한화꿈에그린아파트(지하주차장)</h4><br>충청남도 천안시 서북구 광장로 260 (불당동)</div>',
+   	        latlng:new naver.maps.LatLng(36.801042, 127.113497)
+   		},
+   		{
+   			content:'<div><h4>e편한세상두정2차아파트(지하주차장)</h4><br>충청남도 천안시 서북구 노태산로 145 (두정동)</div>',
+   	        latlng:new naver.maps.LatLng(36.838003, 127.129653)
+   		},
+   		{
+   			content:'<div><h4>세광엔리치빌3단지아파트(지하주차장)</h4><br>충청남도 천안시 서북구 늘푸른1길 29 (두정동)</div>',
+   	        latlng:new naver.maps.LatLng(36.828192, 127.128383)
+   		},
+   		{
+   			content:'<div><h4>서해그랑블아파트(지하주차장)</h4><br>충청남도 천안시 서북구 늘푸른1길 32 (두정동)</div>',
+   	        latlng:new naver.maps.LatLng(36.828169, 127.130203)
+   		},
+   		{
+   			content:'<div><h4>e편한세상스마일시티아파트(지하주차장)</h4><br>충청남도 천안시 서북구 3공단6로 85-27 (차암동 e편한세상스마일시티)</div>',
+   	        latlng:new naver.maps.LatLng(36.843828, 127.103606)
+   		},
+   		{
+   			content:'<div><h4>대우푸르지오4차아파트(지하주차장)</h4><br>충청남도 천안시 서북구 늘푸른1길 50 (두정동)</div>',
+   	        latlng:new naver.maps.LatLng(36.829519, 127.130208)
+   		},
+   		{
+   			content:'<div><h4>극동늘푸른아파트(지하주차장)</h4><br>충청남도 천안시 서북구 늘푸른6길 42 (두정동)</div>',
+   	        latlng:new naver.maps.LatLng(36.828117, 127.131911)
+   		},
+   		{
+   			content:'<div><h4>선경아파트(지하주차장)</h4><br>충청남도 천안시 서북구 도원2길 39 (성정동 선경아파트)</div>',
+   	        latlng:new naver.maps.LatLng(36.822097, 127.133569)
+   		},
+   		{
+   			content:'<div><h4>충남타워(지하주차장)</h4><br>충청남도 천안시 서북구 동서대로 163 (성정동 충남타워)</div>',
+   	        latlng:new naver.maps.LatLng(36.825911, 127.141306)
+   		},
+   		{
+   			content:'<div><h4>대우푸르지오5차아파트(지하주차장)</h4><br>충청남도 천안시 서북구 두정고1길 9 (두정동)</div>',
+   	        latlng:new naver.maps.LatLng(36.834742, 127.128717)
+   		},
+   		{
+   			content:'<div><h4>우성아파트(지하주차장)</h4><br>충청남도 천안시 서북구 두정고7길 36 (두정동)</div>',
+   	        latlng:new naver.maps.LatLng(36.836475, 127.132467)
+   		},
+   		{
+   			content:'<div><h4>대주파크빌아파트(지하주차장)</h4><br>충청남도 천안시 서북구 두정고7길 9 (두정동)</div>',
+   	        latlng:new naver.maps.LatLng(36.836542, 127.129978)
+   		},
+   		{
+   			content:'<div><h4>두정한성2차아파트(지하주차장)</h4><br>충청남도 천안시 서북구 두정고8길 24 (두정동)</div>',
+   	        latlng:new naver.maps.LatLng(36.837636, 127.133356)
+   		},
    	]
 	
    	for (var i = 0; i < positions.length; i++) {
