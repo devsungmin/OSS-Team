@@ -17,7 +17,7 @@ public class DAO {
 		ResultSet rs = null; 
 		int cnt = 0; 
 		try { 
-			sql = "SELECT COUNT(*) FROM board1"; 
+			sql = "SELECT COUNT(*) FROM board"; 
 			pstmt = con.prepareStatement(sql); 
 			rs = pstmt.executeQuery(); 
 			if(rs.next()) { 
