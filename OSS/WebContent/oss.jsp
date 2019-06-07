@@ -67,7 +67,7 @@
 
 			</button>
 
-			<a class="navbar-brand" href="main.jsp">내 주변 대피소 찾기</a>
+			<a class="navbar-brand" href="NewFile1.jsp">내 주변 대피소 찾기</a>
 
 		</div>
 
@@ -77,7 +77,7 @@
 
 			<ul class="nav navbar-nav">
 
-				<li><a href="main.jsp">메인</a></li>
+				<li><a href="NewFile1.jsp">메인</a></li>
 
 				<li class="active"><a href="oss.jsp">게시판</a></li>
 

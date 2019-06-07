@@ -32,7 +32,7 @@
 			
 			script.println("<script>");
 
-			script.println("location.href = 'main.jsp'");
+			script.println("location.href = 'NewFile1.jsp'");
 
 			script.println("</script>");
 		}

@@ -35,9 +35,7 @@
 		}
 	%>
  <!-- 네비게이션  -->
-
  <nav class="navbar navbar-default">
-
 		<div class="navbar-header">
 			<button type="button" class="navbar-toggle collapsed"
 				data-toggle="collapse" data-target="bs-example-navbar-collapse-1"
@@ -45,12 +43,12 @@
 				<span class="icon-bar"></span> <span class="icon-bar"></span> <span
 					class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="main.jsp">내 주변 대피소 찾기</a>
+			<a class="navbar-brand" href="NewFile1.jsp">내 주변 대피소 찾기</a>
 		</div>
 		<div class="collapse navbar-collapse"
 			id="#bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav">
-				<li class="active"><a href="main.jsp">메인</a></li>
+				<li class="active"><a href="NewFile1.jsp">메인</a></li>
 				<li><a href="oss.jsp">게시판</a></li>
 			</ul>
 			<%
@@ -109,7 +107,7 @@
 	    pointRadius: 2,
 	    title: "this is a red line"	
 	};
-	var lonlat = new Tmap.LonLat(126.984895, 37.566369).transform("EPSG:4326", "EPSG:3857");//좌표 설정
+	var lonlat = new Tmap.LonLat(36.8092096,127.1460138).transform("EPSG:4326", "EPSG:3857");//좌표 설정
 	var geolocation = navigator.geolocation;
 
 	var icon_s = icon("s");
@@ -944,6 +942,8 @@
    
  </div>
 </div>
+
+<center>
 <form class="offset-s6 col s3" style="margin-top: 37%;">
                 <div class="row">
                     <div class="input-field col s12">
@@ -957,7 +957,7 @@
                         </div>
                     </div>
                 </div>
-
+                <br>
                 <div class="row">
                     <div class="input-field col s12">
                         <input type="text" id="end" />
@@ -969,26 +969,24 @@
                             </button>
                         </div>
                     </div>
-                </div>
-
-                <div class="row">
-                    <div class="submit col s12">
-                        <button class="col-lg-4"
-                        type="button" onclick="go()">
-                                <i class="material-icons right">경로탐색</i>
-                        </button>
-                    </div>
-                </div>
+                	</div>
+                	<br>
+                	<div class="row">
+        	       			<div class="submit col s12">
+            	 	 			  <button class="col-lg-2" type="button" onclick="go()">
+              			  		<i class="material-icons right">경로탐색</i>
+              		 	 		</button>
+              		  		</div>
+               		 </div>            
             </form>
- 			<div class="result col s3">
-                <p id="result" class="center-align"></p>
-                <p id="result1" class="center-align"></p>
-                <p id="result2" class="center-align"></p>
-                <p id="result3" class="center-align"></p>
-            </div>
+ 				<div class="result col s3">
+                	<p id="result" class="center-align"></p>
+                	<p id="result1" class="center-align"></p>
+                	<p id="result2" class="center-align"></p>
+                	<p id="result3" class="center-align"></p>
+            	</div>
+            </center>
         </div>
- 			
-
  
 
  <!-- 애니매이션 담당 JQUERY -->

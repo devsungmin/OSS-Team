@@ -19,7 +19,7 @@
 	%>
 	<script>	//메인으로 이동
 
-		location.href = 'main.jsp';
+		location.href = 'NewFile1.jsp';
 
 	</script>
 
