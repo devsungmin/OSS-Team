@@ -18,7 +18,7 @@
 		Connection conn = DriverManager.getConnection(url,id,pass);
 		Statement stmt = conn.createStatement();
 
-		String sqlCount = "SELECT COUNT(*) FROM board";
+		String sqlCount = "SELECT COUNT(*) FROM board2";
 		ResultSet rs = stmt.executeQuery(sqlCount);
 		
 		if(rs.next()){
@@ -27,7 +27,7 @@
 		rs.close();
 		out.print("총 게시물 : " + total + "개");
 		
-		String sqlList = "SELECT NUM, USERNAME, TITLE, TIME, HIT from board order by NUM DESC";
+		String sqlList = "SELECT shelterIndex,id,memo from board2 order by shelterIndex DESC";
 		rs = stmt.executeQuery(sqlList);
 		
 %>
@@ -36,10 +36,8 @@
  <tr style="background:url('img/table_mid.gif') repeat-x; text-align:center;">
    <td width="5"><img src="img/table_left.gif" width="5" height="30" /></td>
    <td width="73">번호</td>
-   <td width="379">제목</td>
-   <td width="73">작성자</td>
-   <td width="164">작성일</td>
-   <td width="58">조회수</td>
+   <td width="73">ID</td>
+   <td width="373">내용</td>
    <td width="7"><img src="img/table_right.gif" width="5" height="30" /></td>
   </tr>
 <%
@@ -53,19 +51,17 @@
 	 		
 		while(rs.next()) {
 			int idx = rs.getInt(1);
-			String name = rs.getString(2);
-			String title = rs.getString(3);
-			String time = rs.getString(4);
-			int hit = rs.getInt(5);
+			String id1 = rs.getString(2);
+			String memo = rs.getString(3);
+			
 		
 %>
 <tr height="25" align="center">
 	<td>&nbsp;</td>
 	<td><%=idx %></td>
-	<td align="left"><%=title %></td>
-	<td align="center"><%=name %></td>
-	<td align="center"><%=time %></td>
-	<td align="center"><%=hit %></td>
+	<td align="left"><%=id1 %></td>
+	<td align="center"><%=memo %></td>
+	
 	<td>&nbsp;</td>
 </tr>
   <tr height="1" bgcolor="#D2D2D2"><td colspan="6"></td></tr>
@@ -84,10 +80,13 @@
  
 <table width="100%" cellpadding="0" cellspacing="0" border="0">
   <tr><td colspan="4" height="5"></td></tr>
-  <tr align="center">
-   <td><input type=button value="글쓰기"></td>
-  </tr>
+
 </table>
+<form name="a" method="post" action="write_ok.jsp">
+   		<input type="text" name="memo" value="" style="text-align:center; width:200px; height:50px;" /><br />
+       <input type="submit" value="댓글 달기" />
+
+</form>
 </body> 
 </html>
 

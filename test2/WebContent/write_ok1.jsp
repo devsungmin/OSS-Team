@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-이 름: <%= request.getParameter("textLine") %>
+이 름: <%= request.getParameter("test") %>
 </body>
 </html>

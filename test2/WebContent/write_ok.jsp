@@ -3,7 +3,7 @@
 
 <%@ page import="java.sql.*"%>  
 <%
-	request.setCharacterEncoding("euc-kr");
+	request.setCharacterEncoding("UTF-8");
 
 		Class.forName("com.mysql.cj.jdbc.Driver");
 	
@@ -11,16 +11,19 @@
 		String id = "root";
 		String pass = "admin";
 	
-	String memo = request.getParameter("textLine");
-	
+	String memo = request.getParameter("memo");
+	int sI = 2;
+	String id1="wngh1";
 	try {	
 		Connection conn = DriverManager.getConnection(url,id,pass);
 		
-		String sql = "INSERT INTO board(MEMO) VALUES(?)";
+		String sql = "INSERT INTO board2(shelterIndex,id,memo) VALUES(?,?,?)";
 		PreparedStatement pstmt = conn.prepareStatement(sql);
 		
 	
-		pstmt.setString(1, memo);
+		pstmt.setInt(1, sI);
+		pstmt.setString(2, id1);
+		pstmt.setString(3, memo);
 		
 		pstmt.execute();
 		pstmt.close();
