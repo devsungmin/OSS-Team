@@ -7,53 +7,53 @@ import java.sql.ResultSet;
 
 public class UserDAO {
 
-	// dao : µ¥ÀÌÅÍº£ÀÌ½º Á¢±Ù °´Ã¼ÀÇ ¾àÀÚ·Î¼­
+	// dao : ï¿½ï¿½ï¿½ï¿½ï¿½Íºï¿½ï¿½Ì½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã¼ï¿½ï¿½ ï¿½ï¿½ï¿½Ú·Î¼ï¿½
 
-	// ½ÇÁúÀûÀ¸·Î db¿¡¼­ È¸¿øÁ¤º¸ ºÒ·¯¿À°Å³ª db¿¡ È¸¿øÁ¤º¸ ³ÖÀ»¶§
-	private Connection conn; // connection:db¿¡Á¢±ÙÇÏ°Ô ÇØÁÖ´Â °´Ã¼
+	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ dbï¿½ï¿½ï¿½ï¿½ È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ò·ï¿½ï¿½ï¿½ï¿½Å³ï¿½ dbï¿½ï¿½ È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	private Connection conn; // connection:dbï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ ï¿½ï¿½ï¿½Ö´ï¿½ ï¿½ï¿½Ã¼
 	private PreparedStatement pstmt;
 	private ResultSet rs;
 
-	// mysql¿¡ Á¢¼ÓÇØ ÁÖ´Â ºÎºÐ
-	public UserDAO() { // »ý¼ºÀÚ ½ÇÇàµÉ¶§¸¶´Ù ÀÚµ¿À¸·Î db¿¬°áÀÌ ÀÌ·ç¾î Áú ¼ö ÀÖµµ·ÏÇÔ
+	// mysqlï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½Îºï¿½
+	public UserDAO() { // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½É¶ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Úµï¿½ï¿½ï¿½ï¿½ï¿½ dbï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ì·ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ ï¿½Öµï¿½ï¿½ï¿½ï¿½ï¿½
 		try {
-			String dbURL = "jdbc:mysql://localhost:3306/OSS?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC"; // localhost:3306 Æ÷Æ®´Â ÄÄÇ»ÅÍ¼³Ä¡µÈ mysqlÁÖ¼Ò
+			String dbURL = "jdbc:mysql://localhost:3306/OSS?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC"; // localhost:3306 ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½Ç»ï¿½Í¼ï¿½Ä¡ï¿½ï¿½ mysqlï¿½Ö¼ï¿½
 			String dbID = "root";
-			String dbPassword = "6301209";
+			String dbPassword = "admin";
 			Class.forName("com.mysql.jdbc.Driver");
 			conn = DriverManager.getConnection(dbURL, dbID, dbPassword);
 		} catch (Exception e) {
-			e.printStackTrace(); // ¿À·ù°¡ ¹«¾ùÀÎÁö Ãâ·Â
+			e.printStackTrace(); // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 		}
 	}
 	
-	// ·Î±×ÀÎÀ» ½ÃµµÇÏ´Â ÇÔ¼ö****
+	// ï¿½Î±ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ãµï¿½ï¿½Ï´ï¿½ ï¿½Ô¼ï¿½****
 	public int login(String userID, String userPassword) {
 		String SQL = "SELECT userPassword FROM USER WHERE userID = ?";
 		try {
-			// pstmt : prepared statement Á¤ÇØÁø sql¹®ÀåÀ» db¿¡ »ðÀÔÇÏ´Â Çü½ÄÀ¸·Î ÀÎ½ºÅÏ½º°¡Á®¿È
+			// pstmt : prepared statement ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ sqlï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ dbï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Î½ï¿½ï¿½Ï½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			pstmt = conn.prepareStatement(SQL);
-			// sqlÀÎÁ§¼Ç °°Àº ÇØÅ·±â¹ýÀ» ¹æ¾îÇÏ´Â°Í... pstmtÀ» ÀÌ¿ëÇØ ÇÏ³ªÀÇ ¹®ÀåÀ» ¹Ì¸® ÁØºñÇØ¼­(¹°À½Ç¥»ç¿ë)
-			// ¹°À½Ç¥ÇØ´çÇÏ´Â ³»¿ëÀ» À¯Àú¾ÆÀÌµð·Î, ¸Å°³º¯¼ö·Î ÀÌ¿ë.. 1)Á¸ÀçÇÏ´ÂÁö 2)ºñ¹Ð¹øÈ£¹«¾ùÀÎÁö
+			// sqlï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å·ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ï´Â°ï¿½... pstmtï¿½ï¿½ ï¿½Ì¿ï¿½ï¿½ï¿½ ï¿½Ï³ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¸ï¿½ ï¿½Øºï¿½ï¿½Ø¼ï¿½(ï¿½ï¿½ï¿½ï¿½Ç¥ï¿½ï¿½ï¿½)
+			// ï¿½ï¿½ï¿½ï¿½Ç¥ï¿½Ø´ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ìµï¿½ï¿½, ï¿½Å°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¿ï¿½.. 1)ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ï¿½ï¿½ 2)ï¿½ï¿½Ð¹ï¿½È£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			pstmt.setString(1, userID);
-			// rs:result set ¿¡ °á°úº¸°ü
+			// rs:result set ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			rs = pstmt.executeQuery();
-			// °á°ú°¡ Á¸ÀçÇÑ´Ù¸é ½ÇÇà
+			// ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ñ´Ù¸ï¿½ ï¿½ï¿½ï¿½ï¿½
 			if (rs.next()) {
-				// ÆÐ½º¿öµå ÀÏÄ¡ÇÑ´Ù¸é ½ÇÇà
+				// ï¿½Ð½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡ï¿½Ñ´Ù¸ï¿½ ï¿½ï¿½ï¿½ï¿½
 				if (rs.getString(1).equals(userPassword)) {
-					return 1; // ¶ó±ä ¼º°ø
+					return 1; // ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 				} else
-					return 0; // ºñ¹Ð¹øÈ£ ºÒÀÏÄ¡
+					return 0; // ï¿½ï¿½Ð¹ï¿½È£ ï¿½ï¿½ï¿½ï¿½Ä¡
 			}
-			return -1; // ¾ÆÀÌµð°¡ ¾øÀ½ ¿À·ù
+			return -1; // ï¿½ï¿½ï¿½Ìµï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
 		} catch (Exception e) {
 
 			e.printStackTrace();
 
 		}
-		return -2; // µ¥ÀÌÅÍº£ÀÌ½º ¿À·ù¸¦ ÀÇ¹Ì
+		return -2; // ï¿½ï¿½ï¿½ï¿½ï¿½Íºï¿½ï¿½Ì½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ç¹ï¿½
 
 	}
 	public int join(User user) {
@@ -70,7 +70,7 @@ public class UserDAO {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return -1; // DB ¿À·ù
+		return -1; // DB ï¿½ï¿½ï¿½ï¿½
 	}
 
 }

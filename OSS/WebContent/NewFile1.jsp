@@ -26,15 +26,17 @@
 
 <body onload="initTmap()">
 <%
-
+		int a=0;
 		//로긴한사람이라면	 userID라는 변수에 해당 아이디가 담기고 그렇지 않으면 null값
 
 		String userID = null;
 		if (session.getAttribute("userID") != null) {
 			userID = (String) session.getAttribute("userID");
+			a=10;
 		}
 	%>
  <!-- 네비게이션  -->
+
  <nav class="navbar navbar-default">
 		<div class="navbar-header">
 			<button type="button" class="navbar-toggle collapsed"
@@ -49,7 +51,7 @@
 			id="#bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav">
 				<li class="active"><a href="NewFile1.jsp">메인</a></li>
-				<li><a href="oss.jsp">게시판</a></li>
+				<li><a href="list.jsp">게시판</a></li>
 			</ul>
 			<%
 				//라긴안된경우
