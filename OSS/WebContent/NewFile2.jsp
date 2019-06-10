@@ -620,7 +620,19 @@
 	       	        lonlat: new Tmap.LonLat(127.104868,36.811573).transform("EPSG:4326", "EPSG:3857")
 	       		},
 	       		{
-	       			title:'한성아파트(지하주차장)',
+	       			title:"<div style=' position: relative; border-bottom: 1px solid #dcdcdc; line-height: 18px; padding: 0 35px 2px 0;'>"+
+				    "<div style='font-size: 12px; line-height: 15px;'>"+
+			        "<span style='display: inline-block; width: 14px; height: 14px; background-image: url(/resources/images/common/icon_blet.png); vertical-align: middle; margin-right: 5px;'></span>한성아파트(지하주차장)"+
+			    "</div>"+
+			 "</div>"+
+			 "<div style='position: relative; padding-top: 5px; display:inline-block'>"+
+			 	
+			    "<div style='display:inline-block; margin-left:5px; vertical-align: top;'>"+
+			    	"<span style='font-size: 12px; margin-left:2px; margin-bottom:2px; display:block;'>------------------------------------------------"+
+			    	"<span style='font-size: 12px; color:#888; margin-left:2px; margin-bottom:2px; display:block;'>-----------------------------------</span>"+
+			    	"<span style='font-size: 12px; margin-left:2px;'><a href='http://localhost:9090/OSS/list.jsp?title=한성아파트' target='blank'>커뮤니티 이동</a></span>"+
+			    "</div>"+
+			 "</div>",
 	       	        lonlat: new Tmap.LonLat(127.244887,36.915581).transform("EPSG:4326", "EPSG:3857")
 	       		},
 	       		{
@@ -636,9 +648,13 @@
 	    			markerLayer.addMarker(marker);  // 마커 레이어에 마커 추가
 	    			//팝업 생성
 	    			popup = new Tmap.Popup("p1", positions[i].lonlat, new Tmap.Size(120, 30), positions[i].title);
+	    			popup.setBorder("1px solid #8d8d8d");//popup border 조절
+	    			popup.autoSize=true;//popup 사이즈 자동 조절	
 	    			map.addPopup(popup); // 지도에 팝업 추가
-	    			popup.hide(); // 팝업 숨기기
 	    			
+	    			popup.hide(); // 팝업 숨기기
+	    			                         
+
 	    			//마커 이벤트등록
 	    			marker.events.register("mouseover", new MarkerPopup(marker, popup), onOverMarker); // 마커위로 마우스 포인터가 들어왔을 때 이벤트 설정
 	    			marker.events.register("mouseout", new MarkerPopup(marker, popup), onOutMarker); // 마커위에 있던 마우스 포인터가 밖으로 나갔을 때 이벤트 설정
