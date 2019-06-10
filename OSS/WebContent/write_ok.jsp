@@ -3,6 +3,7 @@
 <%@ page import="java.sql.*"%>  
 <%
 	request.setCharacterEncoding("UTF-8");
+ 	String c="1";
 
 		Class.forName("com.mysql.cj.jdbc.Driver");
 	
@@ -10,20 +11,22 @@
 		String id = "root";
 		String pass = "admin";
 	String id2="";
+	 String irum = (String)request.getParameter("re1");
 	id2 = (String)session.getAttribute("userID");
 	String memo = request.getParameter("memo");
-	int sI = 2;
+	
 	
 	try {	
 		Connection conn = DriverManager.getConnection(url,id,pass);
 		
-		String sql = "INSERT INTO board2(shelterIndex,id,memo) VALUES(?,?,?)";
+		String sql = "INSERT INTO board2(shelterName,id,memo) VALUES(?,?,?)";
 		PreparedStatement pstmt = conn.prepareStatement(sql);
 		
 	
-		pstmt.setInt(1, sI);
+		pstmt.setString(1,irum);
 		pstmt.setString(2, id2);
 		pstmt.setString(3, memo);
+		
 		
 		pstmt.execute();
 		pstmt.close();
@@ -33,8 +36,16 @@
 	out.println( e.toString() );
 	}
 %>
-  <script language=javascript>
-   self.window.alert("입력한 글을 저장하였습니다.");
-   location.href="list.jsp"; 
+<body>
+<%=irum %>
+<%=c %>
+  <form name="a" method="post" action="list.jsp">
+<input type="hidden" name="re" value="<%=irum %>">
+<input type="hidden" name="cnt" value="<%=c%>">
+<center>
+<input type="submit" value="작성 완료" />
+</center>
+</form>
+</body>
 
-</script>
+   		

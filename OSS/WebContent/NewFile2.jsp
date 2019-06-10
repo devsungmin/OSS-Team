@@ -32,6 +32,7 @@
 		String userID = null;
 		if (session.getAttribute("userID") != null) {
 			userID = (String) session.getAttribute("userID");
+			
 		}
 	%>
  <!-- 네비게이션  -->
@@ -43,13 +44,13 @@
 				<span class="icon-bar"></span> <span class="icon-bar"></span> <span
 					class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="NewFile1.jsp">내 주변 대피소 찾기</a>
+			<a class="navbar-brand" href="NewFile2.jsp">내 주변 대피소 찾기</a>
 		</div>
 		<div class="collapse navbar-collapse"
 			id="#bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav">
-				<li class="active"><a href="NewFile1.jsp">메인</a></li>
-				<li><a href="oss.jsp">게시판</a></li>
+				<li class="active"><a href="NewFile2.jsp">메인</a></li>
+				<li><a href="list.jsp">게시판</a></li>
 			</ul>
 			<%
 				//라긴안된경우
@@ -156,470 +157,1878 @@
 	    	// 대피소 위치
 	    		var positions = [
 	       		{
-	    			title:'광성장여관(지하주차장)',
+	    			title:"<div style=' position: relative; border-bottom: 1px solid #dcdcdc; line-height: 18px; padding: 0 35px 2px 0;'>"+
+				    "<div style='font-size: 12px; line-height: 15px;'>"+
+			        "<span style='display: inline-block; width: 14px; height: 14px; background-image: url(/resources/images/common/icon_blet.png); vertical-align: middle; margin-right: 5px;'></span>광성장여관(지하주차장)"+
+			    "</div>"+
+			 "</div>"+
+			 "<div style='position: relative; padding-top: 5px; display:inline-block'>"+
+			 	
+			    "<div style='display:inline-block; margin-left:5px; vertical-align: top;'>"+
+			    	"<span style='font-size: 12px; margin-left:2px; margin-bottom:2px; display:block;'>------------------------------------------------"+
+			    	"<span style='font-size: 12px; color:#888; margin-left:2px; margin-bottom:2px; display:block;'>-----------------------------------</span>"+
+			    	"<span style='font-size: 12px; margin-left:2px;'><a href='http://localhost:9090/OSS/list.jsp?title="+encodeURI('광성장여관(지하주차장)')+"' target='blank'>커뮤니티 이동</a></span>"+
+			    "</div>"+
+			 "</div>",
 	       	        lonlat: new Tmap.LonLat(127.1612705,36.806103).transform("EPSG:4326", "EPSG:3857")//좌표 지정
 	       		},
 	       		{
-	       			title:'정원맨숀(지하주차장)',
+	       			title:"<div style=' position: relative; border-bottom: 1px solid #dcdcdc; line-height: 18px; padding: 0 35px 2px 0;'>"+
+				    "<div style='font-size: 12px; line-height: 15px;'>"+
+			        "<span style='display: inline-block; width: 14px; height: 14px; background-image: url(/resources/images/common/icon_blet.png); vertical-align: middle; margin-right: 5px;'></span>정원맨숀(지하주차장)"+
+			    "</div>"+
+			 "</div>"+
+			 "<div style='position: relative; padding-top: 5px; display:inline-block'>"+
+			 	
+			    "<div style='display:inline-block; margin-left:5px; vertical-align: top;'>"+
+			    	"<span style='font-size: 12px; margin-left:2px; margin-bottom:2px; display:block;'>------------------------------------------------"+
+			    	"<span style='font-size: 12px; color:#888; margin-left:2px; margin-bottom:2px; display:block;'>-----------------------------------</span>"+
+			    	"<span style='font-size: 12px; margin-left:2px;'><a href='http://localhost:9090/OSS/list.jsp?title="+encodeURI('정원맨숀(지하주차장)')+"' target='blank'>커뮤니티 이동</a></span>"+
+			    "</div>"+
+			 "</div>",
 	       	        lonlat: new Tmap.LonLat(127.1629145,36.805786).transform("EPSG:4326", "EPSG:3857")
 	       		},
 	       		{
-	       			title:'다가동 한화꿈에그린아파트(지하주차장)',
+	       			title:"<div style=' position: relative; border-bottom: 1px solid #dcdcdc; line-height: 18px; padding: 0 35px 2px 0;'>"+
+				    "<div style='font-size: 12px; line-height: 15px;'>"+
+			        "<span style='display: inline-block; width: 14px; height: 14px; background-image: url(/resources/images/common/icon_blet.png); vertical-align: middle; margin-right: 5px;'></span>다가동 한화꿈에그린아파트(지하주차장)"+
+			    "</div>"+
+			 "</div>"+
+			 "<div style='position: relative; padding-top: 5px; display:inline-block'>"+
+			 	
+			    "<div style='display:inline-block; margin-left:5px; vertical-align: top;'>"+
+			    	"<span style='font-size: 12px; margin-left:2px; margin-bottom:2px; display:block;'>------------------------------------------------"+
+			    	"<span style='font-size: 12px; color:#888; margin-left:2px; margin-bottom:2px; display:block;'>-----------------------------------</span>"+
+			    	"<span style='font-size: 12px; margin-left:2px;'><a href='http://localhost:9090/OSS/list.jsp?title="+encodeURI('다가동 한화꿈에그린아파트(지하주차장)')+"' target='blank'>커뮤니티 이동</a></span>"+
+			    "</div>"+
+			 "</div>",
 	       	        lonlat: new Tmap.LonLat(127.137717,36.797281).transform("EPSG:4326", "EPSG:3857")
 	       		},
 	       		{
-	       			title:'포스코더샵오피스텔(지하주차장)',
+	       			title:"<div style=' position: relative; border-bottom: 1px solid #dcdcdc; line-height: 18px; padding: 0 35px 2px 0;'>"+
+				    "<div style='font-size: 12px; line-height: 15px;'>"+
+			        "<span style='display: inline-block; width: 14px; height: 14px; background-image: url(/resources/images/common/icon_blet.png); vertical-align: middle; margin-right: 5px;'></span>포스코더샵오피스텔(지하주차장)"+
+			    "</div>"+
+			 "</div>"+
+			 "<div style='position: relative; padding-top: 5px; display:inline-block'>"+
+			 	
+			    "<div style='display:inline-block; margin-left:5px; vertical-align: top;'>"+
+			    	"<span style='font-size: 12px; margin-left:2px; margin-bottom:2px; display:block;'>------------------------------------------------"+
+			    	"<span style='font-size: 12px; color:#888; margin-left:2px; margin-bottom:2px; display:block;'>-----------------------------------</span>"+
+			    	"<span style='font-size: 12px; margin-left:2px;'><a href='http://localhost:9090/OSS/list.jsp?title="+encodeURI('포스코더샵오피스텔(지하주차장)')+"' target='blank'>커뮤니티 이동</a></span>"+
+			    "</div>"+
+			 "</div>",
 	       	        lonlat: new Tmap.LonLat(127.153003,36.819139).transform("EPSG:4326", "EPSG:3857")
 	       		},
 	       		{
-	       			title:'CGV(지하주차장)',
+	       			title:"<div style=' position: relative; border-bottom: 1px solid #dcdcdc; line-height: 18px; padding: 0 35px 2px 0;'>"+
+				    "<div style='font-size: 12px; line-height: 15px;'>"+
+			        "<span style='display: inline-block; width: 14px; height: 14px; background-image: url(/resources/images/common/icon_blet.png); vertical-align: middle; margin-right: 5px;'></span>CGV(지하주차장)"+
+			    "</div>"+
+			 "</div>"+
+			 "<div style='position: relative; padding-top: 5px; display:inline-block'>"+
+			 	
+			    "<div style='display:inline-block; margin-left:5px; vertical-align: top;'>"+
+			    	"<span style='font-size: 12px; margin-left:2px; margin-bottom:2px; display:block;'>------------------------------------------------"+
+			    	"<span style='font-size: 12px; color:#888; margin-left:2px; margin-bottom:2px; display:block;'>-----------------------------------</span>"+
+			    	"<span style='font-size: 12px; margin-left:2px;'><a href='http://localhost:9090/OSS/list.jsp?title="+encodeURI('CGV(지하주차장)')+"' target='blank'>커뮤니티 이동</a></span>"+
+			    "</div>"+
+			 "</div>",
 	       	        lonlat: new Tmap.LonLat(127.148381,36.807686).transform("EPSG:4326", "EPSG:3857")
 	       		},
 	       		{
-	       			title:'농협은행 대흥동지점 앞 지하상가주차장',
+	       			title:"<div style=' position: relative; border-bottom: 1px solid #dcdcdc; line-height: 18px; padding: 0 35px 2px 0;'>"+
+				    "<div style='font-size: 12px; line-height: 15px;'>"+
+			        "<span style='display: inline-block; width: 14px; height: 14px; background-image: url(/resources/images/common/icon_blet.png); vertical-align: middle; margin-right: 5px;'></span>농협은행 대흥동지점 앞 지하상가주차장"+
+			    "</div>"+
+			 "</div>"+
+			 "<div style='position: relative; padding-top: 5px; display:inline-block'>"+
+			 	
+			    "<div style='display:inline-block; margin-left:5px; vertical-align: top;'>"+
+			    	"<span style='font-size: 12px; margin-left:2px; margin-bottom:2px; display:block;'>------------------------------------------------"+
+			    	"<span style='font-size: 12px; color:#888; margin-left:2px; margin-bottom:2px; display:block;'>-----------------------------------</span>"+
+			    	"<span style='font-size: 12px; margin-left:2px;'><a href='http://localhost:9090/OSS/list.jsp?title="+encodeURI('농협은행 대흥동지점 앞 지하상가주차장')+"' target='blank'>커뮤니티 이동</a></span>"+
+			    "</div>"+
+			 "</div>",
 	       	        lonlat: new Tmap.LonLat(127.149817,36.808458).transform("EPSG:4326", "EPSG:3857")
 	       		},
 	       		{
-	       			title:'신도브래뉴2차아파트(지하주차장)',
+	       			title:"<div style=' position: relative; border-bottom: 1px solid #dcdcdc; line-height: 18px; padding: 0 35px 2px 0;'>"+
+				    "<div style='font-size: 12px; line-height: 15px;'>"+
+			        "<span style='display: inline-block; width: 14px; height: 14px; background-image: url(/resources/images/common/icon_blet.png); vertical-align: middle; margin-right: 5px;'></span>신도브래뉴2차아파트(지하주차장)"+
+			    "</div>"+
+			 "</div>"+
+			 "<div style='position: relative; padding-top: 5px; display:inline-block'>"+
+			 	
+			    "<div style='display:inline-block; margin-left:5px; vertical-align: top;'>"+
+			    	"<span style='font-size: 12px; margin-left:2px; margin-bottom:2px; display:block;'>------------------------------------------------"+
+			    	"<span style='font-size: 12px; color:#888; margin-left:2px; margin-bottom:2px; display:block;'>-----------------------------------</span>"+
+			    	"<span style='font-size: 12px; margin-left:2px;'><a href='http://localhost:9090/OSS/list.jsp?title="+encodeURI('신도브래뉴2차아파트(지하주차장)')+"' target='blank'>커뮤니티 이동</a></span>"+
+			    "</div>"+
+			 "</div>",
 	       	        lonlat: new Tmap.LonLat(127.210667,36.777781).transform("EPSG:4326", "EPSG:3857")
 	       		},
 	       		{
-	       			title:'부영2단지아파트(지하주차장)',
+	       			title:"<div style=' position: relative; border-bottom: 1px solid #dcdcdc; line-height: 18px; padding: 0 35px 2px 0;'>"+
+				    "<div style='font-size: 12px; line-height: 15px;'>"+
+			        "<span style='display: inline-block; width: 14px; height: 14px; background-image: url(/resources/images/common/icon_blet.png); vertical-align: middle; margin-right: 5px;'></span>부영2단지아파트(지하주차장)"+
+			    "</div>"+
+			 "</div>"+
+			 "<div style='position: relative; padding-top: 5px; display:inline-block'>"+
+			 	
+			    "<div style='display:inline-block; margin-left:5px; vertical-align: top;'>"+
+			    	"<span style='font-size: 12px; margin-left:2px; margin-bottom:2px; display:block;'>------------------------------------------------"+
+			    	"<span style='font-size: 12px; color:#888; margin-left:2px; margin-bottom:2px; display:block;'>-----------------------------------</span>"+
+			    	"<span style='font-size: 12px; margin-left:2px;'><a href='http://localhost:9090/OSS/list.jsp?title="+encodeURI('부영2단지아파트(지하주차장)')+"' target='blank'>커뮤니티 이동</a></span>"+
+			    "</div>"+
+			 "</div>",
 	       	        lonlat: new Tmap.LonLat(127.176989,36.761769).transform("EPSG:4326", "EPSG:3857")
 	       		},
 	       		{
-	       			title:'부영1단지아파트(지하주차장)',
+	       			title:"<div style=' position: relative; border-bottom: 1px solid #dcdcdc; line-height: 18px; padding: 0 35px 2px 0;'>"+
+				    "<div style='font-size: 12px; line-height: 15px;'>"+
+			        "<span style='display: inline-block; width: 14px; height: 14px; background-image: url(/resources/images/common/icon_blet.png); vertical-align: middle; margin-right: 5px;'></span>부영1단지아파트(지하주차장)"+
+			    "</div>"+
+			 "</div>"+
+			 "<div style='position: relative; padding-top: 5px; display:inline-block'>"+
+			 	
+			    "<div style='display:inline-block; margin-left:5px; vertical-align: top;'>"+
+			    	"<span style='font-size: 12px; margin-left:2px; margin-bottom:2px; display:block;'>------------------------------------------------"+
+			    	"<span style='font-size: 12px; color:#888; margin-left:2px; margin-bottom:2px; display:block;'>-----------------------------------</span>"+
+			    	"<span style='font-size: 12px; margin-left:2px;'><a href='http://localhost:9090/OSS/list.jsp?title="+encodeURI('부영1단지아파트(지하주차장)')+"' target='blank'>커뮤니티 이동</a></span>"+
+			    "</div>"+
+			 "</div>",
 	       	        lonlat: new Tmap.LonLat(127.178917,36.758992).transform("EPSG:4326", "EPSG:3857")
 	       		},
 	       		{
-	       			title:'대흥동지하상가',
+	       			title:"<div style=' position: relative; border-bottom: 1px solid #dcdcdc; line-height: 18px; padding: 0 35px 2px 0;'>"+
+				    "<div style='font-size: 12px; line-height: 15px;'>"+
+			        "<span style='display: inline-block; width: 14px; height: 14px; background-image: url(/resources/images/common/icon_blet.png); vertical-align: middle; margin-right: 5px;'></span>대흥동지하상가"+
+			    "</div>"+
+			 "</div>"+
+			 "<div style='position: relative; padding-top: 5px; display:inline-block'>"+
+			 	
+			    "<div style='display:inline-block; margin-left:5px; vertical-align: top;'>"+
+			    	"<span style='font-size: 12px; margin-left:2px; margin-bottom:2px; display:block;'>------------------------------------------------"+
+			    	"<span style='font-size: 12px; color:#888; margin-left:2px; margin-bottom:2px; display:block;'>-----------------------------------</span>"+
+			    	"<span style='font-size: 12px; margin-left:2px;'><a href='http://localhost:9090/OSS/list.jsp?title="+encodeURI('대흥동지하상가')+"' target='blank'>커뮤니티 이동</a></span>"+
+			    "</div>"+
+			 "</div>",
 	       	        lonlat: new Tmap.LonLat(127.148194,36.809347).transform("EPSG:4326", "EPSG:3857")
 	       		},
 	       		{
-	       			title:'봉명청솔3차아파트(지하주차장)',
+	       			title:"<div style=' position: relative; border-bottom: 1px solid #dcdcdc; line-height: 18px; padding: 0 35px 2px 0;'>"+
+				    "<div style='font-size: 12px; line-height: 15px;'>"+
+			        "<span style='display: inline-block; width: 14px; height: 14px; background-image: url(/resources/images/common/icon_blet.png); vertical-align: middle; margin-right: 5px;'></span>봉명청솔3차아파트(지하주차장)"+
+			    "</div>"+
+			 "</div>"+
+			 "<div style='position: relative; padding-top: 5px; display:inline-block'>"+
+			 	
+			    "<div style='display:inline-block; margin-left:5px; vertical-align: top;'>"+
+			    	"<span style='font-size: 12px; margin-left:2px; margin-bottom:2px; display:block;'>------------------------------------------------"+
+			    	"<span style='font-size: 12px; color:#888; margin-left:2px; margin-bottom:2px; display:block;'>-----------------------------------</span>"+
+			    	"<span style='font-size: 12px; margin-left:2px;'><a href='http://localhost:9090/OSS/list.jsp?title="+encodeURI('봉명청솔3차아파트(지하주차장)')+"' target='blank'>커뮤니티 이동</a></span>"+
+			    "</div>"+
+			 "</div>",
 	       	        lonlat: new Tmap.LonLat(127.132358,36.810894).transform("EPSG:4326", "EPSG:3857")
 	       		},
 	       		{
-	       			title:'신동아아파트(지하주차장)',
+	       			title:"<div style=' position: relative; border-bottom: 1px solid #dcdcdc; line-height: 18px; padding: 0 35px 2px 0;'>"+
+				    "<div style='font-size: 12px; line-height: 15px;'>"+
+			        "<span style='display: inline-block; width: 14px; height: 14px; background-image: url(/resources/images/common/icon_blet.png); vertical-align: middle; margin-right: 5px;'></span>신동아아파트(지하주차장)"+
+			    "</div>"+
+			 "</div>"+
+			 "<div style='position: relative; padding-top: 5px; display:inline-block'>"+
+			 	
+			    "<div style='display:inline-block; margin-left:5px; vertical-align: top;'>"+
+			    	"<span style='font-size: 12px; margin-left:2px; margin-bottom:2px; display:block;'>------------------------------------------------"+
+			    	"<span style='font-size: 12px; color:#888; margin-left:2px; margin-bottom:2px; display:block;'>-----------------------------------</span>"+
+			    	"<span style='font-size: 12px; margin-left:2px;'><a href='http://localhost:9090/OSS/list.jsp?title="+encodeURI('신동아아파트(지하주차장)')+"' target='blank'>커뮤니티 이동</a></span>"+
+			    "</div>"+
+			 "</div>",
 	       	        lonlat: new Tmap.LonLat(127.131853,36.793931).transform("EPSG:4326", "EPSG:3857")
 	       		},
 	       		{
-	       			title:'향촌현대아파트(지하주차장)',
+	       			title:"<div style=' position: relative; border-bottom: 1px solid #dcdcdc; line-height: 18px; padding: 0 35px 2px 0;'>"+
+				    "<div style='font-size: 12px; line-height: 15px;'>"+
+			        "<span style='display: inline-block; width: 14px; height: 14px; background-image: url(/resources/images/common/icon_blet.png); vertical-align: middle; margin-right: 5px;'></span>향촌현대아파트(지하주차장)"+
+			    "</div>"+
+			 "</div>"+
+			 "<div style='position: relative; padding-top: 5px; display:inline-block'>"+
+			 	
+			    "<div style='display:inline-block; margin-left:5px; vertical-align: top;'>"+
+			    	"<span style='font-size: 12px; margin-left:2px; margin-bottom:2px; display:block;'>------------------------------------------------"+
+			    	"<span style='font-size: 12px; color:#888; margin-left:2px; margin-bottom:2px; display:block;'>-----------------------------------</span>"+
+			    	"<span style='font-size: 12px; margin-left:2px;'><a href='http://localhost:9090/OSS/list.jsp?title="+encodeURI('향촌현대아파트(지하주차장)')+"' target='blank'>커뮤니티 이동</a></span>"+
+			    "</div>"+
+			 "</div>",
 	       	        lonlat: new Tmap.LonLat(127.130083,36.789247).transform("EPSG:4326", "EPSG:3857")
 	       		},
 	       		{
-	       			title:'한라동백2차아파트(지하주차장)',
+	       			title:"<div style=' position: relative; border-bottom: 1px solid #dcdcdc; line-height: 18px; padding: 0 35px 2px 0;'>"+
+				    "<div style='font-size: 12px; line-height: 15px;'>"+
+			        "<span style='display: inline-block; width: 14px; height: 14px; background-image: url(/resources/images/common/icon_blet.png); vertical-align: middle; margin-right: 5px;'></span>한라동백2차아파트(지하주차장)"+
+			    "</div>"+
+			 "</div>"+
+			 "<div style='position: relative; padding-top: 5px; display:inline-block'>"+
+			 	
+			    "<div style='display:inline-block; margin-left:5px; vertical-align: top;'>"+
+			    	"<span style='font-size: 12px; margin-left:2px; margin-bottom:2px; display:block;'>------------------------------------------------"+
+			    	"<span style='font-size: 12px; color:#888; margin-left:2px; margin-bottom:2px; display:block;'>-----------------------------------</span>"+
+			    	"<span style='font-size: 12px; margin-left:2px;'><a href='http://localhost:9090/OSS/list.jsp?title="+encodeURI('한라동백2차아파트(지하주차장)')+"' target='blank'>커뮤니티 이동</a></span>"+
+			    "</div>"+
+			 "</div>",
 	       	        lonlat: new Tmap.LonLat(127.129922,36.787108).transform("EPSG:4326", "EPSG:3857")
 	       		},
 	       		{
-	       			title:'두레현대2단지아파트(지하주차장)',
+	       			title:"<div style=' position: relative; border-bottom: 1px solid #dcdcdc; line-height: 18px; padding: 0 35px 2px 0;'>"+
+				    "<div style='font-size: 12px; line-height: 15px;'>"+
+			        "<span style='display: inline-block; width: 14px; height: 14px; background-image: url(/resources/images/common/icon_blet.png); vertical-align: middle; margin-right: 5px;'></span>두레현대2단지아파트(지하주차장)"+
+			    "</div>"+
+			 "</div>"+
+			 "<div style='position: relative; padding-top: 5px; display:inline-block'>"+
+			 	
+			    "<div style='display:inline-block; margin-left:5px; vertical-align: top;'>"+
+			    	"<span style='font-size: 12px; margin-left:2px; margin-bottom:2px; display:block;'>------------------------------------------------"+
+			    	"<span style='font-size: 12px; color:#888; margin-left:2px; margin-bottom:2px; display:block;'>-----------------------------------</span>"+
+			    	"<span style='font-size: 12px; margin-left:2px;'><a href='http://localhost:9090/OSS/list.jsp?title="+encodeURI('두레현대2단지아파트(지하주차장)')+"' target='blank'>커뮤니티 이동</a></span>"+
+			    "</div>"+
+			 "</div>",
 	       	        lonlat: new Tmap.LonLat(127.130167,36.791086).transform("EPSG:4326", "EPSG:3857")
 	       		},
 	       		{
-	       			title:'초원그린아파트(지하주차장)',
+	       			title:"<div style=' position: relative; border-bottom: 1px solid #dcdcdc; line-height: 18px; padding: 0 35px 2px 0;'>"+
+				    "<div style='font-size: 12px; line-height: 15px;'>"+
+			        "<span style='display: inline-block; width: 14px; height: 14px; background-image: url(/resources/images/common/icon_blet.png); vertical-align: middle; margin-right: 5px;'></span>초원그린아파트(지하주차장)"+
+			    "</div>"+
+			 "</div>"+
+			 "<div style='position: relative; padding-top: 5px; display:inline-block'>"+
+			 	
+			    "<div style='display:inline-block; margin-left:5px; vertical-align: top;'>"+
+			    	"<span style='font-size: 12px; margin-left:2px; margin-bottom:2px; display:block;'>------------------------------------------------"+
+			    	"<span style='font-size: 12px; color:#888; margin-left:2px; margin-bottom:2px; display:block;'>-----------------------------------</span>"+
+			    	"<span style='font-size: 12px; margin-left:2px;'><a href='http://localhost:9090/OSS/list.jsp?title="+encodeURI('초원그린아파트(지하주차장)')+"' target='blank'>커뮤니티 이동</a></span>"+
+			    "</div>"+
+			 "</div>",
 	       	        lonlat: new Tmap.LonLat(127.126369,36.787306).transform("EPSG:4326", "EPSG:3857")
 	       		},
 	       		{
-	       			title:'초원라이프아파트(지하주차장)',
+	       			title:"<div style=' position: relative; border-bottom: 1px solid #dcdcdc; line-height: 18px; padding: 0 35px 2px 0;'>"+
+				    "<div style='font-size: 12px; line-height: 15px;'>"+
+			        "<span style='display: inline-block; width: 14px; height: 14px; background-image: url(/resources/images/common/icon_blet.png); vertical-align: middle; margin-right: 5px;'></span>초원라이프아파트(지하주차장)"+
+			    "</div>"+
+			 "</div>"+
+			 "<div style='position: relative; padding-top: 5px; display:inline-block'>"+
+			 	
+			    "<div style='display:inline-block; margin-left:5px; vertical-align: top;'>"+
+			    	"<span style='font-size: 12px; margin-left:2px; margin-bottom:2px; display:block;'>------------------------------------------------"+
+			    	"<span style='font-size: 12px; color:#888; margin-left:2px; margin-bottom:2px; display:block;'>-----------------------------------</span>"+
+			    	"<span style='font-size: 12px; margin-left:2px;'><a href='http://localhost:9090/OSS/list.jsp?title="+encodeURI('초원라이프아파트(지하주차장)')+"' target='blank'>커뮤니티 이동</a></span>"+
+			    "</div>"+
+			 "</div>",
 	       	        lonlat: new Tmap.LonLat(127.162289,36.807956).transform("EPSG:4326", "EPSG:3857")
 	       		},
 	       		{
-	       			title:'성지새말1단지아파트(지하주차장)',
+	       			title:"<div style=' position: relative; border-bottom: 1px solid #dcdcdc; line-height: 18px; padding: 0 35px 2px 0;'>"+
+				    "<div style='font-size: 12px; line-height: 15px;'>"+
+			        "<span style='display: inline-block; width: 14px; height: 14px; background-image: url(/resources/images/common/icon_blet.png); vertical-align: middle; margin-right: 5px;'></span>성지새말1단지아파트(지하주차장)"+
+			    "</div>"+
+			 "</div>"+
+			 "<div style='position: relative; padding-top: 5px; display:inline-block'>"+
+			 	
+			    "<div style='display:inline-block; margin-left:5px; vertical-align: top;'>"+
+			    	"<span style='font-size: 12px; margin-left:2px; margin-bottom:2px; display:block;'>------------------------------------------------"+
+			    	"<span style='font-size: 12px; color:#888; margin-left:2px; margin-bottom:2px; display:block;'>-----------------------------------</span>"+
+			    	"<span style='font-size: 12px; margin-left:2px;'><a href='http://localhost:9090/OSS/list.jsp?title="+encodeURI('성지새말1단지아파트(지하주차장)')+"' target='blank'>커뮤니티 이동</a></span>"+
+			    "</div>"+
+			 "</div>",
 	       	        lonlat: new Tmap.LonLat(127.130117,36.794117).transform("EPSG:4326", "EPSG:3857")
 	       		},
 	       		{
-	       			title:'성지새말2단지아파트(지하주차장)',
+	       			title:"<div style=' position: relative; border-bottom: 1px solid #dcdcdc; line-height: 18px; padding: 0 35px 2px 0;'>"+
+				    "<div style='font-size: 12px; line-height: 15px;'>"+
+			        "<span style='display: inline-block; width: 14px; height: 14px; background-image: url(/resources/images/common/icon_blet.png); vertical-align: middle; margin-right: 5px;'></span>성지새말2단지아파트(지하주차장)"+
+			    "</div>"+
+			 "</div>"+
+			 "<div style='position: relative; padding-top: 5px; display:inline-block'>"+
+			 	
+			    "<div style='display:inline-block; margin-left:5px; vertical-align: top;'>"+
+			    	"<span style='font-size: 12px; margin-left:2px; margin-bottom:2px; display:block;'>------------------------------------------------"+
+			    	"<span style='font-size: 12px; color:#888; margin-left:2px; margin-bottom:2px; display:block;'>-----------------------------------</span>"+
+			    	"<span style='font-size: 12px; margin-left:2px;'><a href='http://localhost:9090/OSS/list.jsp?title="+encodeURI('성지새말2단지아파트(지하주차장)')+"' target='blank'>커뮤니티 이동</a></span>"+
+			    "</div>"+
+			 "</div>",
 	       	        lonlat: new Tmap.LonLat(127.130644,36.792414).transform("EPSG:4326", "EPSG:3857")
 	       		},
 	       		{
-	       			title:'두레현대1단지아파트(지하주차장)',
+	       			title:"<div style=' position: relative; border-bottom: 1px solid #dcdcdc; line-height: 18px; padding: 0 35px 2px 0;'>"+
+				    "<div style='font-size: 12px; line-height: 15px;'>"+
+			        "<span style='display: inline-block; width: 14px; height: 14px; background-image: url(/resources/images/common/icon_blet.png); vertical-align: middle; margin-right: 5px;'></span>두레현대1단지아파트(지하주차장)"+
+			    "</div>"+
+			 "</div>"+
+			 "<div style='position: relative; padding-top: 5px; display:inline-block'>"+
+			 	
+			    "<div style='display:inline-block; margin-left:5px; vertical-align: top;'>"+
+			    	"<span style='font-size: 12px; margin-left:2px; margin-bottom:2px; display:block;'>------------------------------------------------"+
+			    	"<span style='font-size: 12px; color:#888; margin-left:2px; margin-bottom:2px; display:block;'>-----------------------------------</span>"+
+			    	"<span style='font-size: 12px; margin-left:2px;'><a href='http://localhost:9090/OSS/list.jsp?title="+encodeURI('두레현대1단지아파트(지하주차장)')+"' target='blank'>커뮤니티 이동</a></span>"+
+			    "</div>"+
+			 "</div>",
 	       	        lonlat: new Tmap.LonLat(127.132131,36.7925948).transform("EPSG:4326", "EPSG:3857")
 	       		},
 	       		{
-	       			title:'동일하이빌아파트1단지아파트(1 4 5 지하주차장)',
+	       			title:"<div style=' position: relative; border-bottom: 1px solid #dcdcdc; line-height: 18px; padding: 0 35px 2px 0;'>"+
+				    "<div style='font-size: 12px; line-height: 15px;'>"+
+			        "<span style='display: inline-block; width: 14px; height: 14px; background-image: url(/resources/images/common/icon_blet.png); vertical-align: middle; margin-right: 5px;'></span>동일하이빌아파트1단지아파트(1 4 5 지하주차장)"+
+			    "</div>"+
+			 "</div>"+
+			 "<div style='position: relative; padding-top: 5px; display:inline-block'>"+
+			 	
+			    "<div style='display:inline-block; margin-left:5px; vertical-align: top;'>"+
+			    	"<span style='font-size: 12px; margin-left:2px; margin-bottom:2px; display:block;'>------------------------------------------------"+
+			    	"<span style='font-size: 12px; color:#888; margin-left:2px; margin-bottom:2px; display:block;'>-----------------------------------</span>"+
+			    	"<span style='font-size: 12px; margin-left:2px;'><a href='http://localhost:9090/OSS/list.jsp?title="+encodeURI('동일하이빌아파트1단지아파트(1 4 5 지하주차장)')+"' target='blank'>커뮤니티 이동</a></span>"+
+			    "</div>"+
+			 "</div>",
 	       	        lonlat: new Tmap.LonLat(127.137417,36.791956).transform("EPSG:4326", "EPSG:3857")
 	       		},
 	       		{
-	       			title:'신성미소지움아파트(지하주차장)',
+	       			title:"<div style=' position: relative; border-bottom: 1px solid #dcdcdc; line-height: 18px; padding: 0 35px 2px 0;'>"+
+				    "<div style='font-size: 12px; line-height: 15px;'>"+
+			        "<span style='display: inline-block; width: 14px; height: 14px; background-image: url(/resources/images/common/icon_blet.png); vertical-align: middle; margin-right: 5px;'></span>신성미소지움아파트(지하주차장)"+
+			    "</div>"+
+			 "</div>"+
+			 "<div style='position: relative; padding-top: 5px; display:inline-block'>"+
+			 	
+			    "<div style='display:inline-block; margin-left:5px; vertical-align: top;'>"+
+			    	"<span style='font-size: 12px; margin-left:2px; margin-bottom:2px; display:block;'>------------------------------------------------"+
+			    	"<span style='font-size: 12px; color:#888; margin-left:2px; margin-bottom:2px; display:block;'>-----------------------------------</span>"+
+			    	"<span style='font-size: 12px; margin-left:2px;'><a href='http://localhost:9090/OSS/list.jsp?title="+encodeURI('신성미소지움아파트(지하주차장)')+"' target='blank'>커뮤니티 이동</a></span>"+
+			    "</div>"+
+			 "</div>",
 	       	        lonlat: new Tmap.LonLat(127.1637275,36.792844).transform("EPSG:4326", "EPSG:3857")
 	       		},
 	       		{
-	       			title:'방죽안휴먼시아아파트(지하주차장)',
+	       			title:"<div style=' position: relative; border-bottom: 1px solid #dcdcdc; line-height: 18px; padding: 0 35px 2px 0;'>"+
+				    "<div style='font-size: 12px; line-height: 15px;'>"+
+			        "<span style='display: inline-block; width: 14px; height: 14px; background-image: url(/resources/images/common/icon_blet.png); vertical-align: middle; margin-right: 5px;'></span>방죽안휴먼시아아파트(지하주차장)"+
+			    "</div>"+
+			 "</div>"+
+			 "<div style='position: relative; padding-top: 5px; display:inline-block'>"+
+			 	
+			    "<div style='display:inline-block; margin-left:5px; vertical-align: top;'>"+
+			    	"<span style='font-size: 12px; margin-left:2px; margin-bottom:2px; display:block;'>------------------------------------------------"+
+			    	"<span style='font-size: 12px; color:#888; margin-left:2px; margin-bottom:2px; display:block;'>-----------------------------------</span>"+
+			    	"<span style='font-size: 12px; margin-left:2px;'><a href='http://localhost:9090/OSS/list.jsp?title="+encodeURI('방죽안휴먼시아아파트(지하주차장)')+"' target='blank'>커뮤니티 이동</a></span>"+
+			    "</div>"+
+			 "</div>",
 	       	        lonlat: new Tmap.LonLat(127.155067,36.821683).transform("EPSG:4326", "EPSG:3857")
 	       		},
 	       		{
-	       			title:'청당벽산블루밍아파트(지하주차장)',
+	       			title:"<div style=' position: relative; border-bottom: 1px solid #dcdcdc; line-height: 18px; padding: 0 35px 2px 0;'>"+
+				    "<div style='font-size: 12px; line-height: 15px;'>"+
+			        "<span style='display: inline-block; width: 14px; height: 14px; background-image: url(/resources/images/common/icon_blet.png); vertical-align: middle; margin-right: 5px;'></span>청당벽산블루밍아파트(지하주차장)"+
+			    "</div>"+
+			 "</div>"+
+			 "<div style='position: relative; padding-top: 5px; display:inline-block'>"+
+			 	
+			    "<div style='display:inline-block; margin-left:5px; vertical-align: top;'>"+
+			    	"<span style='font-size: 12px; margin-left:2px; margin-bottom:2px; display:block;'>------------------------------------------------"+
+			    	"<span style='font-size: 12px; color:#888; margin-left:2px; margin-bottom:2px; display:block;'>-----------------------------------</span>"+
+			    	"<span style='font-size: 12px; margin-left:2px;'><a href='http://localhost:9090/OSS/list.jsp?title="+encodeURI('청당벽산블루밍아파트(지하주차장)')+"' target='blank'>커뮤니티 이동</a></span>"+
+			    "</div>"+
+			 "</div>",
 	       	        lonlat: new Tmap.LonLat(127.156197,36.779283).transform("EPSG:4326", "EPSG:3857")
 	       		},
 	       		{
-	       			title:'청솔엘지에스케이아파트(지하주차장)',
+	       			title:"<div style=' position: relative; border-bottom: 1px solid #dcdcdc; line-height: 18px; padding: 0 35px 2px 0;'>"+
+				    "<div style='font-size: 12px; line-height: 15px;'>"+
+			        "<span style='display: inline-block; width: 14px; height: 14px; background-image: url(/resources/images/common/icon_blet.png); vertical-align: middle; margin-right: 5px;'></span>청솔엘지에스케이아파트(지하주차장)"+
+			    "</div>"+
+			 "</div>"+
+			 "<div style='position: relative; padding-top: 5px; display:inline-block'>"+
+			 	
+			    "<div style='display:inline-block; margin-left:5px; vertical-align: top;'>"+
+			    	"<span style='font-size: 12px; margin-left:2px; margin-bottom:2px; display:block;'>------------------------------------------------"+
+			    	"<span style='font-size: 12px; color:#888; margin-left:2px; margin-bottom:2px; display:block;'>-----------------------------------</span>"+
+			    	"<span style='font-size: 12px; margin-left:2px;'><a href='http://localhost:9090/OSS/list.jsp?title="+encodeURI('청솔엘지에스케이아파트(지하주차장)')+"' target='blank'>커뮤니티 이동</a></span>"+
+			    "</div>"+
+			 "</div>",
 	       	        lonlat: new Tmap.LonLat(127.157775,36.792014).transform("EPSG:4326", "EPSG:3857")
 	       		},
 	       		{
-	       			title:'우성VIP아파트(지하주차장)',
+	       			title:"<div style=' position: relative; border-bottom: 1px solid #dcdcdc; line-height: 18px; padding: 0 35px 2px 0;'>"+
+				    "<div style='font-size: 12px; line-height: 15px;'>"+
+			        "<span style='display: inline-block; width: 14px; height: 14px; background-image: url(/resources/images/common/icon_blet.png); vertical-align: middle; margin-right: 5px;'></span>우성VIP아파트(지하주차장)"+
+			    "</div>"+
+			 "</div>"+
+			 "<div style='position: relative; padding-top: 5px; display:inline-block'>"+
+			 	
+			    "<div style='display:inline-block; margin-left:5px; vertical-align: top;'>"+
+			    	"<span style='font-size: 12px; margin-left:2px; margin-bottom:2px; display:block;'>------------------------------------------------"+
+			    	"<span style='font-size: 12px; color:#888; margin-left:2px; margin-bottom:2px; display:block;'>-----------------------------------</span>"+
+			    	"<span style='font-size: 12px; margin-left:2px;'><a href='http://localhost:9090/OSS/list.jsp?title="+encodeURI('우성VIP아파트(지하주차장)')+"' target='blank'>커뮤니티 이동</a></span>"+
+			    "</div>"+
+			 "</div>",
 	       	        lonlat: new Tmap.LonLat(127.155453,36.798772).transform("EPSG:4326", "EPSG:3857")
 	       		},
 	       		{
-	       			title:'충남근로자복지회관(지하주차장)',
+	       			title:"<div style=' position: relative; border-bottom: 1px solid #dcdcdc; line-height: 18px; padding: 0 35px 2px 0;'>"+
+				    "<div style='font-size: 12px; line-height: 15px;'>"+
+			        "<span style='display: inline-block; width: 14px; height: 14px; background-image: url(/resources/images/common/icon_blet.png); vertical-align: middle; margin-right: 5px;'></span>충남근로자복지회관(지하주차장)"+
+			    "</div>"+
+			 "</div>"+
+			 "<div style='position: relative; padding-top: 5px; display:inline-block'>"+
+			 	
+			    "<div style='display:inline-block; margin-left:5px; vertical-align: top;'>"+
+			    	"<span style='font-size: 12px; margin-left:2px; margin-bottom:2px; display:block;'>------------------------------------------------"+
+			    	"<span style='font-size: 12px; color:#888; margin-left:2px; margin-bottom:2px; display:block;'>-----------------------------------</span>"+
+			    	"<span style='font-size: 12px; margin-left:2px;'><a href='http://localhost:9090/OSS/list.jsp?title="+encodeURI('충남근로자복지회관(지하주차장)')+"' target='blank'>커뮤니티 이동</a></span>"+
+			    "</div>"+
+			 "</div>",
 	       	        lonlat: new Tmap.LonLat(127.156183,36.798811).transform("EPSG:4326", "EPSG:3857")
 	       		},
 	       		{
-	       			title:'교보생명(지하주차장)',
+	       			title:"<div style=' position: relative; border-bottom: 1px solid #dcdcdc; line-height: 18px; padding: 0 35px 2px 0;'>"+
+				    "<div style='font-size: 12px; line-height: 15px;'>"+
+			        "<span style='display: inline-block; width: 14px; height: 14px; background-image: url(/resources/images/common/icon_blet.png); vertical-align: middle; margin-right: 5px;'></span>교보생명(지하주차장)"+
+			    "</div>"+
+			 "</div>"+
+			 "<div style='position: relative; padding-top: 5px; display:inline-block'>"+
+			 	
+			    "<div style='display:inline-block; margin-left:5px; vertical-align: top;'>"+
+			    	"<span style='font-size: 12px; margin-left:2px; margin-bottom:2px; display:block;'>------------------------------------------------"+
+			    	"<span style='font-size: 12px; color:#888; margin-left:2px; margin-bottom:2px; display:block;'>-----------------------------------</span>"+
+			    	"<span style='font-size: 12px; margin-left:2px;'><a href='http://localhost:9090/OSS/list.jsp?title="+encodeURI('교보생명(지하주차장)')+"' target='blank'>커뮤니티 이동</a></span>"+
+			    "</div>"+
+			 "</div>",
 	       	        lonlat: new Tmap.LonLat(127.158417,36.806753).transform("EPSG:4326", "EPSG:3857")
 	       		},
 	       		{
-	       			title:'원성극동아파트(101동 지하)',
+	       			title:"<div style=' position: relative; border-bottom: 1px solid #dcdcdc; line-height: 18px; padding: 0 35px 2px 0;'>"+
+				    "<div style='font-size: 12px; line-height: 15px;'>"+
+			        "<span style='display: inline-block; width: 14px; height: 14px; background-image: url(/resources/images/common/icon_blet.png); vertical-align: middle; margin-right: 5px;'></span>원성극동아파트(101동 지하)"+
+			    "</div>"+
+			 "</div>"+
+			 "<div style='position: relative; padding-top: 5px; display:inline-block'>"+
+			 	
+			    "<div style='display:inline-block; margin-left:5px; vertical-align: top;'>"+
+			    	"<span style='font-size: 12px; margin-left:2px; margin-bottom:2px; display:block;'>------------------------------------------------"+
+			    	"<span style='font-size: 12px; color:#888; margin-left:2px; margin-bottom:2px; display:block;'>-----------------------------------</span>"+
+			    	"<span style='font-size: 12px; margin-left:2px;'><a href='http://localhost:9090/OSS/list.jsp?title="+encodeURI('원성극동아파트(101동 지하)')+"' target='blank'>커뮤니티 이동</a></span>"+
+			    "</div>"+
+			 "</div>",
 	       	        lonlat: new Tmap.LonLat(127.158642,36.802492).transform("EPSG:4326", "EPSG:3857")
 	       		},
 	       		{
-	       			title:'<천안동부새마을금고(지하주차장)',
+	       			title:"<div style=' position: relative; border-bottom: 1px solid #dcdcdc; line-height: 18px; padding: 0 35px 2px 0;'>"+
+				    "<div style='font-size: 12px; line-height: 15px;'>"+
+			        "<span style='display: inline-block; width: 14px; height: 14px; background-image: url(/resources/images/common/icon_blet.png); vertical-align: middle; margin-right: 5px;'></span>천안동부새마을금고(지하주차장)"+
+			    "</div>"+
+			 "</div>"+
+			 "<div style='position: relative; padding-top: 5px; display:inline-block'>"+
+			 	
+			    "<div style='display:inline-block; margin-left:5px; vertical-align: top;'>"+
+			    	"<span style='font-size: 12px; margin-left:2px; margin-bottom:2px; display:block;'>------------------------------------------------"+
+			    	"<span style='font-size: 12px; color:#888; margin-left:2px; margin-bottom:2px; display:block;'>-----------------------------------</span>"+
+			    	"<span style='font-size: 12px; margin-left:2px;'><a href='http://localhost:9090/OSS/list.jsp?title="+encodeURI('천안동부새마을금고(지하주차장)')+"' target='blank'>커뮤니티 이동</a></span>"+
+			    "</div>"+
+			 "</div>",
 	       	        lonlat: new Tmap.LonLat(127.158808,36.801347).transform("EPSG:4326", "EPSG:3857")
 	       		},
 	       		{
-	       			title:'파고다아파트(지하주차장)',
+	       			title:"<div style=' position: relative; border-bottom: 1px solid #dcdcdc; line-height: 18px; padding: 0 35px 2px 0;'>"+
+				    "<div style='font-size: 12px; line-height: 15px;'>"+
+			        "<span style='display: inline-block; width: 14px; height: 14px; background-image: url(/resources/images/common/icon_blet.png); vertical-align: middle; margin-right: 5px;'></span>파고다아파트(지하주차장)"+
+			    "</div>"+
+			 "</div>"+
+			 "<div style='position: relative; padding-top: 5px; display:inline-block'>"+
+			 	
+			    "<div style='display:inline-block; margin-left:5px; vertical-align: top;'>"+
+			    	"<span style='font-size: 12px; margin-left:2px; margin-bottom:2px; display:block;'>------------------------------------------------"+
+			    	"<span style='font-size: 12px; color:#888; margin-left:2px; margin-bottom:2px; display:block;'>-----------------------------------</span>"+
+			    	"<span style='font-size: 12px; margin-left:2px;'><a href='http://localhost:9090/OSS/list.jsp?title="+encodeURI('파고다아파트(지하주차장)')+"' target='blank'>커뮤니티 이동</a></span>"+
+			    "</div>"+
+			 "</div>",
 	       	        lonlat: new Tmap.LonLat(127.150972,36.802231).transform("EPSG:4326", "EPSG:3857")
 	       		},
 	       		{
-	       			title:'대림한들아파트(지하주차장)',
+	       			title:"<div style=' position: relative; border-bottom: 1px solid #dcdcdc; line-height: 18px; padding: 0 35px 2px 0;'>"+
+				    "<div style='font-size: 12px; line-height: 15px;'>"+
+			        "<span style='display: inline-block; width: 14px; height: 14px; background-image: url(/resources/images/common/icon_blet.png); vertical-align: middle; margin-right: 5px;'></span>대림한들아파트(지하주차장)"+
+			    "</div>"+
+			 "</div>"+
+			 "<div style='position: relative; padding-top: 5px; display:inline-block'>"+
+			 	
+			    "<div style='display:inline-block; margin-left:5px; vertical-align: top;'>"+
+			    	"<span style='font-size: 12px; margin-left:2px; margin-bottom:2px; display:block;'>------------------------------------------------"+
+			    	"<span style='font-size: 12px; color:#888; margin-left:2px; margin-bottom:2px; display:block;'>-----------------------------------</span>"+
+			    	"<span style='font-size: 12px; margin-left:2px;'><a href='http://localhost:9090/OSS/list.jsp?title="+encodeURI('대림한들아파트(지하주차장)')+"' target='blank'>커뮤니티 이동</a></span>"+
+			    "</div>"+
+			 "</div>",
 	       	        lonlat: new Tmap.LonLat(127.158789,36.823794).transform("EPSG:4326", "EPSG:3857")
 	       		},
 	       		{
-	       			title:'청수현대아파트(지하주차장)',
+	       			title:"<div style=' position: relative; border-bottom: 1px solid #dcdcdc; line-height: 18px; padding: 0 35px 2px 0;'>"+
+				    "<div style='font-size: 12px; line-height: 15px;'>"+
+			        "<span style='display: inline-block; width: 14px; height: 14px; background-image: url(/resources/images/common/icon_blet.png); vertical-align: middle; margin-right: 5px;'></span>청수현대아파트(지하주차장)"+
+			    "</div>"+
+			 "</div>"+
+			 "<div style='position: relative; padding-top: 5px; display:inline-block'>"+
+			 	
+			    "<div style='display:inline-block; margin-left:5px; vertical-align: top;'>"+
+			    	"<span style='font-size: 12px; margin-left:2px; margin-bottom:2px; display:block;'>------------------------------------------------"+
+			    	"<span style='font-size: 12px; color:#888; margin-left:2px; margin-bottom:2px; display:block;'>-----------------------------------</span>"+
+			    	"<span style='font-size: 12px; margin-left:2px;'><a href='http://localhost:9090/OSS/list.jsp?title="+encodeURI('청수현대아파트(지하주차장)')+"' target='blank'>커뮤니티 이동</a></span>"+
+			    "</div>"+
+			 "</div>",
 	       	        lonlat: new Tmap.LonLat(127.153894,36.797417).transform("EPSG:4326", "EPSG:3857")
 	       		},
 	       		{
-	       			title:'e편한세상스마일시티아파트(지하주차장)',
+	       			title:"<div style=' position: relative; border-bottom: 1px solid #dcdcdc; line-height: 18px; padding: 0 35px 2px 0;'>"+
+				    "<div style='font-size: 12px; line-height: 15px;'>"+
+			        "<span style='display: inline-block; width: 14px; height: 14px; background-image: url(/resources/images/common/icon_blet.png); vertical-align: middle; margin-right: 5px;'></span>e편한세상스마일시티아파트(지하주차장)"+
+			    "</div>"+
+			 "</div>"+
+			 "<div style='position: relative; padding-top: 5px; display:inline-block'>"+
+			 	
+			    "<div style='display:inline-block; margin-left:5px; vertical-align: top;'>"+
+			    	"<span style='font-size: 12px; margin-left:2px; margin-bottom:2px; display:block;'>------------------------------------------------"+
+			    	"<span style='font-size: 12px; color:#888; margin-left:2px; margin-bottom:2px; display:block;'>-----------------------------------</span>"+
+			    	"<span style='font-size: 12px; margin-left:2px;'><a href='http://localhost:9090/OSS/list.jsp?title="+encodeURI('e편한세상스마일시티아파트(지하주차장)')+"' target='blank'>커뮤니티 이동</a></span>"+
+			    "</div>"+
+			 "</div>",
 	       	        lonlat: new Tmap.LonLat(127.103606,36.843828).transform("EPSG:4326", "EPSG:3857")
 	       		},
 	       		{
-	       			title:'불당한화꿈에그린아파트(지하주차장)',
+	       			title:"<div style=' position: relative; border-bottom: 1px solid #dcdcdc; line-height: 18px; padding: 0 35px 2px 0;'>"+
+				    "<div style='font-size: 12px; line-height: 15px;'>"+
+			        "<span style='display: inline-block; width: 14px; height: 14px; background-image: url(/resources/images/common/icon_blet.png); vertical-align: middle; margin-right: 5px;'></span>불당한화꿈에그린아파트(지하주차장)"+
+			    "</div>"+
+			 "</div>"+
+			 "<div style='position: relative; padding-top: 5px; display:inline-block'>"+
+			 	
+			    "<div style='display:inline-block; margin-left:5px; vertical-align: top;'>"+
+			    	"<span style='font-size: 12px; margin-left:2px; margin-bottom:2px; display:block;'>------------------------------------------------"+
+			    	"<span style='font-size: 12px; color:#888; margin-left:2px; margin-bottom:2px; display:block;'>-----------------------------------</span>"+
+			    	"<span style='font-size: 12px; margin-left:2px;'><a href='http://localhost:9090/OSS/list.jsp?title="+encodeURI('불당한화꿈에그린아파트(지하주차장)')+"' target='blank'>커뮤니티 이동</a></span>"+
+			    "</div>"+
+			 "</div>",
 	       	        lonlat: new Tmap.LonLat(127.113497,36.801042).transform("EPSG:4326", "EPSG:3857")
 	       		},
 	       		{
-	       			title:'e편한세상두정2차아파트(지하주차장)',
+	       			title:"<div style=' position: relative; border-bottom: 1px solid #dcdcdc; line-height: 18px; padding: 0 35px 2px 0;'>"+
+				    "<div style='font-size: 12px; line-height: 15px;'>"+
+			        "<span style='display: inline-block; width: 14px; height: 14px; background-image: url(/resources/images/common/icon_blet.png); vertical-align: middle; margin-right: 5px;'></span>e편한세상두정2차아파트(지하주차장)"+
+			    "</div>"+
+			 "</div>"+
+			 "<div style='position: relative; padding-top: 5px; display:inline-block'>"+
+			 	
+			    "<div style='display:inline-block; margin-left:5px; vertical-align: top;'>"+
+			    	"<span style='font-size: 12px; margin-left:2px; margin-bottom:2px; display:block;'>------------------------------------------------"+
+			    	"<span style='font-size: 12px; color:#888; margin-left:2px; margin-bottom:2px; display:block;'>-----------------------------------</span>"+
+			    	"<span style='font-size: 12px; margin-left:2px;'><a href='http://localhost:9090/OSS/list.jsp?title="+encodeURI('e편한세상두정2차아파트(지하주차장)')+"' target='blank'>커뮤니티 이동</a></span>"+
+			    "</div>"+
+			 "</div>",
 	       	        lonlat: new Tmap.LonLat(127.129653,36.838003).transform("EPSG:4326", "EPSG:3857")
 	       		},
 	       		{
-	       			title:'세광엔리치빌3단지아파트(지하주차장)',
+	       			title:"<div style=' position: relative; border-bottom: 1px solid #dcdcdc; line-height: 18px; padding: 0 35px 2px 0;'>"+
+				    "<div style='font-size: 12px; line-height: 15px;'>"+
+			        "<span style='display: inline-block; width: 14px; height: 14px; background-image: url(/resources/images/common/icon_blet.png); vertical-align: middle; margin-right: 5px;'></span>세광엔리치빌3단지아파트(지하주차장)"+
+			    "</div>"+
+			 "</div>"+
+			 "<div style='position: relative; padding-top: 5px; display:inline-block'>"+
+			 	
+			    "<div style='display:inline-block; margin-left:5px; vertical-align: top;'>"+
+			    	"<span style='font-size: 12px; margin-left:2px; margin-bottom:2px; display:block;'>------------------------------------------------"+
+			    	"<span style='font-size: 12px; color:#888; margin-left:2px; margin-bottom:2px; display:block;'>-----------------------------------</span>"+
+			    	"<span style='font-size: 12px; margin-left:2px;'><a href='http://localhost:9090/OSS/list.jsp?title="+encodeURI('세광엔리치빌3단지아파트(지하주차장)')+"' target='blank'>커뮤니티 이동</a></span>"+
+			    "</div>"+
+			 "</div>",
 	       	        lonlat: new Tmap.LonLat(127.128383,36.828192).transform("EPSG:4326", "EPSG:3857")
 	       		},
 	       		{
-	       			title:'서해그랑블아파트(지하주차장)',
+	       			title:"<div style=' position: relative; border-bottom: 1px solid #dcdcdc; line-height: 18px; padding: 0 35px 2px 0;'>"+
+				    "<div style='font-size: 12px; line-height: 15px;'>"+
+			        "<span style='display: inline-block; width: 14px; height: 14px; background-image: url(/resources/images/common/icon_blet.png); vertical-align: middle; margin-right: 5px;'></span>서해그랑블아파트(지하주차장)"+
+			    "</div>"+
+			 "</div>"+
+			 "<div style='position: relative; padding-top: 5px; display:inline-block'>"+
+			 	
+			    "<div style='display:inline-block; margin-left:5px; vertical-align: top;'>"+
+			    	"<span style='font-size: 12px; margin-left:2px; margin-bottom:2px; display:block;'>------------------------------------------------"+
+			    	"<span style='font-size: 12px; color:#888; margin-left:2px; margin-bottom:2px; display:block;'>-----------------------------------</span>"+
+			    	"<span style='font-size: 12px; margin-left:2px;'><a href='http://localhost:9090/OSS/list.jsp?title="+encodeURI('서해그랑블아파트(지하주차장)')+"' target='blank'>커뮤니티 이동</a></span>"+
+			    "</div>"+
+			 "</div>",
 	       	        lonlat: new Tmap.LonLat(127.130203,36.828169).transform("EPSG:4326", "EPSG:3857")
 	       		},
 	       		{
-	       			title:'e편한세상스마일시티아파트(지하주차장)',
+	       			title:"<div style=' position: relative; border-bottom: 1px solid #dcdcdc; line-height: 18px; padding: 0 35px 2px 0;'>"+
+				    "<div style='font-size: 12px; line-height: 15px;'>"+
+			        "<span style='display: inline-block; width: 14px; height: 14px; background-image: url(/resources/images/common/icon_blet.png); vertical-align: middle; margin-right: 5px;'></span>대우푸르지오4차아파트(지하주차장)"+
+			    "</div>"+
+			 "</div>"+
+			 "<div style='position: relative; padding-top: 5px; display:inline-block'>"+
+			 	
+			    "<div style='display:inline-block; margin-left:5px; vertical-align: top;'>"+
+			    	"<span style='font-size: 12px; margin-left:2px; margin-bottom:2px; display:block;'>------------------------------------------------"+
+			    	"<span style='font-size: 12px; color:#888; margin-left:2px; margin-bottom:2px; display:block;'>-----------------------------------</span>"+
+			    	"<span style='font-size: 12px; margin-left:2px;'><a href='http://localhost:9090/OSS/list.jsp?title="+encodeURI('대우푸르지오4차아파트(지하주차장)')+"' target='blank'>커뮤니티 이동</a></span>"+
+			    "</div>"+
+			 "</div>",
 	       	        lonlat: new Tmap.LonLat(127.103606,36.843828).transform("EPSG:4326", "EPSG:3857")
 	       		},
 	       		{
-	       			title:'대우푸르지오4차아파트(지하주차장)',
+	       			title:"<div style=' position: relative; border-bottom: 1px solid #dcdcdc; line-height: 18px; padding: 0 35px 2px 0;'>"+
+				    "<div style='font-size: 12px; line-height: 15px;'>"+
+			        "<span style='display: inline-block; width: 14px; height: 14px; background-image: url(/resources/images/common/icon_blet.png); vertical-align: middle; margin-right: 5px;'></span>극동늘푸른아파트(지하주차장)"+
+			    "</div>"+
+			 "</div>"+
+			 "<div style='position: relative; padding-top: 5px; display:inline-block'>"+
+			 	
+			    "<div style='display:inline-block; margin-left:5px; vertical-align: top;'>"+
+			    	"<span style='font-size: 12px; margin-left:2px; margin-bottom:2px; display:block;'>------------------------------------------------"+
+			    	"<span style='font-size: 12px; color:#888; margin-left:2px; margin-bottom:2px; display:block;'>-----------------------------------</span>"+
+			    	"<span style='font-size: 12px; margin-left:2px;'><a href='http://localhost:9090/OSS/list.jsp?title="+encodeURI('극동늘푸른아파트(지하주차장)')+"' target='blank'>커뮤니티 이동</a></span>"+
+			    "</div>"+
+			 "</div>",
 	       	        lonlat: new Tmap.LonLat(127.130208,36.829519).transform("EPSG:4326", "EPSG:3857")
 	       		},
 	       		{
-	       			title:'극동늘푸른아파트(지하주차장)',
+	       			title:"<div style=' position: relative; border-bottom: 1px solid #dcdcdc; line-height: 18px; padding: 0 35px 2px 0;'>"+
+				    "<div style='font-size: 12px; line-height: 15px;'>"+
+			        "<span style='display: inline-block; width: 14px; height: 14px; background-image: url(/resources/images/common/icon_blet.png); vertical-align: middle; margin-right: 5px;'></span>선경아파트(지하주차장)"+
+			    "</div>"+
+			 "</div>"+
+			 "<div style='position: relative; padding-top: 5px; display:inline-block'>"+
+			 	
+			    "<div style='display:inline-block; margin-left:5px; vertical-align: top;'>"+
+			    	"<span style='font-size: 12px; margin-left:2px; margin-bottom:2px; display:block;'>------------------------------------------------"+
+			    	"<span style='font-size: 12px; color:#888; margin-left:2px; margin-bottom:2px; display:block;'>-----------------------------------</span>"+
+			    	"<span style='font-size: 12px; margin-left:2px;'><a href='http://localhost:9090/OSS/list.jsp?title="+encodeURI('선경아파트(지하주차장)')+"' target='blank'>커뮤니티 이동</a></span>"+
+			    "</div>"+
+			 "</div>",
 	       	        lonlat: new Tmap.LonLat(127.131911,36.828117).transform("EPSG:4326", "EPSG:3857")
-	       		},
+			},
 	       		{
-	       			title:'선경아파트(지하주차장)',
+	       			title:"<div style=' position: relative; border-bottom: 1px solid #dcdcdc; line-height: 18px; padding: 0 35px 2px 0;'>"+
+				    "<div style='font-size: 12px; line-height: 15px;'>"+
+			        "<span style='display: inline-block; width: 14px; height: 14px; background-image: url(/resources/images/common/icon_blet.png); vertical-align: middle; margin-right: 5px;'></span>광성장여관(지하주차장)"+
+			    "</div>"+
+			 "</div>"+
+			 "<div style='position: relative; padding-top: 5px; display:inline-block'>"+
+			 	
+			    "<div style='display:inline-block; margin-left:5px; vertical-align: top;'>"+
+			    	"<span style='font-size: 12px; margin-left:2px; margin-bottom:2px; display:block;'>------------------------------------------------"+
+			    	"<span style='font-size: 12px; color:#888; margin-left:2px; margin-bottom:2px; display:block;'>-----------------------------------</span>"+
+			    	"<span style='font-size: 12px; margin-left:2px;'><a href='http://localhost:9090/OSS/list.jsp?title="+encodeURI('광성장여관(지하주차장)')+"' target='blank'>커뮤니티 이동</a></span>"+
+			    "</div>"+
+			 "</div>",
 	       	        lonlat: new Tmap.LonLat(127.133569,36.822097).transform("EPSG:4326", "EPSG:3857")
 	       		},
 	       		{
-	       			title:'충남타워(지하주차장)',
-	       	        lonlat: new Tmap.LonLat(127.141306,36.825911).transform("EPSG:4326", "EPSG:3857")
+	       			title:"<div style=' position: relative; border-bottom: 1px solid #dcdcdc; line-height: 18px; padding: 0 35px 2px 0;'>"+
+				    "<div style='font-size: 12px; line-height: 15px;'>"+
+			        "<span style='display: inline-block; width: 14px; height: 14px; background-image: url(/resources/images/common/icon_blet.png); vertical-align: middle; margin-right: 5px;'></span>충남타워(지하주차장)"+
+			    "</div>"+
+			 "</div>"+
+			 "<div style='position: relative; padding-top: 5px; display:inline-block'>"+
+			 	
+			    "<div style='display:inline-block; margin-left:5px; vertical-align: top;'>"+
+			    	"<span style='font-size: 12px; margin-left:2px; margin-bottom:2px; display:block;'>------------------------------------------------"+
+			    	"<span style='font-size: 12px; color:#888; margin-left:2px; margin-bottom:2px; display:block;'>-----------------------------------</span>"+
+			    	"<span style='font-size: 12px; margin-left:2px;'><a href='http://localhost:9090/OSS/list.jsp?title="+encodeURI('충남타워(지하주차장)')+"' target='blank'>커뮤니티 이동</a></span>"+
+			    "</div>"+
+			 "</div>",
+			lonlat: new Tmap.LonLat(127.133569,36.822097).transform("EPSG:4326", "EPSG:3857")
 	       		},
 	       		{
-	       			title:'대우푸르지오5차아파트(지하주차장)',
-	       	        lonlat: new Tmap.LonLat(127.128717,36.834742).transform("EPSG:4326", "EPSG:3857")
+	       			title:"<div style=' position: relative; border-bottom: 1px solid #dcdcdc; line-height: 18px; padding: 0 35px 2px 0;'>"+
+				    "<div style='font-size: 12px; line-height: 15px;'>"+
+			        "<span style='display: inline-block; width: 14px; height: 14px; background-image: url(/resources/images/common/icon_blet.png); vertical-align: middle; margin-right: 5px;'></span>대우푸르지오5차아파트(지하주차장)"+
+			    "</div>"+
+			 "</div>"+
+			 "<div style='position: relative; padding-top: 5px; display:inline-block'>"+
+			 	
+			    "<div style='display:inline-block; margin-left:5px; vertical-align: top;'>"+
+			    	"<span style='font-size: 12px; margin-left:2px; margin-bottom:2px; display:block;'>------------------------------------------------"+
+			    	"<span style='font-size: 12px; color:#888; margin-left:2px; margin-bottom:2px; display:block;'>-----------------------------------</span>"+
+			    	"<span style='font-size: 12px; margin-left:2px;'><a href='http://localhost:9090/OSS/list.jsp?title="+encodeURI('대우푸르지오5차아파트(지하주차장)')+"' target='blank'>커뮤니티 이동</a></span>"+
+			    "</div>"+
+			 "</div>",
+			lonlat: new Tmap.LonLat(127.141306,36.825911).transform("EPSG:4326", "EPSG:3857")
 	       		},
 	       		{
-	       			title:'우성아파트(지하주차장)',
-	       	        lonlat: new Tmap.LonLat(127.132467,36.836475).transform("EPSG:4326", "EPSG:3857")
+	       			title:"<div style=' position: relative; border-bottom: 1px solid #dcdcdc; line-height: 18px; padding: 0 35px 2px 0;'>"+
+				    "<div style='font-size: 12px; line-height: 15px;'>"+
+			        "<span style='display: inline-block; width: 14px; height: 14px; background-image: url(/resources/images/common/icon_blet.png); vertical-align: middle; margin-right: 5px;'></span>우성아파트(지하주차장)"+
+			    "</div>"+
+			 "</div>"+
+			 "<div style='position: relative; padding-top: 5px; display:inline-block'>"+
+			 	
+			    "<div style='display:inline-block; margin-left:5px; vertical-align: top;'>"+
+			    	"<span style='font-size: 12px; margin-left:2px; margin-bottom:2px; display:block;'>------------------------------------------------"+
+			    	"<span style='font-size: 12px; color:#888; margin-left:2px; margin-bottom:2px; display:block;'>-----------------------------------</span>"+
+			    	"<span style='font-size: 12px; margin-left:2px;'><a href='http://localhost:9090/OSS/list.jsp?title="+encodeURI('우성아파트(지하주차장)')+"' target='blank'>커뮤니티 이동</a></span>"+
+			    "</div>"+
+			 "</div>",
+			lonlat: new Tmap.LonLat(127.128717,36.834742).transform("EPSG:4326", "EPSG:3857")
 	       		},
 	       		{
-	       			title:'대주파크빌아파트(지하주차장)',
-	       	        lonlat: new Tmap.LonLat(127.129978,36.836542).transform("EPSG:4326", "EPSG:3857")
+	       			title:"<div style=' position: relative; border-bottom: 1px solid #dcdcdc; line-height: 18px; padding: 0 35px 2px 0;'>"+
+				    "<div style='font-size: 12px; line-height: 15px;'>"+
+			        "<span style='display: inline-block; width: 14px; height: 14px; background-image: url(/resources/images/common/icon_blet.png); vertical-align: middle; margin-right: 5px;'></span>대주파크빌아파트(지하주차장)"+
+			    "</div>"+
+			 "</div>"+
+			 "<div style='position: relative; padding-top: 5px; display:inline-block'>"+
+			 	
+			    "<div style='display:inline-block; margin-left:5px; vertical-align: top;'>"+
+			    	"<span style='font-size: 12px; margin-left:2px; margin-bottom:2px; display:block;'>------------------------------------------------"+
+			    	"<span style='font-size: 12px; color:#888; margin-left:2px; margin-bottom:2px; display:block;'>-----------------------------------</span>"+
+			    	"<span style='font-size: 12px; margin-left:2px;'><a href='http://localhost:9090/OSS/list.jsp?title="+encodeURI('대주파크빌아파트(지하주차장)')+"' target='blank'>커뮤니티 이동</a></span>"+
+			    "</div>"+
+			 "</div>",
+			lonlat: new Tmap.LonLat(127.132467,36.836475).transform("EPSG:4326", "EPSG:3857")
 	       		},
 	       		{
-	       			title:'두정한성2차아파트(지하주차장)',
-	       	        lonlat: new Tmap.LonLat(127.133356,36.837636).transform("EPSG:4326", "EPSG:3857")
+	       			title:"<div style=' position: relative; border-bottom: 1px solid #dcdcdc; line-height: 18px; padding: 0 35px 2px 0;'>"+
+				    "<div style='font-size: 12px; line-height: 15px;'>"+
+			        "<span style='display: inline-block; width: 14px; height: 14px; background-image: url(/resources/images/common/icon_blet.png); vertical-align: middle; margin-right: 5px;'></span>두정한성2차아파트(지하주차장)"+
+			    "</div>"+
+			 "</div>"+
+			 "<div style='position: relative; padding-top: 5px; display:inline-block'>"+
+			 	
+			    "<div style='display:inline-block; margin-left:5px; vertical-align: top;'>"+
+			    	"<span style='font-size: 12px; margin-left:2px; margin-bottom:2px; display:block;'>------------------------------------------------"+
+			    	"<span style='font-size: 12px; color:#888; margin-left:2px; margin-bottom:2px; display:block;'>-----------------------------------</span>"+
+			    	"<span style='font-size: 12px; margin-left:2px;'><a href='http://localhost:9090/OSS/list.jsp?title="+encodeURI('두정한성2차아파트(지하주차장)')+"' target='blank'>커뮤니티 이동</a></span>"+
+			    "</div>"+
+			 "</div>",
+			lonlat: new Tmap.LonLat(127.129978,36.836542).transform("EPSG:4326", "EPSG:3857")
 	       		},
 	       		{
-	       			title:'두정역푸르지오아파트(지하주차장)',
-	       	        lonlat: new Tmap.LonLat(127.150333,36.833808).transform("EPSG:4326", "EPSG:3857")
+	       			title:"<div style=' position: relative; border-bottom: 1px solid #dcdcdc; line-height: 18px; padding: 0 35px 2px 0;'>"+
+				    "<div style='font-size: 12px; line-height: 15px;'>"+
+			        "<span style='display: inline-block; width: 14px; height: 14px; background-image: url(/resources/images/common/icon_blet.png); vertical-align: middle; margin-right: 5px;'></span>두정역푸르지오아파트(지하주차장)"+
+			    "</div>"+
+			 "</div>"+
+			 "<div style='position: relative; padding-top: 5px; display:inline-block'>"+
+			 	
+			    "<div style='display:inline-block; margin-left:5px; vertical-align: top;'>"+
+			    	"<span style='font-size: 12px; margin-left:2px; margin-bottom:2px; display:block;'>------------------------------------------------"+
+			    	"<span style='font-size: 12px; color:#888; margin-left:2px; margin-bottom:2px; display:block;'>-----------------------------------</span>"+
+			    	"<span style='font-size: 12px; margin-left:2px;'><a href='http://localhost:9090/OSS/list.jsp?title="+encodeURI('두정역푸르지오아파트(지하주차장)')+"' target='blank'>커뮤니티 이동</a></span>"+
+			    "</div>"+
+			 "</div>",
+			lonlat: new Tmap.LonLat(127.133356,36.837636).transform("EPSG:4326", "EPSG:3857")
 	       		},
 	       		{
-	       			title:'두정우남아파트(지하주차장)',
-	       	        lonlat: new Tmap.LonLat(127.146856,36.838225).transform("EPSG:4326", "EPSG:3857")
+	       			title:"<div style=' position: relative; border-bottom: 1px solid #dcdcdc; line-height: 18px; padding: 0 35px 2px 0;'>"+
+				    "<div style='font-size: 12px; line-height: 15px;'>"+
+			        "<span style='display: inline-block; width: 14px; height: 14px; background-image: url(/resources/images/common/icon_blet.png); vertical-align: middle; margin-right: 5px;'></span>두정우남아파트(지하주차장)"+
+			    "</div>"+
+			 "</div>"+
+			 "<div style='position: relative; padding-top: 5px; display:inline-block'>"+
+			 	
+			    "<div style='display:inline-block; margin-left:5px; vertical-align: top;'>"+
+			    	"<span style='font-size: 12px; margin-left:2px; margin-bottom:2px; display:block;'>------------------------------------------------"+
+			    	"<span style='font-size: 12px; color:#888; margin-left:2px; margin-bottom:2px; display:block;'>-----------------------------------</span>"+
+			    	"<span style='font-size: 12px; margin-left:2px;'><a href='http://localhost:9090/OSS/list.jsp?title="+encodeURI('두정우남아파트(지하주차장)')+"' target='blank'>커뮤니티 이동</a></span>"+
+			    "</div>"+
+			 "</div>",
+			lonlat: new Tmap.LonLat(127.150333,36.833808).transform("EPSG:4326", "EPSG:3857")
 	       		},
 	       		{
-	       			title:'경남아너스빌아파트(지하주차장)',
-	       	        lonlat: new Tmap.LonLat(127.139614,36.838297).transform("EPSG:4326", "EPSG:3857")
+	       			title:"<div style=' position: relative; border-bottom: 1px solid #dcdcdc; line-height: 18px; padding: 0 35px 2px 0;'>"+
+				    "<div style='font-size: 12px; line-height: 15px;'>"+
+			        "<span style='display: inline-block; width: 14px; height: 14px; background-image: url(/resources/images/common/icon_blet.png); vertical-align: middle; margin-right: 5px;'></span>경남아너스빌아파트(지하주차장)"+
+			    "</div>"+
+			 "</div>"+
+			 "<div style='position: relative; padding-top: 5px; display:inline-block'>"+
+			 	
+			    "<div style='display:inline-block; margin-left:5px; vertical-align: top;'>"+
+			    	"<span style='font-size: 12px; margin-left:2px; margin-bottom:2px; display:block;'>------------------------------------------------"+
+			    	"<span style='font-size: 12px; color:#888; margin-left:2px; margin-bottom:2px; display:block;'>-----------------------------------</span>"+
+			    	"<span style='font-size: 12px; margin-left:2px;'><a href='http://localhost:9090/OSS/list.jsp?title="+encodeURI('경남아너스빌아파트(지하주차장)')+"' target='blank'>커뮤니티 이동</a></span>"+
+			    "</div>"+
+			 "</div>",
+			lonlat: new Tmap.LonLat(127.146856,36.838225).transform("EPSG:4326", "EPSG:3857")
 	       		},
 	       		{
-	       			title:'두정e편한세상아파트(지하주차장)',
+	       			title:"<div style=' position: relative; border-bottom: 1px solid #dcdcdc; line-height: 18px; padding: 0 35px 2px 0;'>"+
+				    "<div style='font-size: 12px; line-height: 15px;'>"+
+			        "<span style='display: inline-block; width: 14px; height: 14px; background-image: url(/resources/images/common/icon_blet.png); vertical-align: middle; margin-right: 5px;'></span>두정e편한세상아파트(지하주차장)"+
+			    "</div>"+
+			 "</div>"+
+			 "<div style='position: relative; padding-top: 5px; display:inline-block'>"+
+			 	
+			    "<div style='display:inline-block; margin-left:5px; vertical-align: top;'>"+
+			    	"<span style='font-size: 12px; margin-left:2px; margin-bottom:2px; display:block;'>------------------------------------------------"+
+			    	"<span style='font-size: 12px; color:#888; margin-left:2px; margin-bottom:2px; display:block;'>-----------------------------------</span>"+
+			    	"<span style='font-size: 12px; margin-left:2px;'><a href='http://localhost:9090/OSS/list.jsp?title="+encodeURI('두정e편한세상아파트(지하주차장)')+"' target='blank'>커뮤니티 이동</a></span>"+
+			    "</div>"+
+			 "</div>",
+			lonlat: new Tmap.LonLat(127.139614,36.838297).transform("EPSG:4326", "EPSG:3857")
+	       		},
+	       		{
+	       			title:"<div style=' position: relative; border-bottom: 1px solid #dcdcdc; line-height: 18px; padding: 0 35px 2px 0;'>"+
+				    "<div style='font-size: 12px; line-height: 15px;'>"+
+			        "<span style='display: inline-block; width: 14px; height: 14px; background-image: url(/resources/images/common/icon_blet.png); vertical-align: middle; margin-right: 5px;'></span>대우타워아파트(지하주차장)"+
+			    "</div>"+
+			 "</div>"+
+			 "<div style='position: relative; padding-top: 5px; display:inline-block'>"+
+			 	
+			    "<div style='display:inline-block; margin-left:5px; vertical-align: top;'>"+
+			    	"<span style='font-size: 12px; margin-left:2px; margin-bottom:2px; display:block;'>------------------------------------------------"+
+			    	"<span style='font-size: 12px; color:#888; margin-left:2px; margin-bottom:2px; display:block;'>-----------------------------------</span>"+
+			    	"<span style='font-size: 12px; margin-left:2px;'><a href='http://localhost:9090/OSS/list.jsp?title="+encodeURI('대우타워아파트(지하주차장)')+"' target='blank'>커뮤니티 이동</a></span>"+
+			    "</div>"+
+			 "</div>",
 	       	        lonlat: new Tmap.LonLat(127.140897,36.834906).transform("EPSG:4326", "EPSG:3857")
 	       		},
 	       		{
-	       			title:'대우타워아파트(지하주차장)',
+	       			title:"<div style=' position: relative; border-bottom: 1px solid #dcdcdc; line-height: 18px; padding: 0 35px 2px 0;'>"+
+				    "<div style='font-size: 12px; line-height: 15px;'>"+
+			        "<span style='display: inline-block; width: 14px; height: 14px; background-image: url(/resources/images/common/icon_blet.png); vertical-align: middle; margin-right: 5px;'></span>광명아파트(지하주차장)"+
+			    "</div>"+
+			 "</div>"+
+			 "<div style='position: relative; padding-top: 5px; display:inline-block'>"+
+			 	
+			    "<div style='display:inline-block; margin-left:5px; vertical-align: top;'>"+
+			    	"<span style='font-size: 12px; margin-left:2px; margin-bottom:2px; display:block;'>------------------------------------------------"+
+			    	"<span style='font-size: 12px; color:#888; margin-left:2px; margin-bottom:2px; display:block;'>-----------------------------------</span>"+
+			    	"<span style='font-size: 12px; margin-left:2px;'><a href='http://localhost:9090/OSS/list.jsp?title="+encodeURI('광명아파트(지하주차장)')+"' target='blank'>커뮤니티 이동</a></span>"+
+			    "</div>"+
+			 "</div>",
 	       	        lonlat: new Tmap.LonLat(127.131489,36.806164).transform("EPSG:4326", "EPSG:3857")
 	       		},
 	       		{
-	       			title:'광명아파트(지하주차장)',
+	       			title:"<div style=' position: relative; border-bottom: 1px solid #dcdcdc; line-height: 18px; padding: 0 35px 2px 0;'>"+
+				    "<div style='font-size: 12px; line-height: 15px;'>"+
+			        "<span style='display: inline-block; width: 14px; height: 14px; background-image: url(/resources/images/common/icon_blet.png); vertical-align: middle; margin-right: 5px;'></span>주공그린빌11단지3차아파트(지하주차장)"+
+			    "</div>"+
+			 "</div>"+
+			 "<div style='position: relative; padding-top: 5px; display:inline-block'>"+
+			 	
+			    "<div style='display:inline-block; margin-left:5px; vertical-align: top;'>"+
+			    	"<span style='font-size: 12px; margin-left:2px; margin-bottom:2px; display:block;'>------------------------------------------------"+
+			    	"<span style='font-size: 12px; color:#888; margin-left:2px; margin-bottom:2px; display:block;'>-----------------------------------</span>"+
+			    	"<span style='font-size: 12px; margin-left:2px;'><a href='http://localhost:9090/OSS/list.jsp?title="+encodeURI('주공그린빌11단지3차아파트(지하주차장)')+"' target='blank'>커뮤니티 이동</a></span>"+
+			    "</div>"+
+			 "</div>",
 	       	        lonlat: new Tmap.LonLat(127.128358,36.801769).transform("EPSG:4326", "EPSG:3857")
 	       		},
 	       		{
-	       			title:'주공그린빌11단지3차아파트(지하주차장)',
+	       			title:"<div style=' position: relative; border-bottom: 1px solid #dcdcdc; line-height: 18px; padding: 0 35px 2px 0;'>"+
+				    "<div style='font-size: 12px; line-height: 15px;'>"+
+			        "<span style='display: inline-block; width: 14px; height: 14px; background-image: url(/resources/images/common/icon_blet.png); vertical-align: middle; margin-right: 5px;'></span>천안시청(지하주차장)"+
+			    "</div>"+
+			 "</div>"+
+			 "<div style='position: relative; padding-top: 5px; display:inline-block'>"+
+			 	
+			    "<div style='display:inline-block; margin-left:5px; vertical-align: top;'>"+
+			    	"<span style='font-size: 12px; margin-left:2px; margin-bottom:2px; display:block;'>------------------------------------------------"+
+			    	"<span style='font-size: 12px; color:#888; margin-left:2px; margin-bottom:2px; display:block;'>-----------------------------------</span>"+
+			    	"<span style='font-size: 12px; margin-left:2px;'><a href='http://localhost:9090/OSS/list.jsp?title="+encodeURI('천안시청(지하주차장)')+"' target='blank'>커뮤니티 이동</a></span>"+
+			    "</div>"+
+			 "</div>",
 	       	        lonlat: new Tmap.LonLat(127.118692,36.819844).transform("EPSG:4326", "EPSG:3857")
 	       		},
 	       		{
-	       			title:'천안시청(지하주차장)',
+	       			title:"<div style=' position: relative; border-bottom: 1px solid #dcdcdc; line-height: 18px; padding: 0 35px 2px 0;'>"+
+				    "<div style='font-size: 12px; line-height: 15px;'>"+
+			        "<span style='display: inline-block; width: 14px; height: 14px; background-image: url(/resources/images/common/icon_blet.png); vertical-align: middle; margin-right: 5px;'></span>벽산블루밍1차아파트(지하주차장)"+
+			    "</div>"+
+			 "</div>"+
+			 "<div style='position: relative; padding-top: 5px; display:inline-block'>"+
+			 	
+			    "<div style='display:inline-block; margin-left:5px; vertical-align: top;'>"+
+			    	"<span style='font-size: 12px; margin-left:2px; margin-bottom:2px; display:block;'>------------------------------------------------"+
+			    	"<span style='font-size: 12px; color:#888; margin-left:2px; margin-bottom:2px; display:block;'>-----------------------------------</span>"+
+			    	"<span style='font-size: 12px; margin-left:2px;'><a href='http://localhost:9090/OSS/list.jsp?title="+encodeURI('벽산블루밍1차아파트(지하주차장)')+"' target='blank'>커뮤니티 이동</a></span>"+
+			    "</div>"+
+			 "</div>",
 	       	        lonlat: new Tmap.LonLat(127.1136868,36.815658).transform("EPSG:4326", "EPSG:3857")
 	       		},
 	       		{
-	       			title:'벽산블루밍1차아파트(지하주차장)',
+	       			title:"<div style=' position: relative; border-bottom: 1px solid #dcdcdc; line-height: 18px; padding: 0 35px 2px 0;'>"+
+				    "<div style='font-size: 12px; line-height: 15px;'>"+
+			        "<span style='display: inline-block; width: 14px; height: 14px; background-image: url(/resources/images/common/icon_blet.png); vertical-align: middle; margin-right: 5px;'></span>일성2차버들아파트(지하주차장)"+
+			    "</div>"+
+			 "</div>"+
+			 "<div style='position: relative; padding-top: 5px; display:inline-block'>"+
+			 	
+			    "<div style='display:inline-block; margin-left:5px; vertical-align: top;'>"+
+			    	"<span style='font-size: 12px; margin-left:2px; margin-bottom:2px; display:block;'>------------------------------------------------"+
+			    	"<span style='font-size: 12px; color:#888; margin-left:2px; margin-bottom:2px; display:block;'>-----------------------------------</span>"+
+			    	"<span style='font-size: 12px; margin-left:2px;'><a href='http://localhost:9090/OSS/list.jsp?title="+encodeURI('일성2차버들아파트(지하주차장)')+"' target='blank'>커뮤니티 이동</a></span>"+
+			    "</div>"+
+			 "</div>",
 	       	        lonlat: new Tmap.LonLat(127.114092,36.824992).transform("EPSG:4326", "EPSG:3857")
 	       		},
 	       		{
-	       			title:'일성2차버들아파트(지하주차장)',
+	       			title:"<div style=' position: relative; border-bottom: 1px solid #dcdcdc; line-height: 18px; padding: 0 35px 2px 0;'>"+
+				    "<div style='font-size: 12px; line-height: 15px;'>"+
+			        "<span style='display: inline-block; width: 14px; height: 14px; background-image: url(/resources/images/common/icon_blet.png); vertical-align: middle; margin-right: 5px;'></span>불당호반리젠시빌아파트(지하주차장)"+
+			    "</div>"+
+			 "</div>"+
+			 "<div style='position: relative; padding-top: 5px; display:inline-block'>"+
+			 	
+			    "<div style='display:inline-block; margin-left:5px; vertical-align: top;'>"+
+			    	"<span style='font-size: 12px; margin-left:2px; margin-bottom:2px; display:block;'>------------------------------------------------"+
+			    	"<span style='font-size: 12px; color:#888; margin-left:2px; margin-bottom:2px; display:block;'>-----------------------------------</span>"+
+			    	"<span style='font-size: 12px; margin-left:2px;'><a href='http://localhost:9090/OSS/list.jsp?title="+encodeURI('불당호반리젠시빌아파트(지하주차장)')+"' target='blank'>커뮤니티 이동</a></span>"+
+			    "</div>"+
+			 "</div>",
 	       	        lonlat: new Tmap.LonLat(127.131283,36.809864).transform("EPSG:4326", "EPSG:3857")
 	       		},
 	       		{
-	       			title:'불당호반리젠시빌아파트(지하주차장)',
+	       			title:"<div style=' position: relative; border-bottom: 1px solid #dcdcdc; line-height: 18px; padding: 0 35px 2px 0;'>"+
+				    "<div style='font-size: 12px; line-height: 15px;'>"+
+			        "<span style='display: inline-block; width: 14px; height: 14px; background-image: url(/resources/images/common/icon_blet.png); vertical-align: middle; margin-right: 5px;'></span>주공9단지아파트(404동과 407동 사이 지하주차장)"+
+			    "</div>"+
+			 "</div>"+
+			 "<div style='position: relative; padding-top: 5px; display:inline-block'>"+
+			 	
+			    "<div style='display:inline-block; margin-left:5px; vertical-align: top;'>"+
+			    	"<span style='font-size: 12px; margin-left:2px; margin-bottom:2px; display:block;'>------------------------------------------------"+
+			    	"<span style='font-size: 12px; color:#888; margin-left:2px; margin-bottom:2px; display:block;'>-----------------------------------</span>"+
+			    	"<span style='font-size: 12px; margin-left:2px;'><a href='http://localhost:9090/OSS/list.jsp?title="+encodeURI('주공9단지아파트(404동과 407동 사이 지하주차장)')+"' target='blank'>커뮤니티 이동</a></span>"+
+			    "</div>"+
+			 "</div>",
 	       	        lonlat: new Tmap.LonLat(127.116903,36.805997).transform("EPSG:4326", "EPSG:3857")
 	       		},
 	       		{
-	       			title:'주공9단지아파트(404동과 407동 사이 지하주차장)',
+	       			title:"<div style=' position: relative; border-bottom: 1px solid #dcdcdc; line-height: 18px; padding: 0 35px 2px 0;'>"+
+				    "<div style='font-size: 12px; line-height: 15px;'>"+
+			        "<span style='display: inline-block; width: 14px; height: 14px; background-image: url(/resources/images/common/icon_blet.png); vertical-align: middle; margin-right: 5px;'></span>두정한성3차필하우스아파트(지하주차장)"+
+			    "</div>"+
+			 "</div>"+
+			 "<div style='position: relative; padding-top: 5px; display:inline-block'>"+
+			 	
+			    "<div style='display:inline-block; margin-left:5px; vertical-align: top;'>"+
+			    	"<span style='font-size: 12px; margin-left:2px; margin-bottom:2px; display:block;'>------------------------------------------------"+
+			    	"<span style='font-size: 12px; color:#888; margin-left:2px; margin-bottom:2px; display:block;'>-----------------------------------</span>"+
+			    	"<span style='font-size: 12px; margin-left:2px;'><a href='http://localhost:9090/OSS/list.jsp?title="+encodeURI('두정한성3차필하우스아파트(지하주차장)')+"' target='blank'>커뮤니티 이동</a></span>"+
+			    "</div>"+
+			 "</div>",
 	       	        lonlat: new Tmap.LonLat(127.122431,36.805711).transform("EPSG:4326", "EPSG:3857")
 	       		},
 	       		{
-	       			title:'두정한성3차필하우스아파트(지하주차장)',
+	       			title:"<div style=' position: relative; border-bottom: 1px solid #dcdcdc; line-height: 18px; padding: 0 35px 2px 0;'>"+
+				    "<div style='font-size: 12px; line-height: 15px;'>"+
+			        "<span style='display: inline-block; width: 14px; height: 14px; background-image: url(/resources/images/common/icon_blet.png); vertical-align: middle; margin-right: 5px;'></span>주공8단지아파트(지하주차장)"+
+			    "</div>"+
+			 "</div>"+
+			 "<div style='position: relative; padding-top: 5px; display:inline-block'>"+
+			 	
+			    "<div style='display:inline-block; margin-left:5px; vertical-align: top;'>"+
+			    	"<span style='font-size: 12px; margin-left:2px; margin-bottom:2px; display:block;'>------------------------------------------------"+
+			    	"<span style='font-size: 12px; color:#888; margin-left:2px; margin-bottom:2px; display:block;'>-----------------------------------</span>"+
+			    	"<span style='font-size: 12px; margin-left:2px;'><a href='http://localhost:9090/OSS/list.jsp?title="+encodeURI('주공8단지아파트(지하주차장)')+"' target='blank'>커뮤니티 이동</a></span>"+
+			    "</div>"+
+			 "</div>",
 	       	        lonlat: new Tmap.LonLat(127.147069,36.8342929).transform("EPSG:4326", "EPSG:3857")
 	       		},
 	       		{
-	       			title:'주공8단지아파트(지하주차장)',
+	       			title:"<div style=' position: relative; border-bottom: 1px solid #dcdcdc; line-height: 18px; padding: 0 35px 2px 0;'>"+
+				    "<div style='font-size: 12px; line-height: 15px;'>"+
+			        "<span style='display: inline-block; width: 14px; height: 14px; background-image: url(/resources/images/common/icon_blet.png); vertical-align: middle; margin-right: 5px;'></span>한성스위트빌아파트(지하주차장)"+
+			    "</div>"+
+			 "</div>"+
+			 "<div style='position: relative; padding-top: 5px; display:inline-block'>"+
+			 	
+			    "<div style='display:inline-block; margin-left:5px; vertical-align: top;'>"+
+			    	"<span style='font-size: 12px; margin-left:2px; margin-bottom:2px; display:block;'>------------------------------------------------"+
+			    	"<span style='font-size: 12px; color:#888; margin-left:2px; margin-bottom:2px; display:block;'>-----------------------------------</span>"+
+			    	"<span style='font-size: 12px; margin-left:2px;'><a href='http://localhost:9090/OSS/list.jsp?title="+encodeURI('한성스위트빌아파트(지하주차장)')+"' target='blank'>커뮤니티 이동</a></span>"+
+			    "</div>"+
+			 "</div>",
 	       	        lonlat: new Tmap.LonLat(127.144525,36.836158).transform("EPSG:4326", "EPSG:3857")
 	       		},
 	       		{
-	       			title:'한성스위트빌아파트(지하주차장)',
+	       			title:"<div style=' position: relative; border-bottom: 1px solid #dcdcdc; line-height: 18px; padding: 0 35px 2px 0;'>"+
+				    "<div style='font-size: 12px; line-height: 15px;'>"+
+			        "<span style='display: inline-block; width: 14px; height: 14px; background-image: url(/resources/images/common/icon_blet.png); vertical-align: middle; margin-right: 5px;'></span>계룡리슈빌아파트(지하주차장)"+
+			    "</div>"+
+			 "</div>"+
+			 "<div style='position: relative; padding-top: 5px; display:inline-block'>"+
+			 	
+			    "<div style='display:inline-block; margin-left:5px; vertical-align: top;'>"+
+			    	"<span style='font-size: 12px; margin-left:2px; margin-bottom:2px; display:block;'>------------------------------------------------"+
+			    	"<span style='font-size: 12px; color:#888; margin-left:2px; margin-bottom:2px; display:block;'>-----------------------------------</span>"+
+			    	"<span style='font-size: 12px; margin-left:2px;'><a href='http://localhost:9090/OSS/list.jsp?title="+encodeURI('계룡리슈빌아파트(지하주차장)')+"' target='blank'>커뮤니티 이동</a></span>"+
+			    "</div>"+
+			 "</div>",
 	       	        lonlat: new Tmap.LonLat(127.134392,36.835994).transform("EPSG:4326", "EPSG:3857")
 	       		},
 	       		{
-	       			title:'계룡리슈빌아파트(지하주차장)',
+	       			title:"<div style=' position: relative; border-bottom: 1px solid #dcdcdc; line-height: 18px; padding: 0 35px 2px 0;'>"+
+				    "<div style='font-size: 12px; line-height: 15px;'>"+
+			        "<span style='display: inline-block; width: 14px; height: 14px; background-image: url(/resources/images/common/icon_blet.png); vertical-align: middle; margin-right: 5px;'></span>불당한성필하우스아파트(지하주차장)"+
+			    "</div>"+
+			 "</div>"+
+			 "<div style='position: relative; padding-top: 5px; display:inline-block'>"+
+			 	
+			    "<div style='display:inline-block; margin-left:5px; vertical-align: top;'>"+
+			    	"<span style='font-size: 12px; margin-left:2px; margin-bottom:2px; display:block;'>------------------------------------------------"+
+			    	"<span style='font-size: 12px; color:#888; margin-left:2px; margin-bottom:2px; display:block;'>-----------------------------------</span>"+
+			    	"<span style='font-size: 12px; margin-left:2px;'><a href='http://localhost:9090/OSS/list.jsp?title="+encodeURI('불당한성필하우스아파트(지하주차장)')+"' target='blank'>커뮤니티 이동</a></span>"+
+			    "</div>"+
+			 "</div>",
 	       	        lonlat: new Tmap.LonLat(127.137083,36.838308).transform("EPSG:4326", "EPSG:3857")
 	       		},
 	       		{
-	       			title:'대원칸타빌아파트(지하주차장)',
+	       			title:"<div style=' position: relative; border-bottom: 1px solid #dcdcdc; line-height: 18px; padding: 0 35px 2px 0;'>"+
+				    "<div style='font-size: 12px; line-height: 15px;'>"+
+			        "<span style='display: inline-block; width: 14px; height: 14px; background-image: url(/resources/images/common/icon_blet.png); vertical-align: middle; margin-right: 5px;'></span>대원칸타빌아파트(지하주차장)"+
+			    "</div>"+
+			 "</div>"+
+			 "<div style='position: relative; padding-top: 5px; display:inline-block'>"+
+			 	
+			    "<div style='display:inline-block; margin-left:5px; vertical-align: top;'>"+
+			    	"<span style='font-size: 12px; margin-left:2px; margin-bottom:2px; display:block;'>------------------------------------------------"+
+			    	"<span style='font-size: 12px; color:#888; margin-left:2px; margin-bottom:2px; display:block;'>-----------------------------------</span>"+
+			    	"<span style='font-size: 12px; margin-left:2px;'><a href='http://localhost:9090/OSS/list.jsp?title="+encodeURI('대원칸타빌아파트(지하주차장)')+"' target='blank'>커뮤니티 이동</a></span>"+
+			    "</div>"+
+			 "</div>",
 	       	        lonlat: new Tmap.LonLat(127.1159951,36.803319).transform("EPSG:4326", "EPSG:3857")
 	       		},
 	       		{
-	       			title:'불당아이파크아파트(지하주차장)',
+	       			title:"<div style=' position: relative; border-bottom: 1px solid #dcdcdc; line-height: 18px; padding: 0 35px 2px 0;'>"+
+				    "<div style='font-size: 12px; line-height: 15px;'>"+
+			        "<span style='display: inline-block; width: 14px; height: 14px; background-image: url(/resources/images/common/icon_blet.png); vertical-align: middle; margin-right: 5px;'></span>불당아이파크아파트(지하주차장)"+
+			    "</div>"+
+			 "</div>"+
+			 "<div style='position: relative; padding-top: 5px; display:inline-block'>"+
+			 	
+			    "<div style='display:inline-block; margin-left:5px; vertical-align: top;'>"+
+			    	"<span style='font-size: 12px; margin-left:2px; margin-bottom:2px; display:block;'>------------------------------------------------"+
+			    	"<span style='font-size: 12px; color:#888; margin-left:2px; margin-bottom:2px; display:block;'>-----------------------------------</span>"+
+			    	"<span style='font-size: 12px; margin-left:2px;'><a href='http://localhost:9090/OSS/list.jsp?title="+encodeURI('불당아이파크아파트(지하주차장)')+"' target='blank'>커뮤니티 이동</a></span>"+
+			    "</div>"+
+			 "</div>",
 	       	        lonlat: new Tmap.LonLat(127.109253,36.808597).transform("EPSG:4326", "EPSG:3857")
 	       		},
 	       		{
-	       			title:'화승아파트(지하주차장)',
+	       			title:"<div style=' position: relative; border-bottom: 1px solid #dcdcdc; line-height: 18px; padding: 0 35px 2px 0;'>"+
+				    "<div style='font-size: 12px; line-height: 15px;'>"+
+			        "<span style='display: inline-block; width: 14px; height: 14px; background-image: url(/resources/images/common/icon_blet.png); vertical-align: middle; margin-right: 5px;'></span>화승아파트(지하주차장)"+
+			    "</div>"+
+			 "</div>"+
+			 "<div style='position: relative; padding-top: 5px; display:inline-block'>"+
+			 	
+			    "<div style='display:inline-block; margin-left:5px; vertical-align: top;'>"+
+			    	"<span style='font-size: 12px; margin-left:2px; margin-bottom:2px; display:block;'>------------------------------------------------"+
+			    	"<span style='font-size: 12px; color:#888; margin-left:2px; margin-bottom:2px; display:block;'>-----------------------------------</span>"+
+			    	"<span style='font-size: 12px; margin-left:2px;'><a href='http://localhost:9090/OSS/list.jsp?title="+encodeURI('화승아파트(지하주차장)')+"' target='blank'>커뮤니티 이동</a></span>"+
+			    "</div>"+
+			 "</div>",
 	       	        lonlat: new Tmap.LonLat(127.141703,36.821375).transform("EPSG:4326", "EPSG:3857")
 	       		},
 	       		{
-	       			title:'반석의원(지하주차장)',
+	       			title:"<div style=' position: relative; border-bottom: 1px solid #dcdcdc; line-height: 18px; padding: 0 35px 2px 0;'>"+
+				    "<div style='font-size: 12px; line-height: 15px;'>"+
+			        "<span style='display: inline-block; width: 14px; height: 14px; background-image: url(/resources/images/common/icon_blet.png); vertical-align: middle; margin-right: 5px;'></span>반석의원(지하주차장)"+
+			    "</div>"+
+			 "</div>"+
+			 "<div style='position: relative; padding-top: 5px; display:inline-block'>"+
+			 	
+			    "<div style='display:inline-block; margin-left:5px; vertical-align: top;'>"+
+			    	"<span style='font-size: 12px; margin-left:2px; margin-bottom:2px; display:block;'>------------------------------------------------"+
+			    	"<span style='font-size: 12px; color:#888; margin-left:2px; margin-bottom:2px; display:block;'>-----------------------------------</span>"+
+			    	"<span style='font-size: 12px; margin-left:2px;'><a href='http://localhost:9090/OSS/list.jsp?title="+encodeURI('반석의원(지하주차장)')+"' target='blank'>커뮤니티 이동</a></span>"+
+			    "</div>"+
+			 "</div>",
 	       	        lonlat: new Tmap.LonLat(127.141339,36.822208).transform("EPSG:4326", "EPSG:3857")
 	       		},
 	       		{
-	       			title:'성거벽산아파트(지하주차장)',
+	       			title:"<div style=' position: relative; border-bottom: 1px solid #dcdcdc; line-height: 18px; padding: 0 35px 2px 0;'>"+
+				    "<div style='font-size: 12px; line-height: 15px;'>"+
+			        "<span style='display: inline-block; width: 14px; height: 14px; background-image: url(/resources/images/common/icon_blet.png); vertical-align: middle; margin-right: 5px;'></span>성거벽산아파트(지하주차장)"+
+			    "</div>"+
+			 "</div>"+
+			 "<div style='position: relative; padding-top: 5px; display:inline-block'>"+
+			 	
+			    "<div style='display:inline-block; margin-left:5px; vertical-align: top;'>"+
+			    	"<span style='font-size: 12px; margin-left:2px; margin-bottom:2px; display:block;'>------------------------------------------------"+
+			    	"<span style='font-size: 12px; color:#888; margin-left:2px; margin-bottom:2px; display:block;'>-----------------------------------</span>"+
+			    	"<span style='font-size: 12px; margin-left:2px;'><a href='http://localhost:9090/OSS/list.jsp?title="+encodeURI('성거벽산아파트(지하주차장)')+"' target='blank'>커뮤니티 이동</a></span>"+
+			    "</div>"+
+			 "</div>",
 	       	        lonlat: new Tmap.LonLat(127.159411,36.878686).transform("EPSG:4326", "EPSG:3857")
 	       		},
 	       		{
-	       			title:'삼환나우빌아파트(지하주차장)',
+	       			title:"<div style=' position: relative; border-bottom: 1px solid #dcdcdc; line-height: 18px; padding: 0 35px 2px 0;'>"+
+				    "<div style='font-size: 12px; line-height: 15px;'>"+
+			        "<span style='display: inline-block; width: 14px; height: 14px; background-image: url(/resources/images/common/icon_blet.png); vertical-align: middle; margin-right: 5px;'></span>삼환나우빌아파트(지하주차장)"+
+			    "</div>"+
+			 "</div>"+
+			 "<div style='position: relative; padding-top: 5px; display:inline-block'>"+
+			 	
+			    "<div style='display:inline-block; margin-left:5px; vertical-align: top;'>"+
+			    	"<span style='font-size: 12px; margin-left:2px; margin-bottom:2px; display:block;'>------------------------------------------------"+
+			    	"<span style='font-size: 12px; color:#888; margin-left:2px; margin-bottom:2px; display:block;'>-----------------------------------</span>"+
+			    	"<span style='font-size: 12px; margin-left:2px;'><a href='http://localhost:9090/OSS/list.jsp?title="+encodeURI('삼환나우빌아파트(지하주차장)')+"' target='blank'>커뮤니티 이동</a></span>"+
+			    "</div>"+
+			 "</div>",
 	       	        lonlat: new Tmap.LonLat(127.157128,36.877253).transform("EPSG:4326", "EPSG:3857")
 	       		},
 	       		{
-	       			title:'성거백승아파트(지하주차장)',
+	       			title:"<div style=' position: relative; border-bottom: 1px solid #dcdcdc; line-height: 18px; padding: 0 35px 2px 0;'>"+
+				    "<div style='font-size: 12px; line-height: 15px;'>"+
+			        "<span style='display: inline-block; width: 14px; height: 14px; background-image: url(/resources/images/common/icon_blet.png); vertical-align: middle; margin-right: 5px;'></span>성거백승아파트(지하주차장)"+
+			    "</div>"+
+			 "</div>"+
+			 "<div style='position: relative; padding-top: 5px; display:inline-block'>"+
+			 	
+			    "<div style='display:inline-block; margin-left:5px; vertical-align: top;'>"+
+			    	"<span style='font-size: 12px; margin-left:2px; margin-bottom:2px; display:block;'>------------------------------------------------"+
+			    	"<span style='font-size: 12px; color:#888; margin-left:2px; margin-bottom:2px; display:block;'>-----------------------------------</span>"+
+			    	"<span style='font-size: 12px; margin-left:2px;'><a href='http://localhost:9090/OSS/list.jsp?title="+encodeURI('성거백승아파트(지하주차장)')+"' target='blank'>커뮤니티 이동</a></span>"+
+			    "</div>"+
+			 "</div>",
 	       	        lonlat: new Tmap.LonLat(127.203086,36.873122).transform("EPSG:4326", "EPSG:3857")
 	       		},
 	       		{
-	       			title:'대우성촌프라자아파트(지하주차장)',
+	       			title:"<div style=' position: relative; border-bottom: 1px solid #dcdcdc; line-height: 18px; padding: 0 35px 2px 0;'>"+
+				    "<div style='font-size: 12px; line-height: 15px;'>"+
+			        "<span style='display: inline-block; width: 14px; height: 14px; background-image: url(/resources/images/common/icon_blet.png); vertical-align: middle; margin-right: 5px;'></span>대우성촌프라자아파트(지하주차장)"+
+			    "</div>"+
+			 "</div>"+
+			 "<div style='position: relative; padding-top: 5px; display:inline-block'>"+
+			 	
+			    "<div style='display:inline-block; margin-left:5px; vertical-align: top;'>"+
+			    	"<span style='font-size: 12px; margin-left:2px; margin-bottom:2px; display:block;'>------------------------------------------------"+
+			    	"<span style='font-size: 12px; color:#888; margin-left:2px; margin-bottom:2px; display:block;'>-----------------------------------</span>"+
+			    	"<span style='font-size: 12px; margin-left:2px;'><a href='http://localhost:9090/OSS/list.jsp?title="+encodeURI('대우성촌프라자아파트(지하주차장)')+"' target='blank'>커뮤니티 이동</a></span>"+
+			    "</div>"+
+			 "</div>",
 	       	        lonlat: new Tmap.LonLat(127.138808,36.817831).transform("EPSG:4326", "EPSG:3857")
 	       		},
 	       		{
-	       			title:'대우푸르지오3차아파트(지하주차장)',
+	       			title:"<div style=' position: relative; border-bottom: 1px solid #dcdcdc; line-height: 18px; padding: 0 35px 2px 0;'>"+
+				    "<div style='font-size: 12px; line-height: 15px;'>"+
+			        "<span style='display: inline-block; width: 14px; height: 14px; background-image: url(/resources/images/common/icon_blet.png); vertical-align: middle; margin-right: 5px;'></span>대우푸르지오3차아파트(지하주차장)"+
+			    "</div>"+
+			 "</div>"+
+			 "<div style='position: relative; padding-top: 5px; display:inline-block'>"+
+			 	
+			    "<div style='display:inline-block; margin-left:5px; vertical-align: top;'>"+
+			    	"<span style='font-size: 12px; margin-left:2px; margin-bottom:2px; display:block;'>------------------------------------------------"+
+			    	"<span style='font-size: 12px; color:#888; margin-left:2px; margin-bottom:2px; display:block;'>-----------------------------------</span>"+
+			    	"<span style='font-size: 12px; margin-left:2px;'><a href='http://localhost:9090/OSS/list.jsp?title="+encodeURI('대우푸르지오3차아파트(지하주차장)')+"' target='blank'>커뮤니티 이동</a></span>"+
+			    "</div>"+
+			 "</div>",
 	       	        lonlat: new Tmap.LonLat(127.142897,36.838267).transform("EPSG:4326", "EPSG:3857")
 	       		},
 	       		{
-	       			title:'후생빌딩(지하주차장)',
+	       			title:"<div style=' position: relative; border-bottom: 1px solid #dcdcdc; line-height: 18px; padding: 0 35px 2px 0;'>"+
+				    "<div style='font-size: 12px; line-height: 15px;'>"+
+			        "<span style='display: inline-block; width: 14px; height: 14px; background-image: url(/resources/images/common/icon_blet.png); vertical-align: middle; margin-right: 5px;'></span>후생빌딩(지하주차장)"+
+			    "</div>"+
+			 "</div>"+
+			 "<div style='position: relative; padding-top: 5px; display:inline-block'>"+
+			 	
+			    "<div style='display:inline-block; margin-left:5px; vertical-align: top;'>"+
+			    	"<span style='font-size: 12px; margin-left:2px; margin-bottom:2px; display:block;'>------------------------------------------------"+
+			    	"<span style='font-size: 12px; color:#888; margin-left:2px; margin-bottom:2px; display:block;'>-----------------------------------</span>"+
+			    	"<span style='font-size: 12px; margin-left:2px;'><a href='http://localhost:9090/OSS/list.jsp?title="+encodeURI('후생빌딩(지하주차장)')+"' target='blank'>커뮤니티 이동</a></span>"+
+			    "</div>"+
+			 "</div>",
 	       	        lonlat: new Tmap.LonLat(127.1390834,36.813547).transform("EPSG:4326", "EPSG:3857")
 	       		},
 	       		{
-	       			title:'현대한솔아파트(지하주차장)',
+	       			title:"<div style=' position: relative; border-bottom: 1px solid #dcdcdc; line-height: 18px; padding: 0 35px 2px 0;'>"+
+				    "<div style='font-size: 12px; line-height: 15px;'>"+
+			        "<span style='display: inline-block; width: 14px; height: 14px; background-image: url(/resources/images/common/icon_blet.png); vertical-align: middle; margin-right: 5px;'></span>현대한솔아파트(지하주차장)"+
+			    "</div>"+
+			 "</div>"+
+			 "<div style='position: relative; padding-top: 5px; display:inline-block'>"+
+			 	
+			    "<div style='display:inline-block; margin-left:5px; vertical-align: top;'>"+
+			    	"<span style='font-size: 12px; margin-left:2px; margin-bottom:2px; display:block;'>------------------------------------------------"+
+			    	"<span style='font-size: 12px; color:#888; margin-left:2px; margin-bottom:2px; display:block;'>-----------------------------------</span>"+
+			    	"<span style='font-size: 12px; margin-left:2px;'><a href='http://localhost:9090/OSS/list.jsp?title="+encodeURI('현대한솔아파트(지하주차장)')+"' target='blank'>커뮤니티 이동</a></span>"+
+			    "</div>"+
+			 "</div>",
 	       	        lonlat: new Tmap.LonLat(127.136361,36.918017).transform("EPSG:4326", "EPSG:3857")
 	       		},
 	       		{
-	       			title:'성환e편한세상아파트(지하주차장)',
+	       			title:"<div style=' position: relative; border-bottom: 1px solid #dcdcdc; line-height: 18px; padding: 0 35px 2px 0;'>"+
+				    "<div style='font-size: 12px; line-height: 15px;'>"+
+			        "<span style='display: inline-block; width: 14px; height: 14px; background-image: url(/resources/images/common/icon_blet.png); vertical-align: middle; margin-right: 5px;'></span>성환e편한세상아파트(지하주차장)"+
+			    "</div>"+
+			 "</div>"+
+			 "<div style='position: relative; padding-top: 5px; display:inline-block'>"+
+			 	
+			    "<div style='display:inline-block; margin-left:5px; vertical-align: top;'>"+
+			    	"<span style='font-size: 12px; margin-left:2px; margin-bottom:2px; display:block;'>------------------------------------------------"+
+			    	"<span style='font-size: 12px; color:#888; margin-left:2px; margin-bottom:2px; display:block;'>-----------------------------------</span>"+
+			    	"<span style='font-size: 12px; margin-left:2px;'><a href='http://localhost:9090/OSS/list.jsp?title="+encodeURI('성환e편한세상아파트(지하주차장)')+"' target='blank'>커뮤니티 이동</a></span>"+
+			    "</div>"+
+			 "</div>",
 	       	        lonlat: new Tmap.LonLat(127.132933,36.901603).transform("EPSG:4326", "EPSG:3857")
 	       		},
 	       		{
-	       			title:'삼풍아파트(지하주차장)',
+	       			title:"<div style=' position: relative; border-bottom: 1px solid #dcdcdc; line-height: 18px; padding: 0 35px 2px 0;'>"+
+				    "<div style='font-size: 12px; line-height: 15px;'>"+
+			        "<span style='display: inline-block; width: 14px; height: 14px; background-image: url(/resources/images/common/icon_blet.png); vertical-align: middle; margin-right: 5px;'></span>삼풍아파트(지하주차장)"+
+			    "</div>"+
+			 "</div>"+
+			 "<div style='position: relative; padding-top: 5px; display:inline-block'>"+
+			 	
+			    "<div style='display:inline-block; margin-left:5px; vertical-align: top;'>"+
+			    	"<span style='font-size: 12px; margin-left:2px; margin-bottom:2px; display:block;'>------------------------------------------------"+
+			    	"<span style='font-size: 12px; color:#888; margin-left:2px; margin-bottom:2px; display:block;'>-----------------------------------</span>"+
+			    	"<span style='font-size: 12px; margin-left:2px;'><a href='http://localhost:9090/OSS/list.jsp?title="+encodeURI('삼풍아파트(지하주차장)')+"' target='blank'>커뮤니티 이동</a></span>"+
+			    "</div>"+
+			 "</div>",
 	       	        lonlat: new Tmap.LonLat(127.130997,36.912333).transform("EPSG:4326", "EPSG:3857")
 	       		},
 	       		{
-	       			content:'성환부영2차아파트(지하주차장)',
+	       			title:"<div style=' position: relative; border-bottom: 1px solid #dcdcdc; line-height: 18px; padding: 0 35px 2px 0;'>"+
+				    "<div style='font-size: 12px; line-height: 15px;'>"+
+			        "<span style='display: inline-block; width: 14px; height: 14px; background-image: url(/resources/images/common/icon_blet.png); vertical-align: middle; margin-right: 5px;'></span>성환부영2차아파트(지하주차장)"+
+			    "</div>"+
+			 "</div>"+
+			 "<div style='position: relative; padding-top: 5px; display:inline-block'>"+
+			 	
+			    "<div style='display:inline-block; margin-left:5px; vertical-align: top;'>"+
+			    	"<span style='font-size: 12px; margin-left:2px; margin-bottom:2px; display:block;'>------------------------------------------------"+
+			    	"<span style='font-size: 12px; color:#888; margin-left:2px; margin-bottom:2px; display:block;'>-----------------------------------</span>"+
+			    	"<span style='font-size: 12px; margin-left:2px;'><a href='http://localhost:9090/OSS/list.jsp?title="+encodeURI('성환부영2차아파트(지하주차장)')+"' target='blank'>커뮤니티 이동</a></span>"+
+			    "</div>"+
+			 "</div>",
 	       	        lonlat: new Tmap.LonLat(127.1345145,36.903972).transform("EPSG:4326", "EPSG:3857")
 	       		},
 	       		{
-	       			title:'대동다숲아파트(지하주차장)',
+	       			title:"<div style=' position: relative; border-bottom: 1px solid #dcdcdc; line-height: 18px; padding: 0 35px 2px 0;'>"+
+				    "<div style='font-size: 12px; line-height: 15px;'>"+
+			        "<span style='display: inline-block; width: 14px; height: 14px; background-image: url(/resources/images/common/icon_blet.png); vertical-align: middle; margin-right: 5px;'></span>대동다숲아파트(지하주차장)"+
+			    "</div>"+
+			 "</div>"+
+			 "<div style='position: relative; padding-top: 5px; display:inline-block'>"+
+			 	
+			    "<div style='display:inline-block; margin-left:5px; vertical-align: top;'>"+
+			    	"<span style='font-size: 12px; margin-left:2px; margin-bottom:2px; display:block;'>------------------------------------------------"+
+			    	"<span style='font-size: 12px; color:#888; margin-left:2px; margin-bottom:2px; display:block;'>-----------------------------------</span>"+
+			    	"<span style='font-size: 12px; margin-left:2px;'><a href='http://localhost:9090/OSS/list.jsp?title="+encodeURI('대동다숲아파트(지하주차장)')+"' target='blank'>커뮤니티 이동</a></span>"+
+			    "</div>"+
+			 "</div>",
 	       	        lonlat: new Tmap.LonLat(127.1114498,36.805861).transform("EPSG:4326", "EPSG:3857")
 	       		},
 	       		{
-	       			title:'불당동일하이빌아파트(지하2층 주차장)',
+	       			title:"<div style=' position: relative; border-bottom: 1px solid #dcdcdc; line-height: 18px; padding: 0 35px 2px 0;'>"+
+				    "<div style='font-size: 12px; line-height: 15px;'>"+
+			        "<span style='display: inline-block; width: 14px; height: 14px; background-image: url(/resources/images/common/icon_blet.png); vertical-align: middle; margin-right: 5px;'></span>불당동일하이빌아파트(지하2층 주차장)"+
+			    "</div>"+
+			 "</div>"+
+			 "<div style='position: relative; padding-top: 5px; display:inline-block'>"+
+			 	
+			    "<div style='display:inline-block; margin-left:5px; vertical-align: top;'>"+
+			    	"<span style='font-size: 12px; margin-left:2px; margin-bottom:2px; display:block;'>------------------------------------------------"+
+			    	"<span style='font-size: 12px; color:#888; margin-left:2px; margin-bottom:2px; display:block;'>-----------------------------------</span>"+
+			    	"<span style='font-size: 12px; margin-left:2px;'><a href='http://localhost:9090/OSS/list.jsp?title="+encodeURI('불당동일하이빌아파트(지하2층 주차장)')+"' target='blank'>커뮤니티 이동</a></span>"+
+			    "</div>"+
+			 "</div>",
 	       	        lonlat: new Tmap.LonLat(127.112917,36.807978).transform("EPSG:4326", "EPSG:3857")
 	       		},
 	       		{
-	       			title:'신당코아루아파트(지하주차장)',
+	       			title:"<div style=' position: relative; border-bottom: 1px solid #dcdcdc; line-height: 18px; padding: 0 35px 2px 0;'>"+
+				    "<div style='font-size: 12px; line-height: 15px;'>"+
+			        "<span style='display: inline-block; width: 14px; height: 14px; background-image: url(/resources/images/common/icon_blet.png); vertical-align: middle; margin-right: 5px;'></span>신당코아루아파트(지하주차장)"+
+			    "</div>"+
+			 "</div>"+
+			 "<div style='position: relative; padding-top: 5px; display:inline-block'>"+
+			 	
+			    "<div style='display:inline-block; margin-left:5px; vertical-align: top;'>"+
+			    	"<span style='font-size: 12px; margin-left:2px; margin-bottom:2px; display:block;'>------------------------------------------------"+
+			    	"<span style='font-size: 12px; color:#888; margin-left:2px; margin-bottom:2px; display:block;'>-----------------------------------</span>"+
+			    	"<span style='font-size: 12px; margin-left:2px;'><a href='http://localhost:9090/OSS/list.jsp?title="+encodeURI('신당코아루아파트(지하주차장)')+"' target='blank'>커뮤니티 이동</a></span>"+
+			    "</div>"+
+			 "</div>",
 	       	        lonlat: new Tmap.LonLat(127.159347,36.853336).transform("EPSG:4326", "EPSG:3857")
 	       		},
 	       		{
-	       			title:'라이프타운아파트(102 103동과 105 106동 사이 지하주차장)',
+	       			title:"<div style=' position: relative; border-bottom: 1px solid #dcdcdc; line-height: 18px; padding: 0 35px 2px 0;'>"+
+				    "<div style='font-size: 12px; line-height: 15px;'>"+
+			        "<span style='display: inline-block; width: 14px; height: 14px; background-image: url(/resources/images/common/icon_blet.png); vertical-align: middle; margin-right: 5px;'></span>라이프타운아파트(102 103동과 105 106동 사이 지하주차장)"+
+			    "</div>"+
+			 "</div>"+
+			 "<div style='position: relative; padding-top: 5px; display:inline-block'>"+
+			 	
+			    "<div style='display:inline-block; margin-left:5px; vertical-align: top;'>"+
+			    	"<span style='font-size: 12px; margin-left:2px; margin-bottom:2px; display:block;'>------------------------------------------------"+
+			    	"<span style='font-size: 12px; color:#888; margin-left:2px; margin-bottom:2px; display:block;'>-----------------------------------</span>"+
+			    	"<span style='font-size: 12px; margin-left:2px;'><a href='http://localhost:9090/OSS/list.jsp?title="+encodeURI('라이프타운아파트(102 103동과 105 106동 사이 지하주차장)')+"' target='blank'>커뮤니티 이동</a></span>"+
+			    "</div>"+
+			 "</div>",
 	       	        lonlat: new Tmap.LonLat(127.122506,36.803311).transform("EPSG:4326", "EPSG:3857")
 	       		},
 	       		{
-	       			title:'상록수현대4차아파트(지하주차장)',
+	       			title:"<div style=' position: relative; border-bottom: 1px solid #dcdcdc; line-height: 18px; padding: 0 35px 2px 0;'>"+
+				    "<div style='font-size: 12px; line-height: 15px;'>"+
+			        "<span style='display: inline-block; width: 14px; height: 14px; background-image: url(/resources/images/common/icon_blet.png); vertical-align: middle; margin-right: 5px;'></span>상록수현대4차아파트(지하주차장)"+
+			    "</div>"+
+			 "</div>"+
+			 "<div style='position: relative; padding-top: 5px; display:inline-block'>"+
+			 	
+			    "<div style='display:inline-block; margin-left:5px; vertical-align: top;'>"+
+			    	"<span style='font-size: 12px; margin-left:2px; margin-bottom:2px; display:block;'>------------------------------------------------"+
+			    	"<span style='font-size: 12px; color:#888; margin-left:2px; margin-bottom:2px; display:block;'>-----------------------------------</span>"+
+			    	"<span style='font-size: 12px; margin-left:2px;'><a href='http://localhost:9090/OSS/list.jsp?title="+encodeURI('상록수현대4차아파트(지하주차장)')+"' target='blank'>커뮤니티 이동</a></span>"+
+			    "</div>"+
+			 "</div>",
 	       	        lonlat: new Tmap.LonLat(127.121881,36.795797).transform("EPSG:4326", "EPSG:3857")
 	       		},
 	       		{
-	       			title:'우리은행 천안중앙금융센터(지하주차장)',
+	       			title:"<div style=' position: relative; border-bottom: 1px solid #dcdcdc; line-height: 18px; padding: 0 35px 2px 0;'>"+
+				    "<div style='font-size: 12px; line-height: 15px;'>"+
+			        "<span style='display: inline-block; width: 14px; height: 14px; background-image: url(/resources/images/common/icon_blet.png); vertical-align: middle; margin-right: 5px;'></span>우리은행 천안중앙금융센터(지하주차장)"+
+			    "</div>"+
+			 "</div>"+
+			 "<div style='position: relative; padding-top: 5px; display:inline-block'>"+
+			 	
+			    "<div style='display:inline-block; margin-left:5px; vertical-align: top;'>"+
+			    	"<span style='font-size: 12px; margin-left:2px; margin-bottom:2px; display:block;'>------------------------------------------------"+
+			    	"<span style='font-size: 12px; color:#888; margin-left:2px; margin-bottom:2px; display:block;'>-----------------------------------</span>"+
+			    	"<span style='font-size: 12px; margin-left:2px;'><a href='http://localhost:9090/OSS/list.jsp?title="+encodeURI('우리은행 천안중앙금융센터(지하주차장)')+"' target='blank'>커뮤니티 이동</a></span>"+
+			    "</div>"+
+			 "</div>",
 	       	        lonlat: new Tmap.LonLat(127.135536,36.819825).transform("EPSG:4326", "EPSG:3857")
 	       		},
 	       		{
-	       			title:'월봉일성아파트(지하주차장)',
+	       			title:"<div style=' position: relative; border-bottom: 1px solid #dcdcdc; line-height: 18px; padding: 0 35px 2px 0;'>"+
+				    "<div style='font-size: 12px; line-height: 15px;'>"+
+			        "<span style='display: inline-block; width: 14px; height: 14px; background-image: url(/resources/images/common/icon_blet.png); vertical-align: middle; margin-right: 5px;'></span>월봉일성아파트(지하주차장)"+
+			    "</div>"+
+			 "</div>"+
+			 "<div style='position: relative; padding-top: 5px; display:inline-block'>"+
+			 	
+			    "<div style='display:inline-block; margin-left:5px; vertical-align: top;'>"+
+			    	"<span style='font-size: 12px; margin-left:2px; margin-bottom:2px; display:block;'>------------------------------------------------"+
+			    	"<span style='font-size: 12px; color:#888; margin-left:2px; margin-bottom:2px; display:block;'>-----------------------------------</span>"+
+			    	"<span style='font-size: 12px; margin-left:2px;'><a href='http://localhost:9090/OSS/list.jsp?title="+encodeURI('월봉일성아파트(지하주차장)')+"' target='blank'>커뮤니티 이동</a></span>"+
+			    "</div>"+
+			 "</div>",
 	       	        lonlat: new Tmap.LonLat(127.116889,36.7958963).transform("EPSG:4326", "EPSG:3857")
 	       		},
 	       		{
-	       			title:'월봉벽산태영아파트(지하주차장)',
+	       			title:"<div style=' position: relative; border-bottom: 1px solid #dcdcdc; line-height: 18px; padding: 0 35px 2px 0;'>"+
+				    "<div style='font-size: 12px; line-height: 15px;'>"+
+			        "<span style='display: inline-block; width: 14px; height: 14px; background-image: url(/resources/images/common/icon_blet.png); vertical-align: middle; margin-right: 5px;'></span>월봉벽산태영아파트(지하주차장)"+
+			    "</div>"+
+			 "</div>"+
+			 "<div style='position: relative; padding-top: 5px; display:inline-block'>"+
+			 	
+			    "<div style='display:inline-block; margin-left:5px; vertical-align: top;'>"+
+			    	"<span style='font-size: 12px; margin-left:2px; margin-bottom:2px; display:block;'>------------------------------------------------"+
+			    	"<span style='font-size: 12px; color:#888; margin-left:2px; margin-bottom:2px; display:block;'>-----------------------------------</span>"+
+			    	"<span style='font-size: 12px; margin-left:2px;'><a href='http://localhost:9090/OSS/list.jsp?title="+encodeURI('월봉벽산태영아파트(지하주차장)')+"' target='blank'>커뮤니티 이동</a></span>"+
+			    "</div>"+
+			 "</div>",
 	       	        lonlat: new Tmap.LonLat(127.116353,36.798431).transform("EPSG:4326", "EPSG:3857")
 	       		},
 	       		{
-	       			title:'월봉대우아파트(지하주차장)',
+	       			title:"<div style=' position: relative; border-bottom: 1px solid #dcdcdc; line-height: 18px; padding: 0 35px 2px 0;'>"+
+				    "<div style='font-size: 12px; line-height: 15px;'>"+
+			        "<span style='display: inline-block; width: 14px; height: 14px; background-image: url(/resources/images/common/icon_blet.png); vertical-align: middle; margin-right: 5px;'></span>월봉대우아파트(지하주차장)"+
+			    "</div>"+
+			 "</div>"+
+			 "<div style='position: relative; padding-top: 5px; display:inline-block'>"+
+			 	
+			    "<div style='display:inline-block; margin-left:5px; vertical-align: top;'>"+
+			    	"<span style='font-size: 12px; margin-left:2px; margin-bottom:2px; display:block;'>------------------------------------------------"+
+			    	"<span style='font-size: 12px; color:#888; margin-left:2px; margin-bottom:2px; display:block;'>-----------------------------------</span>"+
+			    	"<span style='font-size: 12px; margin-left:2px;'><a href='http://localhost:9090/OSS/list.jsp?title="+encodeURI('월봉대우아파트(지하주차장)')+"' target='blank'>커뮤니티 이동</a></span>"+
+			    "</div>"+
+			 "</div>",
 	       	        lonlat: new Tmap.LonLat(127.115517,36.795711).transform("EPSG:4326", "EPSG:3857")
 	       		},
 	       		{
-	       			title:'월봉현대아파트(지하주차장)',
+	       			title:"<div style=' position: relative; border-bottom: 1px solid #dcdcdc; line-height: 18px; padding: 0 35px 2px 0;'>"+
+				    "<div style='font-size: 12px; line-height: 15px;'>"+
+			        "<span style='display: inline-block; width: 14px; height: 14px; background-image: url(/resources/images/common/icon_blet.png); vertical-align: middle; margin-right: 5px;'></span>월봉현대아파트(지하주차장)"+
+			    "</div>"+
+			 "</div>"+
+			 "<div style='position: relative; padding-top: 5px; display:inline-block'>"+
+			 	
+			    "<div style='display:inline-block; margin-left:5px; vertical-align: top;'>"+
+			    	"<span style='font-size: 12px; margin-left:2px; margin-bottom:2px; display:block;'>------------------------------------------------"+
+			    	"<span style='font-size: 12px; color:#888; margin-left:2px; margin-bottom:2px; display:block;'>-----------------------------------</span>"+
+			    	"<span style='font-size: 12px; margin-left:2px;'><a href='http://localhost:9090/OSS/list.jsp?title="+encodeURI('월봉현대아파트(지하주차장)')+"' target='blank'>커뮤니티 이동</a></span>"+
+			    "</div>"+
+			 "</div>",
 	       	        lonlat: new Tmap.LonLat(127.113956,36.795886).transform("EPSG:4326", "EPSG:3857")
 	       		},
 	       		{
-	       			title:'월봉청솔2차아파트(지하주차장)',
+	       			title:"<div style=' position: relative; border-bottom: 1px solid #dcdcdc; line-height: 18px; padding: 0 35px 2px 0;'>"+
+				    "<div style='font-size: 12px; line-height: 15px;'>"+
+			        "<span style='display: inline-block; width: 14px; height: 14px; background-image: url(/resources/images/common/icon_blet.png); vertical-align: middle; margin-right: 5px;'></span>월봉청솔2차아파트(지하주차장)"+
+			    "</div>"+
+			 "</div>"+
+			 "<div style='position: relative; padding-top: 5px; display:inline-block'>"+
+			 	
+			    "<div style='display:inline-block; margin-left:5px; vertical-align: top;'>"+
+			    	"<span style='font-size: 12px; margin-left:2px; margin-bottom:2px; display:block;'>------------------------------------------------"+
+			    	"<span style='font-size: 12px; color:#888; margin-left:2px; margin-bottom:2px; display:block;'>-----------------------------------</span>"+
+			    	"<span style='font-size: 12px; margin-left:2px;'><a href='http://localhost:9090/OSS/list.jsp?title="+encodeURI('월봉청솔2차아파트(지하주차장)')+"' target='blank'>커뮤니티 이동</a></span>"+
+			    "</div>"+
+			 "</div>",
 	       	        lonlat: new Tmap.LonLat(127.116247,36.793747).transform("EPSG:4326", "EPSG:3857")
 	       		},
 	       		{
-	       			title:'용암마을아파트(110동 앞 지하주차장)',
+	       			title:"<div style=' position: relative; border-bottom: 1px solid #dcdcdc; line-height: 18px; padding: 0 35px 2px 0;'>"+
+				    "<div style='font-size: 12px; line-height: 15px;'>"+
+			        "<span style='display: inline-block; width: 14px; height: 14px; background-image: url(/resources/images/common/icon_blet.png); vertical-align: middle; margin-right: 5px;'></span>용암마을아파트(110동 앞 지하주차장)"+
+			    "</div>"+
+			 "</div>"+
+			 "<div style='position: relative; padding-top: 5px; display:inline-block'>"+
+			 	
+			    "<div style='display:inline-block; margin-left:5px; vertical-align: top;'>"+
+			    	"<span style='font-size: 12px; margin-left:2px; margin-bottom:2px; display:block;'>------------------------------------------------"+
+			    	"<span style='font-size: 12px; color:#888; margin-left:2px; margin-bottom:2px; display:block;'>-----------------------------------</span>"+
+			    	"<span style='font-size: 12px; margin-left:2px;'><a href='http://localhost:9090/OSS/list.jsp?title="+encodeURI('용암마을아파트(110동 앞 지하주차장)')+"' target='blank'>커뮤니티 이동</a></span>"+
+			    "</div>"+
+			 "</div>",
 	       	        lonlat: new Tmap.LonLat(127.1177065,36.802492).transform("EPSG:4326", "EPSG:3857")
 	       		},
 	       		{
-	       			title:'직산코아루아파트(지하주차장)',
+	       			title:"<div style=' position: relative; border-bottom: 1px solid #dcdcdc; line-height: 18px; padding: 0 35px 2px 0;'>"+
+				    "<div style='font-size: 12px; line-height: 15px;'>"+
+			        "<span style='display: inline-block; width: 14px; height: 14px; background-image: url(/resources/images/common/icon_blet.png); vertical-align: middle; margin-right: 5px;'></span>직산코아루아파트(지하주차장)"+
+			    "</div>"+
+			 "</div>"+
+			 "<div style='position: relative; padding-top: 5px; display:inline-block'>"+
+			 	
+			    "<div style='display:inline-block; margin-left:5px; vertical-align: top;'>"+
+			    	"<span style='font-size: 12px; margin-left:2px; margin-bottom:2px; display:block;'>------------------------------------------------"+
+			    	"<span style='font-size: 12px; color:#888; margin-left:2px; margin-bottom:2px; display:block;'>-----------------------------------</span>"+
+			    	"<span style='font-size: 12px; margin-left:2px;'><a href='http://localhost:9090/OSS/list.jsp?title="+encodeURI('직산코아루아파트(지하주차장)')+"' target='blank'>커뮤니티 이동</a></span>"+
+			    "</div>"+
+			 "</div>",
 	       	        lonlat: new Tmap.LonLat(127.153011,36.877958).transform("EPSG:4326", "EPSG:3857")
 	       		},
 	       		{
-	       			title:'직산세광엔리치빌1차2단지아파트(전동 지하주차장)',
+	       			title:"<div style=' position: relative; border-bottom: 1px solid #dcdcdc; line-height: 18px; padding: 0 35px 2px 0;'>"+
+				    "<div style='font-size: 12px; line-height: 15px;'>"+
+			        "<span style='display: inline-block; width: 14px; height: 14px; background-image: url(/resources/images/common/icon_blet.png); vertical-align: middle; margin-right: 5px;'></span>직산세광엔리치빌1차2단지아파트(전동 지하주차장)"+
+			    "</div>"+
+			 "</div>"+
+			 "<div style='position: relative; padding-top: 5px; display:inline-block'>"+
+			 	
+			    "<div style='display:inline-block; margin-left:5px; vertical-align: top;'>"+
+			    	"<span style='font-size: 12px; margin-left:2px; margin-bottom:2px; display:block;'>------------------------------------------------"+
+			    	"<span style='font-size: 12px; color:#888; margin-left:2px; margin-bottom:2px; display:block;'>-----------------------------------</span>"+
+			    	"<span style='font-size: 12px; margin-left:2px;'><a href='http://localhost:9090/OSS/list.jsp?title="+encodeURI('직산세광엔리치빌1차2단지아파트(전동 지하주차장)')+"' target='blank'>커뮤니티 이동</a></span>"+
+			    "</div>"+
+			 "</div>",
 	       	        lonlat: new Tmap.LonLat(127.150714,36.880231).transform("EPSG:4326", "EPSG:3857")
 	       		},
 	       		{
-	       			title:'직산세광엔리치빌1차1단지아파트(전동 지하주차장)',
+	       			title:"<div style=' position: relative; border-bottom: 1px solid #dcdcdc; line-height: 18px; padding: 0 35px 2px 0;'>"+
+				    "<div style='font-size: 12px; line-height: 15px;'>"+
+			        "<span style='display: inline-block; width: 14px; height: 14px; background-image: url(/resources/images/common/icon_blet.png); vertical-align: middle; margin-right: 5px;'></span>직산세광엔리치빌1차1단지아파트(전동 지하주차장)"+
+			    "</div>"+
+			 "</div>"+
+			 "<div style='position: relative; padding-top: 5px; display:inline-block'>"+
+			 	
+			    "<div style='display:inline-block; margin-left:5px; vertical-align: top;'>"+
+			    	"<span style='font-size: 12px; margin-left:2px; margin-bottom:2px; display:block;'>------------------------------------------------"+
+			    	"<span style='font-size: 12px; color:#888; margin-left:2px; margin-bottom:2px; display:block;'>-----------------------------------</span>"+
+			    	"<span style='font-size: 12px; margin-left:2px;'><a href='http://localhost:9090/OSS/list.jsp?title="+encodeURI('직산세광엔리치빌1차1단지아파트(전동 지하주차장)')+"' target='blank'>커뮤니티 이동</a></span>"+
+			    "</div>"+
+			 "</div>",
 	       	        lonlat: new Tmap.LonLat(127.152581,36.879311).transform("EPSG:4326", "EPSG:3857")
 	       		},
 	       		{
-	       			title:'직산부영아파트(전 지하주차장)',
+	       			title:"<div style=' position: relative; border-bottom: 1px solid #dcdcdc; line-height: 18px; padding: 0 35px 2px 0;'>"+
+				    "<div style='font-size: 12px; line-height: 15px;'>"+
+			        "<span style='display: inline-block; width: 14px; height: 14px; background-image: url(/resources/images/common/icon_blet.png); vertical-align: middle; margin-right: 5px;'></span>직산부영아파트(전 지하주차장)"+
+			    "</div>"+
+			 "</div>"+
+			 "<div style='position: relative; padding-top: 5px; display:inline-block'>"+
+			 	
+			    "<div style='display:inline-block; margin-left:5px; vertical-align: top;'>"+
+			    	"<span style='font-size: 12px; margin-left:2px; margin-bottom:2px; display:block;'>------------------------------------------------"+
+			    	"<span style='font-size: 12px; color:#888; margin-left:2px; margin-bottom:2px; display:block;'>-----------------------------------</span>"+
+			    	"<span style='font-size: 12px; margin-left:2px;'><a href='http://localhost:9090/OSS/list.jsp?title="+encodeURI('직산부영아파트(전 지하주차장)')+"' target='blank'>커뮤니티 이동</a></span>"+
+			    "</div>"+
+			 "</div>",
 	       	        lonlat: new Tmap.LonLat(127.137981,36.8939117).transform("EPSG:4326", "EPSG:3857")
 	       		},
 	       		{
-	       			title:'신동아파밀리에아파트(지하주차장)',
+	       			title:"<div style=' position: relative; border-bottom: 1px solid #dcdcdc; line-height: 18px; padding: 0 35px 2px 0;'>"+
+				    "<div style='font-size: 12px; line-height: 15px;'>"+
+			        "<span style='display: inline-block; width: 14px; height: 14px; background-image: url(/resources/images/common/icon_blet.png); vertical-align: middle; margin-right: 5px;'></span>신동아파밀리에아파트(지하주차장)"+
+			    "</div>"+
+			 "</div>"+
+			 "<div style='position: relative; padding-top: 5px; display:inline-block'>"+
+			 	
+			    "<div style='display:inline-block; margin-left:5px; vertical-align: top;'>"+
+			    	"<span style='font-size: 12px; margin-left:2px; margin-bottom:2px; display:block;'>------------------------------------------------"+
+			    	"<span style='font-size: 12px; color:#888; margin-left:2px; margin-bottom:2px; display:block;'>-----------------------------------</span>"+
+			    	"<span style='font-size: 12px; margin-left:2px;'><a href='http://localhost:9090/OSS/list.jsp?title="+encodeURI('신동아파밀리에아파트(지하주차장)')+"' target='blank'>커뮤니티 이동</a></span>"+
+			    "</div>"+
+			 "</div>",
 	       	        lonlat: new Tmap.LonLat(127.144439,36.807542).transform("EPSG:4326", "EPSG:3857")
 	       		},
 	       		{
-	       			title:'천안축구센터(본관동 지하주차장)',
+	       			title:"<div style=' position: relative; border-bottom: 1px solid #dcdcdc; line-height: 18px; padding: 0 35px 2px 0;'>"+
+				    "<div style='font-size: 12px; line-height: 15px;'>"+
+			        "<span style='display: inline-block; width: 14px; height: 14px; background-image: url(/resources/images/common/icon_blet.png); vertical-align: middle; margin-right: 5px;'></span>천안축구센터(본관동 지하주차장)"+
+			    "</div>"+
+			 "</div>"+
+			 "<div style='position: relative; padding-top: 5px; display:inline-block'>"+
+			 	
+			    "<div style='display:inline-block; margin-left:5px; vertical-align: top;'>"+
+			    	"<span style='font-size: 12px; margin-left:2px; margin-bottom:2px; display:block;'>------------------------------------------------"+
+			    	"<span style='font-size: 12px; color:#888; margin-left:2px; margin-bottom:2px; display:block;'>-----------------------------------</span>"+
+			    	"<span style='font-size: 12px; margin-left:2px;'><a href='http://localhost:9090/OSS/list.jsp?title="+encodeURI('천안축구센터(본관동 지하주차장)')+"' target='blank'>커뮤니티 이동</a></span>"+
+			    "</div>"+
+			 "</div>",
 	       	        lonlat: new Tmap.LonLat(127.145911,36.821442).transform("EPSG:4326", "EPSG:3857")
 	       		},
 	       		{
-	       			title:'현대6차1단지아파트(지하주차장)',
+	       			title:"<div style=' position: relative; border-bottom: 1px solid #dcdcdc; line-height: 18px; padding: 0 35px 2px 0;'>"+
+				    "<div style='font-size: 12px; line-height: 15px;'>"+
+			        "<span style='display: inline-block; width: 14px; height: 14px; background-image: url(/resources/images/common/icon_blet.png); vertical-align: middle; margin-right: 5px;'></span>현대6차1단지아파트(지하주차장)"+
+			    "</div>"+
+			 "</div>"+
+			 "<div style='position: relative; padding-top: 5px; display:inline-block'>"+
+			 	
+			    "<div style='display:inline-block; margin-left:5px; vertical-align: top;'>"+
+			    	"<span style='font-size: 12px; margin-left:2px; margin-bottom:2px; display:block;'>------------------------------------------------"+
+			    	"<span style='font-size: 12px; color:#888; margin-left:2px; margin-bottom:2px; display:block;'>-----------------------------------</span>"+
+			    	"<span style='font-size: 12px; margin-left:2px;'><a href='http://localhost:9090/OSS/list.jsp?title="+encodeURI('현대6차1단지아파트(지하주차장)')+"' target='blank'>커뮤니티 이동</a></span>"+
+			    "</div>"+
+			 "</div>",
 	       	        lonlat: new Tmap.LonLat(127.121942,36.791344).transform("EPSG:4326", "EPSG:3857")
 	       		},
 	       		{
-	       			title:'현대6차2단지아파트(지하주차장)',
+	       			title:"<div style=' position: relative; border-bottom: 1px solid #dcdcdc; line-height: 18px; padding: 0 35px 2px 0;'>"+
+				    "<div style='font-size: 12px; line-height: 15px;'>"+
+			        "<span style='display: inline-block; width: 14px; height: 14px; background-image: url(/resources/images/common/icon_blet.png); vertical-align: middle; margin-right: 5px;'></span>현대6차2단지아파트(지하주차장)"+
+			    "</div>"+
+			 "</div>"+
+			 "<div style='position: relative; padding-top: 5px; display:inline-block'>"+
+			 	
+			    "<div style='display:inline-block; margin-left:5px; vertical-align: top;'>"+
+			    	"<span style='font-size: 12px; margin-left:2px; margin-bottom:2px; display:block;'>------------------------------------------------"+
+			    	"<span style='font-size: 12px; color:#888; margin-left:2px; margin-bottom:2px; display:block;'>-----------------------------------</span>"+
+			    	"<span style='font-size: 12px; margin-left:2px;'><a href='http://localhost:9090/OSS/list.jsp?title="+encodeURI('현대6차2단지아파트(지하주차장)')+"' target='blank'>커뮤니티 이동</a></span>"+
+			    "</div>"+
+			 "</div>",
 	       	        lonlat: new Tmap.LonLat(127.124028,36.791794).transform("EPSG:4326", "EPSG:3857")
 	       		},
 	       		{
-	       			title:'계룡푸른마을아파트(지하주차장)',
+	       			title:"<div style=' position: relative; border-bottom: 1px solid #dcdcdc; line-height: 18px; padding: 0 35px 2px 0;'>"+
+				    "<div style='font-size: 12px; line-height: 15px;'>"+
+			        "<span style='display: inline-block; width: 14px; height: 14px; background-image: url(/resources/images/common/icon_blet.png); vertical-align: middle; margin-right: 5px;'></span>계룡푸른마을아파트(지하주차장)"+
+			    "</div>"+
+			 "</div>"+
+			 "<div style='position: relative; padding-top: 5px; display:inline-block'>"+
+			 	
+			    "<div style='display:inline-block; margin-left:5px; vertical-align: top;'>"+
+			    	"<span style='font-size: 12px; margin-left:2px; margin-bottom:2px; display:block;'>------------------------------------------------"+
+			    	"<span style='font-size: 12px; color:#888; margin-left:2px; margin-bottom:2px; display:block;'>-----------------------------------</span>"+
+			    	"<span style='font-size: 12px; margin-left:2px;'><a href='http://localhost:9090/OSS/list.jsp?title="+encodeURI('계룡푸른마을아파트(지하주차장)')+"' target='blank'>커뮤니티 이동</a></span>"+
+			    "</div>"+
+			 "</div>",
 	       	        lonlat: new Tmap.LonLat(127.123719,36.793908).transform("EPSG:4326", "EPSG:3857")
 	       		},
 	       		{
-	       			title:'선경해누리아파트(지하주차장)',
+	       			title:"<div style=' position: relative; border-bottom: 1px solid #dcdcdc; line-height: 18px; padding: 0 35px 2px 0;'>"+
+				    "<div style='font-size: 12px; line-height: 15px;'>"+
+			        "<span style='display: inline-block; width: 14px; height: 14px; background-image: url(/resources/images/common/icon_blet.png); vertical-align: middle; margin-right: 5px;'></span>선경해누리아파트(지하주차장)"+
+			    "</div>"+
+			 "</div>"+
+			 "<div style='position: relative; padding-top: 5px; display:inline-block'>"+
+			 	
+			    "<div style='display:inline-block; margin-left:5px; vertical-align: top;'>"+
+			    	"<span style='font-size: 12px; margin-left:2px; margin-bottom:2px; display:block;'>------------------------------------------------"+
+			    	"<span style='font-size: 12px; color:#888; margin-left:2px; margin-bottom:2px; display:block;'>-----------------------------------</span>"+
+			    	"<span style='font-size: 12px; margin-left:2px;'><a href='http://localhost:9090/OSS/list.jsp?title="+encodeURI('선경해누리아파트(지하주차장)')+"' target='blank'>커뮤니티 이동</a></span>"+
+			    "</div>"+
+			 "</div>",
 	       	        lonlat: new Tmap.LonLat(127.1246443,36.792414).transform("EPSG:4326", "EPSG:3857")
 	       		},
 	       		{
-	       			title:'쌍용현대3차아파트(지하주차장)',
+	       			title:"<div style=' position: relative; border-bottom: 1px solid #dcdcdc; line-height: 18px; padding: 0 35px 2px 0;'>"+
+				    "<div style='font-size: 12px; line-height: 15px;'>"+
+			        "<span style='display: inline-block; width: 14px; height: 14px; background-image: url(/resources/images/common/icon_blet.png); vertical-align: middle; margin-right: 5px;'></span>쌍용현대3차아파트(지하주차장)"+
+			    "</div>"+
+			 "</div>"+
+			 "<div style='position: relative; padding-top: 5px; display:inline-block'>"+
+			 	
+			    "<div style='display:inline-block; margin-left:5px; vertical-align: top;'>"+
+			    	"<span style='font-size: 12px; margin-left:2px; margin-bottom:2px; display:block;'>------------------------------------------------"+
+			    	"<span style='font-size: 12px; color:#888; margin-left:2px; margin-bottom:2px; display:block;'>-----------------------------------</span>"+
+			    	"<span style='font-size: 12px; margin-left:2px;'><a href='http://localhost:9090/OSS/list.jsp?title="+encodeURI('쌍용현대3차아파트(지하주차장)')+"' target='blank'>커뮤니티 이동</a></span>"+
+			    "</div>"+
+			 "</div>",
 	       	        lonlat: new Tmap.LonLat(127.1303965,36.795964).transform("EPSG:4326", "EPSG:3857")
 	       		},
 	       		{
-	       			title:'쌍용동일하이빌아파트(지하주차장)',
+	       			title:"<div style=' position: relative; border-bottom: 1px solid #dcdcdc; line-height: 18px; padding: 0 35px 2px 0;'>"+
+				    "<div style='font-size: 12px; line-height: 15px;'>"+
+			        "<span style='display: inline-block; width: 14px; height: 14px; background-image: url(/resources/images/common/icon_blet.png); vertical-align: middle; margin-right: 5px;'></span>쌍용동일하이빌아파트(지하주차장)"+
+			    "</div>"+
+			 "</div>"+
+			 "<div style='position: relative; padding-top: 5px; display:inline-block'>"+
+			 	
+			    "<div style='display:inline-block; margin-left:5px; vertical-align: top;'>"+
+			    	"<span style='font-size: 12px; margin-left:2px; margin-bottom:2px; display:block;'>------------------------------------------------"+
+			    	"<span style='font-size: 12px; color:#888; margin-left:2px; margin-bottom:2px; display:block;'>-----------------------------------</span>"+
+			    	"<span style='font-size: 12px; margin-left:2px;'><a href='http://localhost:9090/OSS/list.jsp?title="+encodeURI('쌍용동일하이빌아파트(지하주차장)')+"' target='blank'>커뮤니티 이동</a></span>"+
+			    "</div>"+
+			 "</div>",
 	       	        lonlat: new Tmap.LonLat(127.114369,36.786133).transform("EPSG:4326", "EPSG:3857")
 	       		},
 	       		{
-	       			title:'쌍용역푸르지오아파트(지하주차장)',
+	       			title:"<div style=' position: relative; border-bottom: 1px solid #dcdcdc; line-height: 18px; padding: 0 35px 2px 0;'>"+
+				    "<div style='font-size: 12px; line-height: 15px;'>"+
+			        "<span style='display: inline-block; width: 14px; height: 14px; background-image: url(/resources/images/common/icon_blet.png); vertical-align: middle; margin-right: 5px;'></span>쌍용역푸르지오아파트(지하주차장)"+
+			    "</div>"+
+			 "</div>"+
+			 "<div style='position: relative; padding-top: 5px; display:inline-block'>"+
+			 	
+			    "<div style='display:inline-block; margin-left:5px; vertical-align: top;'>"+
+			    	"<span style='font-size: 12px; margin-left:2px; margin-bottom:2px; display:block;'>------------------------------------------------"+
+			    	"<span style='font-size: 12px; color:#888; margin-left:2px; margin-bottom:2px; display:block;'>-----------------------------------</span>"+
+			    	"<span style='font-size: 12px; margin-left:2px;'><a href='http://localhost:9090/OSS/list.jsp?title="+encodeURI('쌍용역푸르지오아파트(지하주차장)')+"' target='blank'>커뮤니티 이동</a></span>"+
+			    "</div>"+
+			 "</div>",
 	       	        lonlat: new Tmap.LonLat(127.118725,36.790908).transform("EPSG:4326", "EPSG:3857")
 	       		},
 	       		{
-	       			title:'백석계룡리슈빌아파트(지하주차장)',
+	       			title:"<div style=' position: relative; border-bottom: 1px solid #dcdcdc; line-height: 18px; padding: 0 35px 2px 0;'>"+
+				    "<div style='font-size: 12px; line-height: 15px;'>"+
+			        "<span style='display: inline-block; width: 14px; height: 14px; background-image: url(/resources/images/common/icon_blet.png); vertical-align: middle; margin-right: 5px;'></span>백석계룡리슈빌아파트(지하주차장)"+
+			    "</div>"+
+			 "</div>"+
+			 "<div style='position: relative; padding-top: 5px; display:inline-block'>"+
+			 	
+			    "<div style='display:inline-block; margin-left:5px; vertical-align: top;'>"+
+			    	"<span style='font-size: 12px; margin-left:2px; margin-bottom:2px; display:block;'>------------------------------------------------"+
+			    	"<span style='font-size: 12px; color:#888; margin-left:2px; margin-bottom:2px; display:block;'>-----------------------------------</span>"+
+			    	"<span style='font-size: 12px; margin-left:2px;'><a href='http://localhost:9090/OSS/list.jsp?title="+encodeURI('백석계룡리슈빌아파트(지하주차장)')+"' target='blank'>커뮤니티 이동</a></span>"+
+			    "</div>"+
+			 "</div>",
 	       	        lonlat: new Tmap.LonLat(127.122353,36.832686).transform("EPSG:4326", "EPSG:3857")
 	       		},
 	       		{
-	       			title:'백석2차아이파크아파트(지하주차장)',
+	       			title:"<div style=' position: relative; border-bottom: 1px solid #dcdcdc; line-height: 18px; padding: 0 35px 2px 0;'>"+
+				    "<div style='font-size: 12px; line-height: 15px;'>"+
+			        "<span style='display: inline-block; width: 14px; height: 14px; background-image: url(/resources/images/common/icon_blet.png); vertical-align: middle; margin-right: 5px;'></span>백석2차아이파크아파트(지하주차장)"+
+			    "</div>"+
+			 "</div>"+
+			 "<div style='position: relative; padding-top: 5px; display:inline-block'>"+
+			 	
+			    "<div style='display:inline-block; margin-left:5px; vertical-align: top;'>"+
+			    	"<span style='font-size: 12px; margin-left:2px; margin-bottom:2px; display:block;'>------------------------------------------------"+
+			    	"<span style='font-size: 12px; color:#888; margin-left:2px; margin-bottom:2px; display:block;'>-----------------------------------</span>"+
+			    	"<span style='font-size: 12px; margin-left:2px;'><a href='http://localhost:9090/OSS/list.jsp?title="+encodeURI('백석2차아이파크아파트(지하주차장)')+"' target='blank'>커뮤니티 이동</a></span>"+
+			    "</div>"+
+			 "</div>",
 	       	        lonlat: new Tmap.LonLat(127.121447,36.825206).transform("EPSG:4326", "EPSG:3857")
 	       		},
 	       		{
-	       			title:'부경파크빌아파트(지하주차장)',
+	       			title:"<div style=' position: relative; border-bottom: 1px solid #dcdcdc; line-height: 18px; padding: 0 35px 2px 0;'>"+
+				    "<div style='font-size: 12px; line-height: 15px;'>"+
+			        "<span style='display: inline-block; width: 14px; height: 14px; background-image: url(/resources/images/common/icon_blet.png); vertical-align: middle; margin-right: 5px;'></span>부경파크빌아파트(지하주차장)"+
+			    "</div>"+
+			 "</div>"+
+			 "<div style='position: relative; padding-top: 5px; display:inline-block'>"+
+			 	
+			    "<div style='display:inline-block; margin-left:5px; vertical-align: top;'>"+
+			    	"<span style='font-size: 12px; margin-left:2px; margin-bottom:2px; display:block;'>------------------------------------------------"+
+			    	"<span style='font-size: 12px; color:#888; margin-left:2px; margin-bottom:2px; display:block;'>-----------------------------------</span>"+
+			    	"<span style='font-size: 12px; margin-left:2px;'><a href='http://localhost:9090/OSS/list.jsp?title="+encodeURI('부경파크빌아파트(지하주차장)')+"' target='blank'>커뮤니티 이동</a></span>"+
+			    "</div>"+
+			 "</div>",
 	       	        lonlat: new Tmap.LonLat(127.128207,36.827372).transform("EPSG:4326", "EPSG:3857")
 	       		},
 	       		{
-	       			title:'신세계아파트(지하주차장)',
+	       			title:"<div style=' position: relative; border-bottom: 1px solid #dcdcdc; line-height: 18px; padding: 0 35px 2px 0;'>"+
+				    "<div style='font-size: 12px; line-height: 15px;'>"+
+			        "<span style='display: inline-block; width: 14px; height: 14px; background-image: url(/resources/images/common/icon_blet.png); vertical-align: middle; margin-right: 5px;'></span>신세계아파트(지하주차장)"+
+			    "</div>"+
+			 "</div>"+
+			 "<div style='position: relative; padding-top: 5px; display:inline-block'>"+
+			 	
+			    "<div style='display:inline-block; margin-left:5px; vertical-align: top;'>"+
+			    	"<span style='font-size: 12px; margin-left:2px; margin-bottom:2px; display:block;'>------------------------------------------------"+
+			    	"<span style='font-size: 12px; color:#888; margin-left:2px; margin-bottom:2px; display:block;'>-----------------------------------</span>"+
+			    	"<span style='font-size: 12px; margin-left:2px;'><a href='http://localhost:9090/OSS/list.jsp?title="+encodeURI('신세계아파트(지하주차장)')+"' target='blank'>커뮤니티 이동</a></span>"+
+			    "</div>"+
+			 "</div>",
 	       	        lonlat: new Tmap.LonLat(127.305456,36.767391).transform("EPSG:4326", "EPSG:3857")
 	       		},
 	       		{
-	       			title:'아우내아파트(지하주차장)',
+	       			title:"<div style=' position: relative; border-bottom: 1px solid #dcdcdc; line-height: 18px; padding: 0 35px 2px 0;'>"+
+				    "<div style='font-size: 12px; line-height: 15px;'>"+
+			        "<span style='display: inline-block; width: 14px; height: 14px; background-image: url(/resources/images/common/icon_blet.png); vertical-align: middle; margin-right: 5px;'></span>아우내아파트(지하주차장)"+
+			    "</div>"+
+			 "</div>"+
+			 "<div style='position: relative; padding-top: 5px; display:inline-block'>"+
+			 	
+			    "<div style='display:inline-block; margin-left:5px; vertical-align: top;'>"+
+			    	"<span style='font-size: 12px; margin-left:2px; margin-bottom:2px; display:block;'>------------------------------------------------"+
+			    	"<span style='font-size: 12px; color:#888; margin-left:2px; margin-bottom:2px; display:block;'>-----------------------------------</span>"+
+			    	"<span style='font-size: 12px; margin-left:2px;'><a href='http://localhost:9090/OSS/list.jsp?title="+encodeURI('아우내아파트(지하주차장)')+"' target='blank'>커뮤니티 이동</a></span>"+
+			    "</div>"+
+			 "</div>",
 	       	        lonlat: new Tmap.LonLat(127.295245,36.760879).transform("EPSG:4326", "EPSG:3857")
 	       		},
 	       		{
-	       			title:'레이크팰리스 아파트(지하2층 주차장)',
+	       			title:"<div style=' position: relative; border-bottom: 1px solid #dcdcdc; line-height: 18px; padding: 0 35px 2px 0;'>"+
+				    "<div style='font-size: 12px; line-height: 15px;'>"+
+			        "<span style='display: inline-block; width: 14px; height: 14px; background-image: url(/resources/images/common/icon_blet.png); vertical-align: middle; margin-right: 5px;'></span>레이크팰리스 아파트(지하2층 주차장)"+
+			    "</div>"+
+			 "</div>"+
+			 "<div style='position: relative; padding-top: 5px; display:inline-block'>"+
+			 	
+			    "<div style='display:inline-block; margin-left:5px; vertical-align: top;'>"+
+			    	"<span style='font-size: 12px; margin-left:2px; margin-bottom:2px; display:block;'>------------------------------------------------"+
+			    	"<span style='font-size: 12px; color:#888; margin-left:2px; margin-bottom:2px; display:block;'>-----------------------------------</span>"+
+			    	"<span style='font-size: 12px; margin-left:2px;'><a href='http://localhost:9090/OSS/list.jsp?title="+encodeURI('레이크팰리스 아파트(지하2층 주차장)')+"' target='blank'>커뮤니티 이동</a></span>"+
+			    "</div>"+
+			 "</div>",
 	       	        lonlat: new Tmap.LonLat(127.316409,36.764516).transform("EPSG:4326", "EPSG:3857")
 	       		},
 	       		{
-	       			title:'북면 중앙아파트(지하주차장)',
+	       			title:"<div style=' position: relative; border-bottom: 1px solid #dcdcdc; line-height: 18px; padding: 0 35px 2px 0;'>"+
+				    "<div style='font-size: 12px; line-height: 15px;'>"+
+			        "<span style='display: inline-block; width: 14px; height: 14px; background-image: url(/resources/images/common/icon_blet.png); vertical-align: middle; margin-right: 5px;'></span>북면 중앙아파트(지하주차장)"+
+			    "</div>"+
+			 "</div>"+
+			 "<div style='position: relative; padding-top: 5px; display:inline-block'>"+
+			 	
+			    "<div style='display:inline-block; margin-left:5px; vertical-align: top;'>"+
+			    	"<span style='font-size: 12px; margin-left:2px; margin-bottom:2px; display:block;'>------------------------------------------------"+
+			    	"<span style='font-size: 12px; color:#888; margin-left:2px; margin-bottom:2px; display:block;'>-----------------------------------</span>"+
+			    	"<span style='font-size: 12px; margin-left:2px;'><a href='http://localhost:9090/OSS/list.jsp?title="+encodeURI('북면 중앙아파트(지하주차장)')+"' target='blank'>커뮤니티 이동</a></span>"+
+			    "</div>"+
+			 "</div>",
 	       	        lonlat: new Tmap.LonLat(127.269026,36.770101).transform("EPSG:4326", "EPSG:3857")
 	       		},
 	       		{
-	       			title:'천안예술의전당(지하2층주차장)',
+	       			title:"<div style=' position: relative; border-bottom: 1px solid #dcdcdc; line-height: 18px; padding: 0 35px 2px 0;'>"+
+				    "<div style='font-size: 12px; line-height: 15px;'>"+
+			        "<span style='display: inline-block; width: 14px; height: 14px; background-image: url(/resources/images/common/icon_blet.png); vertical-align: middle; margin-right: 5px;'></span>천안예술의전당(지하2층주차장)"+
+			    "</div>"+
+			 "</div>"+
+			 "<div style='position: relative; padding-top: 5px; display:inline-block'>"+
+			 	
+			    "<div style='display:inline-block; margin-left:5px; vertical-align: top;'>"+
+			    	"<span style='font-size: 12px; margin-left:2px; margin-bottom:2px; display:block;'>------------------------------------------------"+
+			    	"<span style='font-size: 12px; color:#888; margin-left:2px; margin-bottom:2px; display:block;'>-----------------------------------</span>"+
+			    	"<span style='font-size: 12px; margin-left:2px;'><a href='http://localhost:9090/OSS/list.jsp?title="+encodeURI('천안예술의전당(지하2층주차장)')+"' target='blank'>커뮤니티 이동</a></span>"+
+			    "</div>"+
+			 "</div>",
 	       	        lonlat: new Tmap.LonLat(127.2258439,36.756358).transform("EPSG:4326", "EPSG:3857")
 	       		},
 	       		{
-	       			title:'용곡마을세광2차엔리치타워아파트(지하주차장)',
+	       			title:"<div style=' position: relative; border-bottom: 1px solid #dcdcdc; line-height: 18px; padding: 0 35px 2px 0;'>"+
+				    "<div style='font-size: 12px; line-height: 15px;'>"+
+			        "<span style='display: inline-block; width: 14px; height: 14px; background-image: url(/resources/images/common/icon_blet.png); vertical-align: middle; margin-right: 5px;'></span>용곡마을세광2차엔리치타워아파트(지하주차장)"+
+			    "</div>"+
+			 "</div>"+
+			 "<div style='position: relative; padding-top: 5px; display:inline-block'>"+
+			 	
+			    "<div style='display:inline-block; margin-left:5px; vertical-align: top;'>"+
+			    	"<span style='font-size: 12px; margin-left:2px; margin-bottom:2px; display:block;'>------------------------------------------------"+
+			    	"<span style='font-size: 12px; color:#888; margin-left:2px; margin-bottom:2px; display:block;'>-----------------------------------</span>"+
+			    	"<span style='font-size: 12px; margin-left:2px;'><a href='http://localhost:9090/OSS/list.jsp?title="+encodeURI('용곡마을세광2차엔리치타워아파트(지하주차장)')+"' target='blank'>커뮤니티 이동</a></span>"+
+			    "</div>"+
+			 "</div>",
 	       	        lonlat: new Tmap.LonLat(127.138106,36.781124).transform("EPSG:4326", "EPSG:3857")
 	       		},
 	       		{
-	       			title:'고운여의주 아파트(지하주차장)',
+	       			title:"<div style=' position: relative; border-bottom: 1px solid #dcdcdc; line-height: 18px; padding: 0 35px 2px 0;'>"+
+				    "<div style='font-size: 12px; line-height: 15px;'>"+
+			        "<span style='display: inline-block; width: 14px; height: 14px; background-image: url(/resources/images/common/icon_blet.png); vertical-align: middle; margin-right: 5px;'></span>고운여의주 아파트(지하주차장)"+
+			    "</div>"+
+			 "</div>"+
+			 "<div style='position: relative; padding-top: 5px; display:inline-block'>"+
+			 	
+			    "<div style='display:inline-block; margin-left:5px; vertical-align: top;'>"+
+			    	"<span style='font-size: 12px; margin-left:2px; margin-bottom:2px; display:block;'>------------------------------------------------"+
+			    	"<span style='font-size: 12px; color:#888; margin-left:2px; margin-bottom:2px; display:block;'>-----------------------------------</span>"+
+			    	"<span style='font-size: 12px; margin-left:2px;'><a href='http://localhost:9090/OSS/list.jsp?title="+encodeURI('고운여의주 아파트(지하주차장)')+"' target='blank'>커뮤니티 이동</a></span>"+
+			    "</div>"+
+			 "</div>",
 	       	        lonlat: new Tmap.LonLat(127.177274,36.830204).transform("EPSG:4326", "EPSG:3857")
 	       		},
 	       		{
-	       			title:'불당리더힐스아파트(지하2층 주차장)',
+	       			title:"<div style=' position: relative; border-bottom: 1px solid #dcdcdc; line-height: 18px; padding: 0 35px 2px 0;'>"+
+				    "<div style='font-size: 12px; line-height: 15px;'>"+
+			        "<span style='display: inline-block; width: 14px; height: 14px; background-image: url(/resources/images/common/icon_blet.png); vertical-align: middle; margin-right: 5px;'></span>불당리더힐스아파트(지하2층 주차장)"+
+			    "</div>"+
+			 "</div>"+
+			 "<div style='position: relative; padding-top: 5px; display:inline-block'>"+
+			 	
+			    "<div style='display:inline-block; margin-left:5px; vertical-align: top;'>"+
+			    	"<span style='font-size: 12px; margin-left:2px; margin-bottom:2px; display:block;'>------------------------------------------------"+
+			    	"<span style='font-size: 12px; color:#888; margin-left:2px; margin-bottom:2px; display:block;'>-----------------------------------</span>"+
+			    	"<span style='font-size: 12px; margin-left:2px;'><a href='http://localhost:9090/OSS/list.jsp?title="+encodeURI('불당리더힐스아파트(지하2층 주차장)')+"' target='blank'>커뮤니티 이동</a></span>"+
+			    "</div>"+
+			 "</div>",
 	       	        lonlat: new Tmap.LonLat(127.103508,36.822498).transform("EPSG:4326", "EPSG:3857")
 	       		},
 	       		{
-	       			title:'불당 호반베르디움센트로포레(1-B 지하주차장)',
+	       			title:"<div style=' position: relative; border-bottom: 1px solid #dcdcdc; line-height: 18px; padding: 0 35px 2px 0;'>"+
+				    "<div style='font-size: 12px; line-height: 15px;'>"+
+			        "<span style='display: inline-block; width: 14px; height: 14px; background-image: url(/resources/images/common/icon_blet.png); vertical-align: middle; margin-right: 5px;'></span>불당 호반베르디움센트로포레(1-B 지하주차장)"+
+			    "</div>"+
+			 "</div>"+
+			 "<div style='position: relative; padding-top: 5px; display:inline-block'>"+
+			 	
+			    "<div style='display:inline-block; margin-left:5px; vertical-align: top;'>"+
+			    	"<span style='font-size: 12px; margin-left:2px; margin-bottom:2px; display:block;'>------------------------------------------------"+
+			    	"<span style='font-size: 12px; color:#888; margin-left:2px; margin-bottom:2px; display:block;'>-----------------------------------</span>"+
+			    	"<span style='font-size: 12px; margin-left:2px;'><a href='http://localhost:9090/OSS/list.jsp?title="+encodeURI('불당 호반베르디움센트로포레(1-B 지하주차장)')+"' target='blank'>커뮤니티 이동</a></span>"+
+			    "</div>"+
+			 "</div>",
 	       	        lonlat: new Tmap.LonLat(127.100864,36.818558).transform("EPSG:4326", "EPSG:3857")
 	       		},
 	       		{
-	       			title:'불당 중흥S클래스 프라디움 레이크(지하주차장)',
+	       			title:"<div style=' position: relative; border-bottom: 1px solid #dcdcdc; line-height: 18px; padding: 0 35px 2px 0;'>"+
+				    "<div style='font-size: 12px; line-height: 15px;'>"+
+			        "<span style='display: inline-block; width: 14px; height: 14px; background-image: url(/resources/images/common/icon_blet.png); vertical-align: middle; margin-right: 5px;'></span>불당 중흥S클래스 프라디움 레이크(지하주차장)"+
+			    "</div>"+
+			 "</div>"+
+			 "<div style='position: relative; padding-top: 5px; display:inline-block'>"+
+			 	
+			    "<div style='display:inline-block; margin-left:5px; vertical-align: top;'>"+
+			    	"<span style='font-size: 12px; margin-left:2px; margin-bottom:2px; display:block;'>------------------------------------------------"+
+			    	"<span style='font-size: 12px; color:#888; margin-left:2px; margin-bottom:2px; display:block;'>-----------------------------------</span>"+
+			    	"<span style='font-size: 12px; margin-left:2px;'><a href='http://localhost:9090/OSS/list.jsp?title="+encodeURI('불당 중흥S클래스 프라디움 레이크(지하주차장)')+"' target='blank'>커뮤니티 이동</a></span>"+
+			    "</div>"+
+			 "</div>",
 	       	        lonlat: new Tmap.LonLat(127.158631,36.786889).transform("EPSG:4326", "EPSG:3857")
 	       		},
-	       		{
-	       			title:'불당 호반써밋플레이스(지하2층 주차장)',
+			{
+	       			title:"<div style=' position: relative; border-bottom: 1px solid #dcdcdc; line-height: 18px; padding: 0 35px 2px 0;'>"+
+				    "<div style='font-size: 12px; line-height: 15px;'>"+
+			        "<span style='display: inline-block; width: 14px; height: 14px; background-image: url(/resources/images/common/icon_blet.png); vertical-align: middle; margin-right: 5px;'></span>불당 호반써밋플레이스(지하2층 주차장)"+
+			    "</div>"+
+			 "</div>"+
+			 "<div style='position: relative; padding-top: 5px; display:inline-block'>"+
+			 	
+			    "<div style='display:inline-block; margin-left:5px; vertical-align: top;'>"+
+			    	"<span style='font-size: 12px; margin-left:2px; margin-bottom:2px; display:block;'>------------------------------------------------"+
+			    	"<span style='font-size: 12px; color:#888; margin-left:2px; margin-bottom:2px; display:block;'>-----------------------------------</span>"+
+			    	"<span style='font-size: 12px; margin-left:2px;'><a href='http://localhost:9090/OSS/list.jsp?title="+encodeURI('불당 호반써밋플레이스(지하2층 주차장)')+"' target='blank'>커뮤니티 이동</a></span>"+
+			    "</div>"+
+			 "</div>",
 	       	        lonlat: new Tmap.LonLat(127.104868,36.811573).transform("EPSG:4326", "EPSG:3857")
 	       		},
-	       		{
+			{
 	       			title:"<div style=' position: relative; border-bottom: 1px solid #dcdcdc; line-height: 18px; padding: 0 35px 2px 0;'>"+
 				    "<div style='font-size: 12px; line-height: 15px;'>"+
 			        "<span style='display: inline-block; width: 14px; height: 14px; background-image: url(/resources/images/common/icon_blet.png); vertical-align: middle; margin-right: 5px;'></span>한성아파트(지하주차장)"+
@@ -630,13 +2039,25 @@
 			    "<div style='display:inline-block; margin-left:5px; vertical-align: top;'>"+
 			    	"<span style='font-size: 12px; margin-left:2px; margin-bottom:2px; display:block;'>------------------------------------------------"+
 			    	"<span style='font-size: 12px; color:#888; margin-left:2px; margin-bottom:2px; display:block;'>-----------------------------------</span>"+
-			    	"<span style='font-size: 12px; margin-left:2px;'><a href='http://localhost:9090/OSS/list.jsp?title=한성아파트' target='blank'>커뮤니티 이동</a></span>"+
+			    	"<span style='font-size: 12px; margin-left:2px;'><a href='http://localhost:9090/OSS/list.jsp?title="+encodeURI('한성아파트')+"' target='blank'>커뮤니티 이동</a></span>"+
 			    "</div>"+
 			 "</div>",
 	       	        lonlat: new Tmap.LonLat(127.244887,36.915581).transform("EPSG:4326", "EPSG:3857")
 	       		},
 	       		{
-	       			title:'연합아파트(지하주차장)',
+	       			title:"<div style=' position: relative; border-bottom: 1px solid #dcdcdc; line-height: 18px; padding: 0 35px 2px 0;'>"+
+				    "<div style='font-size: 12px; line-height: 15px;'>"+
+			        "<span style='display: inline-block; width: 14px; height: 14px; background-image: url(/resources/images/common/icon_blet.png); vertical-align: middle; margin-right: 5px;'></span>연합아파트(지하주차장)"+
+			    "</div>"+
+			 "</div>"+
+			 "<div style='position: relative; padding-top: 5px; display:inline-block'>"+
+			 	
+			    "<div style='display:inline-block; margin-left:5px; vertical-align: top;'>"+
+			    	"<span style='font-size: 12px; margin-left:2px; margin-bottom:2px; display:block;'>------------------------------------------------"+
+			    	"<span style='font-size: 12px; color:#888; margin-left:2px; margin-bottom:2px; display:block;'>-----------------------------------</span>"+
+			    	"<span style='font-size: 12px; margin-left:2px;'><a href='http://localhost:9090/OSS/list.jsp?title="+encodeURI('연합아파트(지하주차장)')+"' target='blank'>커뮤니티 이동</a></span>"+
+			    "</div>"+
+			 "</div>",
 	       	        lonlat: new Tmap.LonLat(127.2092506,36.912786).transform("EPSG:4326", "EPSG:3857")
 	       		}
 	       	];

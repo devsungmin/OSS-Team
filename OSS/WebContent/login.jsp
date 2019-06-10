@@ -27,12 +27,12 @@
      <span class="icon-bar"></span>
     </button>
 
-    <a class="navbar-brand" href="NewFile1.jsp">내 주변 대피소 찾기</a>
+    <a class="navbar-brand" href="NewFile2.jsp">내 주변 대피소 찾기</a>
   </div>
   <div class="collapse navbar-collapse" id="#bs-example-navbar-collapse-1">
    <ul class="nav navbar-nav">
-    <li><a href="NewFile1.jsp">메인</a></li>
-    <li><a href="oss.jsp">게시판</a></li>
+    <li><a href="NewFile2.jsp">메인</a></li>
+    <li><a href="list.jsp">게시판</a></li>
    </ul>
 
    <ul class="nav navbar-nav navbar-right">
