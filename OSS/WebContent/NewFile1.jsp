@@ -98,6 +98,8 @@
 	var markerLayer_e = new Tmap.Layer.Markers("end");
 	var markerLayer = new Tmap.Layer.Markers();
 	var routeLayer = new Tmap.Layer.Vector("route");
+	var selectMarker, selectPopup;
+	var arrMarkerPopup = [];
 	routeLayer.style ={
 	    fillColor:"#FF0000",
 	    fillOpacity:0.2,
@@ -120,6 +122,11 @@
 
 	var input_s = false;
 	var input_e = false;
+	
+	function MarkerPopup(marker, popup) {
+		this.marker = marker;
+		this.popup = popup;
+	}
 
 	// 홈페이지 로딩과 동시에 맵을 호출할 함수
 	function initTmap(){
@@ -624,11 +631,38 @@
 	       	for (var i = 0; i< positions.length; i++){//for문을 통하여 배열 안에 있는 값을 마커 생성
 	    		var icon = new Tmap.Icon('http://tmapapis.sktelecom.com/upload/tmap/marker/pin_b_m_a.png',size, offset);//아이콘 설정
 	    		var lonlat = positions[i].lonlat;//좌표값
-	    		marker = new Tmap.Marker(lonlat, icon);//마커 생성
-	    		markerLayer.addMarker(marker); //마커 레이어에 마커 추가
-	    	}
-	       	
+	    		var title = positions[i].title; // 마커 타이틀
+	    		marker = new Tmap.Marker(lonlat, icon); // 마커생성
+				markerLayer.addMarker(marker);  // 마커 레이어에 마커 추가
+	    		
+	    		//팝업 생성
+				popup = new Tmap.Popup("p1", positions[i].lonlat, new Tmap.Size(200,100), positions[i].title);
+				map.addPopup(popup); // 지도에 팝업 추가
+				popup.hide(); // 팝업 숨기기
+				
+				//마커 이벤트등록
+				marker.events.register("mouseover", new MarkerPopup(marker, popup), onOverMarker); // 마커위로 마우스 포인터가 들어왔을 때 이벤트 설정
+				marker.events.register("mouseout", new MarkerPopup(marker, popup), onOutMarker); // 마커위에 있던 마우스 포인터가 밖으로 나갔을 때 이벤트 설정
+				marker.events.register("click", new MarkerPopup(marker, popup), onClickMarker); // 마커를 클릭했을 때 이벤트 설정
+			}
+		}
+	
+	// 마커에 마우스가 오버되었을 때 발생하는 이벤트 함수입니다.
+	function onOverMarker(evt) {
+		this.popup.show(); // 마커에 마우스가 오버되었을 때 팝업이 보입니다. 
 	}
+	// 마커에 마우스가 아웃되었을 때 발생하는 이벤트 함수입니다.
+	function onOutMarker(evt) {
+		this.popup.hide(); // 마커에 마우스가 없을땐 팝업이 숨겨집니다.
+
+	}
+	
+	// 마커가 클릭되었을 때 발생하는 이벤트 함수입니다.
+	function onClickMarker(evt) {
+		this.popup.show(); // 클릭했을때 팝업이 숨겨집니다.
+		
+	}
+	
 	// 나의 위치정보를 나타낼 메서드
 	function geoLocation(location) {
 	    navigator.geolocation.getCurrentPosition(function(position){
