@@ -1,4 +1,4 @@
- <%@ page language="java" contentType="text/html; charset=UTF-8"
+﻿ <%@ page language="java" contentType="text/html; charset=UTF-8"
 
     pageEncoding="UTF-8"%>
 
@@ -26,16 +26,17 @@
 
 <body onload="initTmap()">
 <%
-
+		int a=0;
 		//로긴한사람이라면	 userID라는 변수에 해당 아이디가 담기고 그렇지 않으면 null값
 
 		String userID = null;
 		if (session.getAttribute("userID") != null) {
 			userID = (String) session.getAttribute("userID");
-			
+			a=10;
 		}
 	%>
  <!-- 네비게이션  -->
+
  <nav class="navbar navbar-default">
 		<div class="navbar-header">
 			<button type="button" class="navbar-toggle collapsed"
@@ -85,13 +86,11 @@
 	</nav>
 
  <!-- 메인폼 -->
-<div class="container">
+<div class="row">
 
-  <div class="col-lg-4"></div>
-  <div class="col-lg-4">
-  
+
   <!-- 지도 -->
-  <div class="row">
+  <div class="col-lg-6">
 	<div id="map_div">
 	<script>
 	var popup, markerLayer;
@@ -2458,12 +2457,39 @@
    	
 	</script>
 	</div>
+	
    
  </div>
-</div>
-
-<center>
-<form class="offset-s6 col s3" style="margin-top: 37%;">
+ <div class = "col-lg-2">
+			<table class="table table-striped" style="text-align:center; border:1px solid #dddddd"> 
+				<thead>
+					<tr>
+						<th style="background-color: #eeeeee; text-align: center;">번호</th>
+						<th style="background-color: #eeeeee; text-align: center;">대피소</th>
+						<th style="background-color: #eeeeee; text-align: center;">사용금지</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>1</td>
+						<td>이한별아파트</td>
+						<td>X</td>
+					</tr>
+					<tr>
+						<td>2</td>
+						<td>주호승아파트</td>
+						<td>X</td>
+					</tr>
+					<tr>
+						<td>3</td>
+						<td>김성민아파트</td>
+						<td>X</td>
+					</tr>
+				</tbody>
+			</table>	
+		</div>
+ <div class="col-lg-5">
+<form class="offset-s6 col s3">
                 <div class="row">
                     <div class="input-field col s12">
                         <input type="text" id="start" />
@@ -2504,8 +2530,9 @@
                 	<p id="result2" class="center-align"></p>
                 	<p id="result3" class="center-align"></p>
             	</div>
-            </center>
-        </div>
+</div>
+</div>
+
  
 
  <!-- 애니매이션 담당 JQUERY -->
