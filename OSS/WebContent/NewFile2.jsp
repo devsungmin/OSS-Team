@@ -1,7 +1,7 @@
 ﻿ <%@ page language="java" contentType="text/html; charset=UTF-8"
 
     pageEncoding="UTF-8"%>
-
+<%@ page import="java.sql.*" %>
 <!DOCTYPE html>
 
 <html>
@@ -143,7 +143,8 @@
 	    map.addLayer(markerLayer_e);
 	    map.addLayer(markerLayer);
 
-	    // HTML5의 geolocation으로 사용할 수 있는지 확인합니다. 
+	    // HTML5의 geo으로 사용할 수 있는지 확인합니다. 
+
 	    // 현재 위치 정보를 얻어오는 메서드이다. 사용자가 허용을 할 경우 실행된다.
 	        // GeoLocation을 이용해서 접속 위치를 얻어옵니다.
 	        if (geolocation)    geoLocation("s");
@@ -2460,7 +2461,22 @@
 	
    
  </div>
- <div class = "col-lg-2">
+ <%
+ request.setCharacterEncoding("UTF-8");
+
+ int cnt=0;
+
+ Class.forName("com.mysql.cj.jdbc.Driver");
+ String url = "jdbc:mysql://localhost:3306/OSS?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC"; // localhost:3306 ��Ʈ�� ��ǻ�ͼ�ġ�� mysql�ּ�
+	String id = "root";
+	String pass = "admin";
+	int total = 0;
+	int cnt5=0;
+	try {	
+		Connection conn = DriverManager.getConnection(url,id,pass);
+		Statement stmt = conn.createStatement();
+%>		
+<div class = "col-lg-2">
 			<table class="table table-striped" style="text-align:center; border:1px solid #dddddd"> 
 				<thead>
 					<tr>
@@ -2469,25 +2485,49 @@
 						<th style="background-color: #eeeeee; text-align: center;">사용금지</th>
 					</tr>
 				</thead>
+
+
+<% 		
+		
+
+		String sqlList = "SELECT shelterName,warning from shelter WHERE warning='1'";
+		ResultSet rs = stmt.executeQuery(sqlList);
+		
+		while(rs.next()) {
+			String Sn = rs.getString(1);
+			String id1 = rs.getString(2);
+			
+			cnt5+=1;
+			
+			
+			
+%>		
+	
 				<tbody>
 					<tr>
-						<td>1</td>
-						<td>이한별아파트</td>
-						<td>X</td>
-					</tr>
-					<tr>
-						<td>2</td>
-						<td>주호승아파트</td>
-						<td>X</td>
-					</tr>
-					<tr>
-						<td>3</td>
-						<td>김성민아파트</td>
+						<td><%=cnt5 %></td>
+						<td><%=Sn %></td>
 						<td>X</td>
 					</tr>
 				</tbody>
-			</table>	
-		</div>
+				
+				
+		
+		
+<% 	
+		}
+		rs.close();
+		stmt.close();
+		conn.close();
+			}catch(SQLException e) {
+		out.println( e.toString() );
+		}
+
+		
+ %>
+ </table>
+</div>	
+
  <div class="col-lg-5">
 <form class="offset-s6 col s3">
                 <div class="row">

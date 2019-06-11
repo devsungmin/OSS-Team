@@ -42,7 +42,7 @@
 
 			</button>
 
-			<a class="navbar-brand" href="main.jsp">내 주변 대피소 찾기</a>
+			<a class="navbar-brand" href="NewFile2.jsp">내 주변 대피소 찾기</a>
 
 		</div>
 
@@ -52,9 +52,9 @@
 
 			<ul class="nav navbar-nav">
 
-				<li><a href="main.jsp">메인</a></li>
+				<li><a href="NewFile2.jsp">메인</a></li>
 
-				<li><a href="bbs.jsp">게시판</a></li>
+				<li><a href="list.jsp">게시판</a></li>
 
 			</ul>
 
