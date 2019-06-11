@@ -43,7 +43,9 @@
 <input type="hidden" name="re" value="<%=irum %>">
 <input type="hidden" name="cnt" value="<%=c%>">
 <center>
+
 <input type="submit" value="작성 완료" />
+
 </center>
 </form>
 </body>

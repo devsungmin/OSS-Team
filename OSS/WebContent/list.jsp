@@ -190,7 +190,12 @@
 <input type="text" name="memo" value="" style="text-align:center; width:200px; height:50px;" /><br />
        <input type="submit" value="댓글 달기" />
        </form>
-       <input type="button" value="사용금지">
+       
+       <form name="b" method="post" action="warning.jsp">
+      <input type="hidden" name="re1" value="<%=id4%>">
+		<input type="submit" value="사용금지">
+		</form>
+       
 </center>
    		
 
